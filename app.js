@@ -10,7 +10,7 @@ app.use('/img', express.static('img'))
 
 app.get('/:id', function (req, res, next) {
     var file = 'index.jade';
-    var html = jade.renderFile(req.param.id||file);
+    var html = jade.renderFile(req.params.id+".jade"||file);
     res.setHeader('Content-Type', 'text/html;charset=utf-8');
     res.end(html);
 });
