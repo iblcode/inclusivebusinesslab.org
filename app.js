@@ -9,8 +9,9 @@ app.use('/img', express.static('img'))
 
 
 app.get('/:id', function (req, res, next) {
-    var file = 'index.jade';
-    var html = jade.renderFile(req.params.id+".jade"||file);
+    var file = 'index';
+    var page = (req.params.id || file) + ".pug";
+    var html = jade.renderFile('/pages/layout.pug', {page:page});
     res.setHeader('Content-Type', 'text/html;charset=utf-8');
     res.end(html);
 });
