@@ -370,6 +370,12 @@ body.is-touchscreen-false .lang-selector:hover ul{
     display: table;
     vertical-align: middle;
     z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+}
+.hero-layer-text.active{
+    visibility: visible;
+    opacity: 1;
 }
 
 .hero-layer-text-v{
@@ -402,7 +408,7 @@ body.is-touchscreen-false .lang-selector:hover ul{
     -moz-transform: translateY(-50px);
     transform: translateY(-50px);
 }
-.hero-layer-text-v.active{
+.hero-layer.active .hero-layer-text-v{
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     transform: translateY(0);

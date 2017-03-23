@@ -1,0 +1,75 @@
+extends /includes/base
+block content
+    section#hero
+        .hero-layer.paralax(style='background-image: url(/static/img/hero.life.jpg)')
+        .hero-layer.hero-layer-text
+            .hero-layer-text-v.active
+                h1.bg-title.bgt-7
+                    span Life Upon Life Movement
+        span#hero-arrow
+    .wrapper3
+        .text1
+            p.big.text-center
+                | Life upon Life Movement encourages the next generation to look beyond their personal goals and achievements and pursue a purpose greater than themselves, being a positive role model and lead a life of significance by adding value to others. We express this as three slogans: be the example, be the culture, be the movement.
+            p.big.text-center
+                | As the next generation embark on their journey of living a life with significance, we encourage them to  write Significant Stories. We showcase these stories on our website as an inspiration for others.
+    section.stories
+        h3.text-center STORIES
+        .isotope
+            script.
+                /***********************
+                Just for a demo
+                ***********************/
+                setTimeout(()=>{
+                let iso = document.querySelector(".isotope-content");
+                iso.innerHTML = iso.innerHTML + iso.innerHTML;
+                },1)
+            .isotope-content
+                span.isotope-item(data-type='Significant Stories')
+                    span.ist-content
+                        span.h4 Ita graviter et severe voluptatem secrevit a bono.
+                        span.p
+                            | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+                        span.ist-bottom
+                            span.ist-date 31 OCTOBER
+                            span.ist-type
+                                a(href='javascript:;') Stem+
+                            span.ist-type
+                                a(href='javascript:;') Stories
+                span.isotope-item(data-type='Significant Stories')
+                    span.ist-image(style='background-image: url(/static/img/iso.1.png)')
+                    span.ist-content
+                        span.h4 Ita graviter et severe voluptatem secrevit a bono.
+                        span.p
+                            | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+                        span.ist-bottom
+                            span.ist-date 31 OCTOBER
+                            span.ist-type
+                                a(href='javascript:;') Stem+
+                            span.ist-type
+                                a(href='javascript:;') Stories
+                span.isotope-item(data-type='news')
+                    span.ist-content
+                        span.h4
+                            | “An important, featured post. Scio enim esse quosdam, qui quavis lingua philosophari possint; At iste non dolendi status non vocatur voluptas.”
+                        span.ist-bottom
+                            span.ist-date 31 OCTOBER
+                            span.ist-type
+                                a(href='javascript:;') Stem+
+                            span.ist-type
+                                a(href='javascript:;') Stories
+                span.isotope-item.isotope-item-video(data-type='Significant Stories')
+                    span.ist-image(style='background-image: url(/static/img/iso.2.png)')
+                    span.ist-content
+                        span.h4 Ita graviter et severe voluptatem secrevit a bono.
+                        span.p
+                            | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+                        span.ist-bottom
+                            span.ist-date 31 OCTOBER
+                            span.ist-type
+                                a(href='javascript:;') Stem+
+                            span.ist-type
+                                a(href='javascript:;') Stories
+        .text-center
+            a.btn.btn-alt(href='javascript:;') Read All Stories
+

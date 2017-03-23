@@ -39,15 +39,15 @@ ibl = {
             })
         });
         if(stop > $(".hero-home").height() - 400){
-            titleLayers.removeClass('active')
+            titleLayers.each(function(){$(this).parent().removeClass('active')})
         }
         else if(stop > 100){
-            titleLayers.eq(0).removeClass('active')
-            titleLayers.eq(1).addClass('active')
+            titleLayers.eq(0).parent().removeClass('active')
+            titleLayers.eq(1).parent().addClass('active')
         }
         else{
-            titleLayers.eq(1).removeClass('active')
-            titleLayers.eq(0).addClass('active')
+            titleLayers.eq(1).parent().removeClass('active')
+            titleLayers.eq(0).parent().addClass('active')
         }
     },
     homeHero:function(){
