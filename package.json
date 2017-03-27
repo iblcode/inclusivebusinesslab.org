@@ -8,10 +8,15 @@
     "penguin.js": "^1.0.0-rc.18",
     "redux": "^3.6.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "penguin": {
+    "languages": ["en"]
   },
+  "scripts": {
+    "serve": "penguin serve -v pug",
+    "prebuild": "penguin pack -v pug",
+    "build": "penguin build"
+  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pA1nD/website-ibl.git"
