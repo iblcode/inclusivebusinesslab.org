@@ -5,11 +5,17 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.15.2",
+    "penguin-link": "0.0.2",
     "penguin.js": "^1.0.0-rc.18",
     "redux": "^3.6.0"
   },
   "penguin": {
-    "languages": ["en"]
+    "languages": [
+      "en"
+    ],
+    "components": {
+      "Link": "penguin-link"
+    }
   },
   "scripts": {
     "serve": "penguin serve -v pug",
