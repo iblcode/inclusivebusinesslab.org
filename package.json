@@ -1,0 +1,26 @@
+{
+  "name": "website-ibl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "penguin.js": "^1.0.0-rc.18",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pA1nD/website-ibl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pA1nD/website-ibl/issues"
+  },
+  "homepage": "https://github.com/pA1nD/website-ibl#readme"
+}
