@@ -7,7 +7,7 @@
     "prebuild": "penguin pack -v pug",
     "build": "penguin build",
     "heroku-postbuild": "penguin pack -v pug",
-    "start": "bash scripts/start.sh"
+    "start": "bash start.sh"
   },
   "penguin": {
     "languages": [
