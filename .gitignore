@@ -1,2 +1,4 @@
 node_modules/
 .penguin/
+data/
+npm-debug.log
