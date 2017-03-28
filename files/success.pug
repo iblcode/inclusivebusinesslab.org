@@ -1,0 +1,60 @@
+html
+  head
+    title Check your mail
+    style.
+      .error {
+      color: #000;
+      background: #fff;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
+      text-align: center;
+      padding-top: 20%;
+      }
+      .desc {
+      display: inline-block;
+      text-align: left;
+      line-height: 49px;
+      height: 49px;
+      vertical-align: middle;
+      }
+      .h1 {
+      display: inline-block;
+      border-right: 1px solid rgba(0, 0, 0,.3);
+      margin: 0;
+      margin-right: 20px;
+      padding: 10px 23px;
+      font-size: 24px;
+      font-weight: 500;
+      vertical-align: top;
+      }
+      .h2 {
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+      }
+      .footer {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: 50px;
+      font-family: monospace;
+      text-align: center;
+      }
+  body
+    .error
+      .text
+        h1.h1 OK
+        .desc
+          h2.h2
+            | Check deine Email
+            br
+        p
+          | /* Wir haben dir eine email gesendet. Dort kannst du dich einloggen. */
+    .footer
+      | <penguin.js>
+      a(href='https://www.websites-smart.de') websites einfach smart
