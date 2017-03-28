@@ -7,8 +7,8 @@ penguin run \
   --middleware [ \
     penguin-passwordless \
       --cookie [ --secret foobar ] \
-      --failure-redirect /login \
-      --sent-redirect /success \
+      --failure-redirect /en/login \
+      --sent-redirect /en/success \
       --pg-url "$DATABASE_URL" \
       --redis-url "$REDIS_URL" \
       --delivery [ \
