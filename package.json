@@ -1,4 +1,14 @@
 {
+  "name": "website-ibl",
+  "version": "1.0.0",
+  "description": "IBLs Website. Made 3/2017",
+  "scripts": {
+    "serve": "penguin serve -v pug --middleware [ penguin-filestack/middleware --api-key APkI1JP79Q5Wh28llgIj6z --secret QD3MEQPQDNFNRLGOJOCDIVGWPQ ]",
+    "prebuild": "penguin pack -v pug",
+    "build": "penguin build",
+    "heroku-postbuild": "penguin pack -v pug",
+    "start": "bash start.sh"
+  },
   "penguin": {
     "languages": [
       "en",
@@ -6,20 +16,36 @@
     ],
     "components": {
       "Link": "penguin-link",
+      "Filestack": "penguin-filestack",
       "Inplace": "penguin-inplace",
       "MediumEditor": "penguin-medium-editor"
     }
   },
-  "scripts": {
-    "start": "echo 'Hey, please use `npm run serve` for development'",
-    "serve": "penguin serve -v pug"
-  },
   "dependencies": {
     "express": "^4.15.2",
-    "penguin-inplace": "0.0.1",
-    "penguin-link": "0.0.1",
+    "penguin-filestack": "^1.0.1",
+    "penguin-inplace": "0.0.3",
+    "penguin-link": "0.0.2",
     "penguin-medium-editor": "^1.1.1",
+    "penguin-passwordless": "0.0.0",
+    "penguin-passwordless-postmark": "0.0.0",
     "penguin.js": "^1.0.0-rc.18",
     "redux": "^3.6.0"
-  }
+  },
+  "optionalDependencies": {
+    "penguin-passwordless": "0.0.0",
+    "penguin-passwordless-postmark": "0.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pA1nD/website-ibl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pA1nD/website-ibl/issues"
+  },
+  "homepage": "https://github.com/pA1nD/website-ibl#readme"
 }
