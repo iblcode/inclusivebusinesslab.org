@@ -1,0 +1,25 @@
+{
+  "penguin": {
+    "languages": [
+      "en",
+      "cn"
+    ],
+    "components": {
+      "Link": "penguin-link",
+      "Inplace": "penguin-inplace",
+      "MediumEditor": "penguin-medium-editor"
+    }
+  },
+  "scripts": {
+    "start": "echo 'Hey, please use `npm run serve` for development'",
+    "serve": "penguin serve -v pug"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "penguin-inplace": "0.0.1",
+    "penguin-link": "0.0.1",
+    "penguin-medium-editor": "^1.1.1",
+    "penguin.js": "^1.0.0-rc.18",
+    "redux": "^3.6.0"
+  }
+}
