@@ -4,7 +4,7 @@ block content
         .hero-layer.paralax(style='background-image: url(/static/img/hero.steam.jpg)')
         .hero-layer.hero-layer-text
             .hero-layer-text-v.active
-                img(src='img/steam.jpg', alt='')
+                img(src='/static/img/steam.jpg', alt='')
     .wrapper3
         .text1
             p.big.text-center
@@ -30,7 +30,7 @@ block content
     .wrapper2
         .checkmate
             div
-                img(src='img/chk1.jpg')
+                img(src='/static/img/chk1.jpg')
                 .chk-content
                     .chk-cell
                         .chk-cell-content
@@ -38,7 +38,7 @@ block content
                             p
                                 | MathCafé Challenges are creative tasks requiring students to work together to propose, discuss and develop their own innovative and original ideas. By participating in a Challenge, students will gain much more than STEM skills, they will also develop skills in: teamwork and leadership, art and design, problem solving, speaking English, communication and presentation.
             div
-                img(src='img/chk2.jpg')
+                img(src='/static/img/chk2.jpg')
                 .chk-content
                     .chk-cell
                         .chk-cell-content
@@ -46,7 +46,7 @@ block content
                             p
                                 | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
             div
-                img(src='img/chk3.jpg')
+                img(src='/static/img/chk3.jpg')
                 .chk-content
                     .chk-cell
                         .chk-cell-content
@@ -111,4 +111,4 @@ block content
                             span.ist-type
                                 a(href='javascript:;') Stories
         .text-center
-            a.btn.btn-alt(href='javascript:;') Read All Stories
+            a.btn.btn-alt(data-component='Link' data-props={href:'/stories'})Read All Stories

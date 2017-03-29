@@ -40,7 +40,7 @@ block content
                         br
                         strong global value chains
                     span.card-btn
-                        a.btn(href='javascript:;') Learn more
+                        a.btn(data-component='Link' data-props={href:'/business'}) Learn more
             span.card
                 span.card-image(style='background-image:url(/static/img/card2.png)')
                     span.h3.bg-title.bgt-4
@@ -51,7 +51,7 @@ block content
                     span.card-text
                         | Developing transformational leadership and next generation inclusive leaders who are ethical, purpose-driven and global-minded
                     span.card-btn
-                        a.btn(href='javascript:;') Learn more
+                        a.btn(data-component='Link' data-props={href:'/business'}) Learn more
     .team
         h3(data-component='Inplace' data-props={field:'home_team_title'}) OUR TEAM
         p(data-component='MediumEditor' data-props={field:'home_team_text'})
@@ -75,7 +75,7 @@ block content
                 span.ts-item-holder
                     span.ts-item(style='background-image: url(/static/img/carousel2.png)')
     .text-center
-        a.btn.btn-alt(href='javascript:;') Meet the whole team
+        a.btn.btn-alt(data-component='Link' data-props={href:'/business'}) Meet the whole team
     #get-involved
         h3(data-component='Inplace' data-props={field:'home_involved_title'}) OUR TEAM GET INVOLVED
         .wrapper2.involved-grid
@@ -86,7 +86,7 @@ block content
                         strong Information
                     p
                         | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis negat? Qui ita affectus, beatum esse numquam probabis; Negat esse eam, inquit, propter se expetendam.
-                    a.btn.btn-invert(href='javascript:;') Get More Info
+                    a.btn.btn-invert(data-component='Link' data-props={href:'/team'}) Get More Info
             .inv-item
                 .inv-item-content
                     span.inv-image.inv-image-2
@@ -94,7 +94,7 @@ block content
                         strong Supporters
                     p
                         | Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. An vero, inquit, quisquam potest probare, quod perceptfum, quod.
-                    a.btn.btn-invert(href='javascript:;') Support us
+                    a.btn.btn-invert(data-component='Link' data-props={href:'/support'}) Support us
             .inv-item
                 .inv-item-content
                     span.inv-image.inv-image-3
@@ -102,7 +102,7 @@ block content
                         strong Partners
                     p
                         | Ergo opifex plus sibi proponet ad formarum quam civis excellens ad factorum pulchritudinem? Nos paucis ad haec additis finem faciamus aliquando.
-                    a.btn.btn-invert(href='javascript:;') Become a partner
+                    a.btn.btn-invert(data-component='Link' data-props={href:'/contact'}) Become a partner
     section.stories
         h3.text-center(data-component='Inplace' data-props={field:'home_stories_title'}) OUR TEAM OUR STORIES
         .isotope
@@ -153,4 +153,4 @@ block content
                             span.ist-type
                                 a(href='javascript:;') Stories
         .text-center
-            a.btn.btn-alt(href='javascript:;') Read All Stories
+            a.btn.btn-alt(data-component='Link' data-props={href:'/stories'}) Read All Stories
