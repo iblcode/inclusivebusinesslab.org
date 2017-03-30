@@ -21,7 +21,8 @@
       "Inplace": "penguin-inplace",
       "MediumEditor": "penguin-medium-editor",
       "SaveButton": "penguin-save-button",
-      "SaveIndicator": "penguin-saved-indicator"
+      "SavedIndicator": "penguin-saved-indicator",
+      "OnlyEditor": "penguin-only-editor"
     }
   },
   "dependencies": {
@@ -30,6 +31,7 @@
     "penguin-inplace": "0.0.3",
     "penguin-link": "0.0.2",
     "penguin-medium-editor": "^1.1.1",
+    "penguin-only-editor": "^1.0.0",
     "penguin-passwordless": "0.0.0",
     "penguin-passwordless-postmark": "0.0.0",
     "penguin-save-button": "0.0.2",

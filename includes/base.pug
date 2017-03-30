@@ -7,7 +7,10 @@ html
         link(rel='stylesheet', type='text/css', href='/static/js/slick/slick.css')
         link(rel='stylesheet', type='text/css', href='/static/css/ui.css')
         link(rel='stylesheet', type='text/css', href='/static/css/style.css')
+          
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+        //- JUST FOR DEVELOPMENT!!
+        script(src='/static/js/jquery.min.js')
         script(src='/static/js/slick/slick.min.js')
         script(src='/static/js/isotope.pkgd.min.js')
         script(src='/static/js/packery-mode.pkgd.js')
@@ -17,12 +20,12 @@ html
             header#header
                 .wrapper
                     nav#top-menu
-                        a(data-component='Link' data-props={href:'/feedback'})
-                            span.icon-comment
-                            | Feedback
-                        a(data-component='Link' data-props={href:'/resources'})
-                            span.icon-download
-                            | Resources
+                        //- a(data-component='Link' data-props={href:'/feedback'})
+                        //-     span.icon-comment
+                        //-     | Feedback
+                        //- a(data-component='Link' data-props={href:'/resources'})
+                        //-     span.icon-download
+                        //-     | Resources
                         .lang-selector
                             span.current-language
                                 span.icon-globus
@@ -33,7 +36,7 @@ html
                                 li
                                     a(href='/cn') Chinese
                     section#header-main
-                        a#logo(href='/') Inclusive Business Lab
+                        a#logo(data-props={href:'/'} data-component='Link') Inclusive Business Lab
                         nav#main-menu
                             ul
                                 li
@@ -47,9 +50,8 @@ html
                                 li
                                     a(data-component='SaveButton')  Save
         block content
-
-        div(style='position: absolute; top: 10px; right: 10px; display:none; background-color: white; z-index: 99999; padding: 25px; color: green;' data-component='SaveIndicator' data-props='{"timeout":1700}')
-          strong Erfolgreich gespeichert!
+          
+        include /includes/toolbar  
         footer#footer
             .wrapper
                 nav
