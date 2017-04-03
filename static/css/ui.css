@@ -53,7 +53,7 @@
     text-align: center;
     line-height: 51px;
     height: 51px;
-    font-weight: bold;
+    font-weight: 700;
     padding: 0 30px;
     background: #F9811B;
     border: 1px solid #F9811B;
@@ -245,6 +245,9 @@
     color: white;
     border-width: 0;
 }
+.isotope-item[data-type="news"] .ist-content .h4{
+    color: white;
+}
 .isotope-item[data-type="news"] .ist-bottom a{
     color:  rgba(0, 0, 0, 1);
 }
@@ -262,7 +265,9 @@
 }
 .ist-content .h4{
     text-decoration: underline;
-    font-weight: 600;
+    font-weight: 400;
+    color: black;
+    line-height: 1.45;
 }
 
 @media (max-width:1170px){
@@ -468,7 +473,7 @@
     font-size: 41px;
     color: rgba(249, 129, 27, 1);
     line-height: 34px;
-    font-weight: 600;
+    font-weight: 700;
     vertical-align: bottom;
 }
 
@@ -717,5 +722,3 @@
     }
 
 }
-
-
