@@ -4,13 +4,17 @@ html
         title IBL
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
+          
+        include /includes/ico
+          
         link(rel='stylesheet', type='text/css', href='/static/js/slick/slick.css')
         link(rel='stylesheet', type='text/css', href='/static/css/ui.css')
         link(rel='stylesheet', type='text/css', href='/static/css/style.css')
           
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+        //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
         //- JUST FOR DEVELOPMENT!!
         script(src='/static/js/jquery.min.js')
+          
         script(src='/static/js/slick/slick.min.js')
         script(src='/static/js/isotope.pkgd.min.js')
         script(src='/static/js/packery-mode.pkgd.js')
@@ -46,20 +50,17 @@ html
                                 li
                                     a(data-component='Link' data-props={href:'/team'})  The Team
                                 li
-                                    a(data-component='Link' data-props={href:'/container'})  Container
-                                li
-                                    a(data-component='SaveButton')  Save
+                                    a(data-component='Link' data-props={href:'/contact'})  Contact
         block content
           
         include /includes/toolbar  
         footer#footer
             .wrapper
                 nav
-                    a(data-component='Link' data-props={href:'/solutions'}) Our Solutions
-                    a(data-component='Link' data-props={href:'/stories'}) Stories
-                    a(data-component='Link' data-props={href:'/team'}) The Team
-                    a(data-component='Link' data-props={href:'/resources'}) Resources
-                    a(data-component='Link' data-props={href:'/contact'}) Get In Touch
+                    a(data-component='Link' data-props={href:'/strategies'}) Strategies
+                    a(data-component='Link' data-props={href:'/stories'})  Stories
+                    a(data-component='Link' data-props={href:'/team'})  The Team
+                    a(data-component='Link' data-props={href:'/contact'})  Contact
                 a#footer-logo(href='/')
                 address#copy
                     | Inclusive Business Lab &

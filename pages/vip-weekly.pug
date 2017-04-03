@@ -5,24 +5,24 @@ block content
         .hero-layer.hero-layer-text
             .hero-layer-text-v.active
                 h1.bg-title.bgt-6
-                    span VIP Weekly
+                    span(data-component='MediumEditor' data-props={field:'title'}) VIP Weekly
     .wrapper3
         .text1
-            p.big.text-center
+            p.big.text-center(data-component='MediumEditor' data-props={field:'desc'})
                 | VIP Weekly are cycles of lessons for high school students on Values – Improvisation – Presentation.
             br
             br
             .wrapper4
-                p
+                p(data-component='MediumEditor' data-props={field:'cont'})
                     | For each VIP cycle, we start with V-Class on values such as love, forgiveness, positive attitude, etc. Students are encouraged to write stories from their own experience based on the value discussed in class. Then the I-Class is designed to improve communication and building confidence through improvisation. The final lesson P-Class is dedicated to student presentations and discussions. Students are encouraged to present their stories on the topic from the V-Class.
-                br
-                a.btn.btn-alt(data-component='Link' data-props={href:'/resources'}) Resources
+                //- br
+                //- a.btn.btn-alt(data-component='Link' data-props={href:'/resources'}) Resources
     .square-images
         div(style='background-image: url(/static/img/sq1.jpg)')
         div(style='background-image: url(/static/img/sq2.jpg)')
         div(style='background-image: url(/static/img/sq3.jpg)')
     section.stories(style='padding-top: 180px;')
-        h3.text-center STORIES
+        h3.text-center(data-component='Inplace' data-props={field:'title_2'}) STORIES
         .isotope
             script.
                 /***********************

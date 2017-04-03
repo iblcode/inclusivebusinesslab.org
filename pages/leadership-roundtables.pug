@@ -1,26 +1,25 @@
 extends /includes/base
 block content
-    section#hero
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.inclusevebusiness.jpg)')
+    section#hero.hero-100
+        .hero-layer.paralax(style='background-image: url(/static/img/hero.life.jpg);')
         .hero-layer.hero-layer-text
             .hero-layer-text-v.active
-                h1.bg-title.bgt-3
-                    span Inclusive Business
+                h1.bg-title.bgt-8(data-component='MediumEditor' data-props={field:'title'})
+                    span Training-the-Trainers Leadership
+                    br
+                    span Roundtables
+        span#hero-arrow
     .wrapper3
-        img(src='/static/img/omnioikos.jpg', alt='OmniOikos')
-        .r-grid.qed
-            .col
-                img(src='/static/img/qed.png', width='320', alt='')
-            .col
-                .r-grid-main
-                    .text1
-                        p
-                            | OmniOikos is an e-m-digital platform with the vision “Economy for Everyone”,
-                            | where we will showcase, develop, upscale and distribute the Inclusive Brand Q.E.D of “Quality; Excellence; Dignity”.
-                            | Behind these quality and ethical brands and products, throughout the value-chains from seeds to stores, are the many significant stories that bring dignity to human lives.
-                    a.btn.btn-alt(href='javascript:;') Visit Omnioikos
+        .text1
+            p.big.text-center(data-component='MediumEditor' data-props={field:'content'})
+                | Training-the-Trainers Leadership Roundtables aim to develop the trainers on leadership development.
+                | The initial focus will be on values including love, forgiveness, attitude, competence, integrity,
+                | personal growth as well as life of significance and purpose. Each roundtable follows a pattern designed to
+                | help everyone participate and accept the challenge of developing each value. This would help to create a close
+                | community in which they support and encourage one another. With deeper understanding of each value, personal
+                | growth is nourished through mutual support and leading to transformation.
     section.stories
-        h3.text-center STORIES
+        h3.text-center(data-component='Inplace' data-props={field:'title_2'}) STORIES
         .isotope
             script.
                 /***********************
@@ -77,4 +76,4 @@ block content
                             span.ist-type
                                 a(href='javascript:;') Stories
         .text-center
-            a.btn.btn-alt(href='javascript:;') Read All Stories
+            a.btn.btn-alt(data-component='Link' data-props={href:'/stories'}) Read All Stories

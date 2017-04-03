@@ -1,25 +1,20 @@
 extends /includes/base
 block content
-    section#hero.hero-100
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.life.jpg);')
+    section#hero
+        .hero-layer.paralax(style='background-image: url(/static/img/hero.life.jpg)')
         .hero-layer.hero-layer-text
             .hero-layer-text-v.active
-                h1.bg-title.bgt-8
-                    span Training-the-Trainers Leadership
-                    br
-                    span Roundtables
+                h1.bg-title.bgt-7
+                    span(data-component='Inplace' data-props={field:'title'}) Life Upon Life Movement
         span#hero-arrow
     .wrapper3
-        .text1
+        .text1(data-component='MediumEditor' data-props={field:'content'})
             p.big.text-center
-                | Training-the-Trainers Leadership Roundtables aim to develop the trainers on leadership development.
-                | The initial focus will be on values including love, forgiveness, attitude, competence, integrity,
-                | personal growth as well as life of significance and purpose. Each roundtable follows a pattern designed to
-                | help everyone participate and accept the challenge of developing each value. This would help to create a close
-                | community in which they support and encourage one another. With deeper understanding of each value, personal
-                | growth is nourished through mutual support and leading to transformation.
+                | Life upon Life Movement encourages the next generation to look beyond their personal goals and achievements and pursue a purpose greater than themselves, being a positive role model and lead a life of significance by adding value to others. We express this as three slogans: be the example, be the culture, be the movement.
+            p.big.text-center
+                | As the next generation embark on their journey of living a life with significance, we encourage them to  write Significant Stories. We showcase these stories on our website as an inspiration for others.
     section.stories
-        h3.text-center STORIES
+        h3.text-center(data-component='Inplace' data-props={field:'stories'}) STORIES
         .isotope
             script.
                 /***********************
@@ -76,4 +71,4 @@ block content
                             span.ist-type
                                 a(href='javascript:;') Stories
         .text-center
-            a.btn.btn-alt(data-component='Link' data-props={href:'/stories'})Read All Stories
+            a.btn.btn-alt(data-component='Link' data-props={href:'/stories'}) Read All Stories

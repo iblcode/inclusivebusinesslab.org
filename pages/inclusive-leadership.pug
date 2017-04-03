@@ -5,9 +5,9 @@ block content
         .hero-layer.hero-layer-text
             .hero-layer-text-v.active
                 h1.bg-title.bgt-4
-                    span Global Inclusive Leadership
+                    span(data-component='Inplace' data-props={field:'title'}) Global Inclusive Leadership
     .wrapper3
-        .leadership-hello
+        .leadership-hello(data-component='MediumEditor' data-props={field:'desc'} )
             | Global Inclusive Leadership Next Gen Program aims to train the next generation (ages 15-35) to be ethical, purpose-driven and global-minded inclusive leaders.
         span.rich-logo.rich-logo1
             | Next Gen
@@ -15,10 +15,10 @@ block content
             |  Program
         .r-grid.qed
             .col
-                img(src='/static/img/leader.jpg', alt='')
+                img(data-component="Filestack", data-props={field:'image_1', defaultURL:'/static/img/leader.jpg'}, alt='')
             .col
                 .r-grid-main
-                    .text1
+                    .text1(data-component='MediumEditor' data-props={field:'content'})
                         h3 A Program which inspires, motivates and empowers the next generation.
                         p
                             | From a base of self-discovery and understanding, the Program inspires students to see greater possibilities, and motivates them to pursue a purpose greater than themselves. It empowers them to reach beyond their own immediate success towards significance within the local and global community.
@@ -26,59 +26,69 @@ block content
                             | Such a program is based on a strong set of values, which are the drivers in the development of character. Experience of the program and its activities enables skills to develop which help the next generation to have a sense of their own purpose and vision for the future.
                         p
                             | The program reflects a holistic approach to education in which learning involves not only the head, but also the heart, and in which ideas and sentiments backed up by action and experience and reflective thinking, resulting in deep and well-rounded understanding.
-                    a.btn.btn-alt(href='javascript:;') Visit Omnioikos
     .dark-box
         .wrapper3
             .dark-box-content-holder
                 .dark-box-content
-                    h1 Life Upon Life
-                    p
+                    h1(data-component='Inplace' data-props={field:'dark_title'} ) Life Upon Life
+                    p(data-component='MediumEditor' data-props={field:'dark_content'})
                         | “Life upon Life” is the principle that one person’s life can positively impact and inspire the lives of those around them in their local and global community.
-                    blockquote
+                    blockquote(data-component='MediumEditor' data-props={field:'dark_quote'})
                         | “As they encountered unconditional love, they will learn to love unconditionally.”
                         footer —— Violet Lo
     .section-info
         .text1
-            h3 OUR PLATFORM
-            p
+            h3(data-component='Inplace' data-props={field:'pf_title'}) OUR PLATFORM
+            p(data-component='MediumEditor' data-props={field:'pf_content'})
                 | The program is intended to be an open-platform which will continue to be developed in collaboration with world-class universities and international and local schools, as well as with multinational corporations, industry leaders, experts, global inclusive business leaders, friends and supporters.
     .wrapper2
         section.cards
             span.card
                 span.card-image(style='background-image:url(/static/img/c1.jpg)')
-                    span.h3.bg-title.bgt-2
+                    span.h3.bg-title.bgt-2(data-component='MediumEditor' data-props={field:'b1_title'})
                         span Global Inclusive
                         br
                         span Leadership Challenge
                 span.card-content
-                    span.card-text
+                    span.card-text(data-component='MediumEditor' data-props={field:'b1_cont'} style='min-height: 115px;')
                         | The Global Inclusive Leadership Challenges are a series of talks by global-minded leaders and experts about their personal leadership journeys.
                     span.card-btn
-                        a.btn.btn-alt(href='javascript:;') Learn more
+                        a.btn.btn-alt(data-component='Link' data-props={href:'/global-inclusive-leadership-challenges'}) Learn more
             span.card
                 span.card-image(style='background-image:url(/static/img/c2.jpg)')
-                    span.h3.bg-title.bgt-4
+                    span.h3.bg-title.bgt-4(data-component='MediumEditor' data-props={field:'b2_title'})
                         span Stem + Studio
                 span.card-content
-                    span.card-text
+                    span.card-text(data-component='MediumEditor' data-props={field:'b2_cont'} style='min-height: 115px;')
                         | STEM+ Studio is a collection of projects which use the principle of “STEM+” to train the next generation of inclusive leaders.
                     span.card-btn
-                        a.btn.btn-alt(href='javascript:;') Learn more
+                        a.btn.btn-alt(data-component='Link' data-props={href:'/stem-plus-studio'}) Learn more
             span.card
                 span.card-image(style='background-image:url(/static/img/c3.jpg)')
-                    span.h3.bg-title.bgt-6
+                    span.h3.bg-title.bgt-6(data-component='MediumEditor' data-props={field:'b3_title'})
                         span VIP Weekly
                 span.card-content
-                    span.card-text
+                    span.card-text(data-component='MediumEditor' data-props={field:'b3_cont'} style='min-height: 115px;')
                         | VIP Weekly is our tailor-made inclusive leadership curriculum for high school students, combining Values, Improvisation and Presentation.
                     span.card-btn
-                        a.btn.btn-alt(href='javascript:;') Learn more
+                        a.btn.btn-alt(data-component='Link' data-props={href:'/vip-weekly'}) Learn more
             span.card
                 span.card-image(style='background-image:url(/static/img/c4.jpg)')
-                    span.h3.bg-title.bgt-7
+                    span.h3.bg-title.bgt-7(data-component='MediumEditor' data-props={field:'b4_title'})
                         span Life Upon Life
                 span.card-content
-                    span.card-text
+                    span.card-text(data-component='MediumEditor' data-props={field:'b4_cont'} style='min-height: 115px;')
                         | We motivate the next generation of leaders to develop and pursue purpose greater than themselves, and move from success to significance.
                     span.card-btn
-                        a.btn.btn-alt(href='javascript:;') Learn more
+                        a.btn.btn-alt(data-component='Link' data-props={href:'/life-upon-life'}) Learn more
+            span.card
+                span.card-image(style='background-image:url(/static/img/c4.jpg)')
+                    span.h3.bg-title.bgt-8(data-component='MediumEditor' data-props={field:'b5_title'})
+                        span Training-the-Trainers Leadership
+                        br
+                        span Roundtables
+                span.card-content
+                    span.card-text(data-component='MediumEditor' data-props={field:'b5_cont'} style='min-height: 115px;')
+                        | We motivate the next generation of leaders to develop and pursue purpose greater than themselves, and move from success to significance.
+                    span.card-btn
+                        a.btn.btn-alt(data-component='Link' data-props={href:'/leadership-roundtables'}) Learn more

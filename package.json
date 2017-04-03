@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "IBLs Website. Made 3/2017",
   "scripts": {
-    "serve": "penguin serve -v pug --middleware [ penguin-filestack/middleware --api-key APkI1JP79Q5Wh28llgIj6z --secret QD3MEQPQDNFNRLGOJOCDIVGWPQ ]",
+    "serve": "penguin serve -v pug -t [ penguin-pug-transform ] --middleware [ penguin-filestack/middleware --api-key APkI1JP79Q5Wh28llgIj6z --secret QD3MEQPQDNFNRLGOJOCDIVGWPQ ]",
     "prebuild": "penguin pack -v pug",
     "build": "penguin build",
     "heroku-postbuild": "penguin pack -v pug",
@@ -27,16 +27,17 @@
   },
   "dependencies": {
     "express": "^4.15.2",
-    "penguin-filestack": "^1.0.1",
+    "penguin-filestack": "1.0.1",
     "penguin-inplace": "0.0.3",
     "penguin-link": "0.0.2",
-    "penguin-medium-editor": "^1.1.1",
-    "penguin-only-editor": "^1.0.0",
+    "penguin-medium-editor": "1.1.1",
+    "penguin-only-editor": "1.0.0",
     "penguin-passwordless": "0.0.0",
     "penguin-passwordless-postmark": "0.0.0",
+    "penguin-pug-transform": "^0.1.1",
     "penguin-save-button": "0.0.2",
-    "penguin-saved-indicator": "^1.0.2",
-    "penguin.js": "^1.0.0-rc.18",
+    "penguin-saved-indicator": "1.0.2",
+    "penguin.js": "1.0.0-rc.18",
     "redux": "^3.6.0"
   },
   "optionalDependencies": {

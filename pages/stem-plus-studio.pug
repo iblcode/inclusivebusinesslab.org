@@ -4,15 +4,15 @@ block content
         .hero-layer.paralax(style='background-image: url(/static/img/hero.steam.jpg)')
         .hero-layer.hero-layer-text
             .hero-layer-text-v.active
-                img(src='/static/img/steam.jpg', alt='')
+                img(data-component="Filestack", data-props={field:'title_image', defaultURL:'/static/img/steam.jpg'}, alt='')
     .wrapper3
         .text1
-            p.big.text-center
+            p.big.text-center(data-component='MediumEditor' data-props={field:'desc'})
                 | STEM+ Studio is a suite of leadership development initiatives, where we also promote strength in the STEM subjects and
                 | its real-world applications and contribution to the society.
             br
             br
-            .wrapper4
+            .wrapper4(data-component='MediumEditor' data-props={field:'content'})
                 p
                     | The STEM subjects (Science, Technology, Engineering and Mathematics) play an important role in shaping social
                     | development and securing economic growth by driving innovation in business, industry, arts and culture.
@@ -30,28 +30,28 @@ block content
     .wrapper2
         .checkmate
             div
-                img(src='/static/img/chk1.jpg')
+                img(data-component="Filestack", data-props={field:'image_1', defaultURL:'/static/img/chk1.jpg'})
                 .chk-content
                     .chk-cell
                         .chk-cell-content
-                            h3 MathCafé Challenges
-                            p
+                            h3(data-component='Inplace' data-props={field:'title_1'}) MathCafé Challenges
+                            p(data-component='MediumEditor' data-props={field:'desc_1'})
                                 | MathCafé Challenges are creative tasks requiring students to work together to propose, discuss and develop their own innovative and original ideas. By participating in a Challenge, students will gain much more than STEM skills, they will also develop skills in: teamwork and leadership, art and design, problem solving, speaking English, communication and presentation.
             div
-                img(src='/static/img/chk2.jpg')
+                img(data-component="Filestack", data-props={field:'image_2', defaultURL:'/static/img/chk2.jpg'})
                 .chk-content
                     .chk-cell
                         .chk-cell-content
-                            h3 Espresso
-                            p
+                            h3(data-component='Inplace' data-props={field:'title_2'}) Espresso
+                            p(data-component='MediumEditor' data-props={field:'desc_2'})
                                 | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
             div
-                img(src='/static/img/chk3.jpg')
+                img(data-component="Filestack", data-props={field:'image_3', defaultURL:'/static/img/chk3.jpg'})
                 .chk-content
                     .chk-cell
                         .chk-cell-content
-                            h3 STEM + Leadership Weeks
-                            p
+                            h3(data-component='Inplace' data-props={field:'title_3'}) STEM + Leadership Weeks
+                            p(data-component='MediumEditor' data-props={field:'desc_3'})
                                 | STEM + Leadership Weeks consist of leadership development workshops and group activities designed to train next generation about STEM and its real-world applications and contribution to the society. Example topics could be  “using nanotechnology in cancer treatment".
     section.stories
         h3.text-center STORIES
@@ -111,4 +111,4 @@ block content
                             span.ist-type
                                 a(href='javascript:;') Stories
         .text-center
-            a.btn.btn-alt(data-component='Link' data-props={href:'/stories'})Read All Stories
+            a.btn.btn-alt(data-component='Link' data-props={href:'/stories'}) Read All Stories

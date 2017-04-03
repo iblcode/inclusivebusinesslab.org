@@ -5,34 +5,34 @@ block content
         .hero-layer.hero-layer-text
             .hero-layer-text-v.active
                 h1.bg-title.bgt-2
-                    span Our strategies
+                    span(data-component='Inplace' data-props={field:'title'} ) Our strategies
     section.hello.hello-inner
         .hello-wrapper
-            p
+            p(data-component='MediumEditor' data-props={field:'content'})
                 | Inclusive Business Lab and Inclusive Business Foundation work together to create an ecosystem that address the systemic poverty and rich-poor gap issues, by
     .strategies.wrapper2
         section.cards
-            span.card
-                span.card-image(style='background-image:url(/static/img/card1.png)')
-                    span.h3.bg-title.bgt-3
-                        span Inclusive
-                        br
-                        span Business
-                span.card-content
-                    span.card-text
-                        | Creating inclusive economic opportunities though the
-                        br
-                        strong global value chains
-                    span.card-btn
-                        a.btn(data-component='Link' data-props={href:'/business'}) Learn more
-            span.card
-                span.card-image(style='background-image:url(/static/img/card2.png)')
-                    span.h3.bg-title.bgt-4
-                        span Inclusive
-                        br
-                        span Business
-                span.card-content
-                    span.card-text
-                        | Developing transformational leadership and next generation inclusive leaders who are ethical, purpose-driven and global-minded
-                    span.card-btn
-                        a.btn(data-component='Link' data-props={href:'/business'}) Learn more
+          span.card
+              span.card-image(style='background-image:url(/static/img/card1.png)')
+                  span.h3.bg-title.bgt-3(data-component='MediumEditor' data-props={field:'home_startegies_incl'})
+                      span Inclusive
+                      br
+                      span Business
+              span.card-content
+                  span.card-text(data-component='MediumEditor' data-props={field:'home_startegies_incl_d'} style='min-height: 115px;')
+                      | Creating inclusive economic opportunities though the
+                      br
+                      strong global value-chains
+                  span.card-btn
+                      a.btn(data-component='Link' data-props={href:'/inclusive-business'}) Learn more
+          span.card
+              span.card-image(style='background-image:url(/static/img/card2.png)')
+                  span.h3.bg-title.bgt-4(data-component='MediumEditor' data-props={field:'home_startegies_glob'})
+                      span Global Inclusive
+                      br
+                      span Leadership
+              span.card-content
+                  span.card-text(data-component='MediumEditor' data-props={field:'home_startegies_glob_d'} style='min-height: 115px;')
+                      | Developing #[strong transformational leadership] and next generation inclusive leaders who are ethical, purpose-driven and global-minded
+                  span.card-btn
+                      a.btn(data-component='Link' data-props={href:'/inclusive-leadership'}) Learn more
