@@ -1,175 +1,167 @@
 extends /includes/base
 block content
-    section#hero.hero-home
-        .hero-layer.paralax(style='background-image: url(/static/img/back.jpg)')
-        .hero-layer(style='background-image: url(/static/img/front.png)')
-        .hero-layer.hero-layer-text
-            .hero-layer-text-v.active
-                h1.bg-title.bgt-1
-                    span(data-component='Inplace' data-props={field:'title'}) “Every valley shall be raised up”
-        .hero-layer.hero-layer-text
-            .hero-layer-text-v
-                h1.bg-title.bgt-2(data-component='MediumEditor' data-props={field:'title_2'})
-                    span   End Systemic Poverty. End Modern Slavery.
-                    br
-                    span Economy for Everyone.
-        span#hero-arrow
-    section.hello
-        .hello-wrapper
-            p(data-component='MediumEditor' data-props={field:'home_hello_text'})
-                strong Inclusive Business Lab
-                |  and
-                strong  Inclusive Business Foundation
-                br
-                | work together to create an ecosystem that addresses systemic
-                br
-                | poverty and rich-poor gap issues.
-    .strategies.wrapper2
-        .text-center
-            h3(data-component='MediumEditor' data-props={field:'home_strategies_title'}) OUR STRATEGIES
-        section.cards
-            span.card
-                span.card-image(style='background-image:url(/static/img/card1.png)' data-component="BgFilepicker", data-props={field:'home_startegies_img-1', defaultURL:'/static/img/card1.png'})
-                    span.h3.bg-title.bgt-3(data-component='MediumEditor' data-props={field:'home_startegies_incl'})
-                        span Inclusive
-                        br
-                        span Business
-                span.card-content
-                    span.card-text(data-component='MediumEditor' data-props={field:'home_startegies_incl_d'} style='min-height: 115px;')
-                        | Creating inclusive economic opportunities though the
-                        br
-                        strong global value-chains
-                    span.card-btn
-                        a.btn(data-component='Link' data-props={href:'/inclusive-business'}) Learn more
-            span.card
-                span.card-image(style='background-image:url(/static/img/card2.png)')
-                    span.h3.bg-title.bgt-4(data-component='MediumEditor' data-props={field:'home_startegies_glob'})
-                        span Global Inclusive
-                        br
-                        span Leadership
-                span.card-content
-                    span.card-text(data-component='MediumEditor' data-props={field:'home_startegies_glob_d'} style='min-height: 115px;')
-                        | Developing #[strong transformational leadership] and next generation inclusive leaders who are ethical, purpose-driven and global-minded
-                    span.card-btn
-                        a.btn(data-component='Link' data-props={href:'/inclusive-leadership'}) Learn more
-                        
-    .team
-        h3(data-component='Inplace' data-props={field:'home_team_title'}) OUR TEAM
-        p(data-component='MediumEditor' data-props={field:'home_team_text'})
-            | The success of our platform, a diversified ecosystem, is built upon global partnerships and collaboration across different sectors, including world-class universities and educational institutions, business and industry sectors, governments and third sector. Keeping standards high is important within the organisation, and “Only the Best” serves as a useful motto in this respect: we bring the world-best and make it available to all.
-        section.t-slider
-            .t-slider-holder
-                span.ts-item-holder
-                    span.ts-item(style='background-image: url(/static/img/carousel1.png)')
-                span.ts-item-holder
-                    span.ts-item(style='background-image: url(/static/img/carousel2.png)')
-                span.ts-item-holder
-                    span.ts-item(style='background-image: url(/static/img/carousel1.png)')
-                span.ts-item-holder
-                    span.ts-item(style='background-image: url(/static/img/carousel2.png)')
-                span.ts-item-holder
-                    span.ts-item(style='background-image: url(/static/img/carousel1.png)')
-                span.ts-item-holder
-                    span.ts-item(style='background-image: url(/static/img/carousel2.png)')
-                span.ts-item-holder
-                    span.ts-item(style='background-image: url(/static/img/carousel1.png)')
-                span.ts-item-holder
-                    span.ts-item(style='background-image: url(/static/img/carousel2.png)')
+  section#hero.hero-home
+    .hero-layer.paralax(style='background-image: url(/static/img/back.jpg)')
+    .hero-layer(style='background-image: url(/static/img/front.png)')
+    .hero-layer.hero-layer-text
+      .hero-layer-text-v.active
+        h1.bg-title.bgt-1
+          span(data-component='Inplace' data-props={field:'title'}) “Every valley shall be raised up”
+    .hero-layer.hero-layer-text
+      .hero-layer-text-v
+        h1.bg-title.bgt-2(data-component='MediumEditor' data-props={field:'title_2'})
+          span   End Systemic Poverty. End Modern Slavery.
+          br
+          span Economy for Everyone.
+    span#hero-arrow
+  section.hello
+    .hello-wrapper
+      p(data-component='MediumEditor' data-props={field:'home_hello_text'}).
+        <strong>Inclusive Business Lab</strong> and <strong>Inclusive Business Foundation</strong> work together to create an ecosystem that addresses systemic poverty and rich-poor gap issues.
+  .strategies.wrapper2
     .text-center
-        a.btn.btn-alt(data-component='Link' data-props={href:'/team'}) Meet the whole team
-    #get-involved
-        h3(data-component='Inplace' data-props={field:'home_involved_title'}) OUR TEAM GET INVOLVED
-        .wrapper2.involved-grid
-            .inv-item
-                .inv-item-content
-                    span.inv-image.inv-image-1
-                    h4(data-component='MediumEditor' data-props={field:'home_involved_head_1'})
-                        strong Information
-                    p(data-component='MediumEditor' data-props={field:'home_involved_cont_1'})
-                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis negat? Qui ita affectus, beatum esse numquam probabis; Negat esse eam, inquit, propter se expetendam.
-                    a.btn.btn-invert(data-component='Link' data-props={href:'/team'}) Get More Info
-            .inv-item
-                .inv-item-content
-                    span.inv-image.inv-image-2
-                    h4(data-component='MediumEditor' data-props={field:'home_involved_head_2'})
-                        strong Supporters
-                    p(data-component='MediumEditor' data-props={field:'home_involved_cont_2'})
-                        | Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. An vero, inquit, quisquam potest probare, quod perceptfum, quod.
-                    a.btn.btn-invert(data-component='Link' data-props={href:'/support'}) Support us
-            .inv-item
-                .inv-item-content
-                    span.inv-image.inv-image-3
-                    h4(data-component='MediumEditor' data-props={field:'home_involved_head_3'})
-                        strong Partners
-                    p(data-component='MediumEditor' data-props={field:'home_involved_cont_3'})
-                        | Ergo opifex plus sibi proponet ad formarum quam civis excellens ad factorum pulchritudinem? Nos paucis ad haec additis finem faciamus aliquando.
-                    a.btn.btn-invert(data-component='Link' data-props={href:'/contact'}) Become a partner
-                    
-    section.stories
-        h3.text-center(data-component='Inplace' data-props={field:'home_stories_title'}) OUR TEAM OUR STORIES
-        .isotope
-            //- .isotope-content(data-component="Stories")
-            .isotope-content
-                script(src="https://npmcdn.com/contentful@latest/dist/contentful.min.js")
-                script.
-                  var client = contentful.createClient({
-                    // This is the space ID. A space is like a project folder in Contentful terms
-                    space: 'nyuckn1zsrb0',
-                    // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-                    accessToken: '12205e0e396c5497b3956ec77b9923b929fe3b5aaa48d9932425eb4e758da4f2'
-                  })
-                  client.getEntries({ 
-                    limit: 8,
-                    content_type: 'story',
-                    'fields.tag': 'story'
-                  })
-                  .then(function (entry) {
-                    console.log('Entry:', entry)
-                  })
-                span.isotope-item(data-type='Significant Stories')
-                    span.ist-content
-                        span.h4 Ita graviter et severe voluptatem secrevit a bono.
-                        span.p
-                            | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
-                        span.ist-bottom
-                            span.ist-date 31 OCTOBER
-                            span.ist-type
-                                a(href='javascript:;') Stem+
-                            span.ist-type
-                                a(href='javascript:;') Stories
-                span.isotope-item(data-type='Significant Stories')
-                    span.ist-image(style='background-image: url(/static/img/iso.1.png)')
-                    span.ist-content
-                        span.h4 Ita graviter et severe voluptatem secrevit a bono.
-                        span.p
-                            | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
-                        span.ist-bottom
-                            span.ist-date 31 OCTOBER
-                            span.ist-type
-                                a(href='javascript:;') Stem+
-                            span.ist-type
-                                a(href='javascript:;') Stories
-                span.isotope-item(data-type='news')
-                    span.ist-content
-                        span.h4
-                            | “An important, featured post. Scio enim esse quosdam, qui quavis lingua philosophari possint; At iste non dolendi status non vocatur voluptas.”
-                        span.ist-bottom
-                            span.ist-date 31 OCTOBER
-                            span.ist-type
-                                a(href='javascript:;') Stem+
-                            span.ist-type
-                                a(href='javascript:;') Stories
-                span.isotope-item.isotope-item-video(data-type='Significant Stories')
-                    span.ist-image(style='background-image: url(/static/img/iso.2.png)')
-                    span.ist-content
-                        span.h4 Ita graviter et severe voluptatem secrevit a bono.
-                        span.p
-                            | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
-                        span.ist-bottom
-                            span.ist-date 31 OCTOBER
-                            span.ist-type
-                                a(href='javascript:;') Stem+
-                            span.ist-type
-                                a(href='javascript:;') Stories
-        .text-center
-            a.btn.btn-alt(data-component='Link' data-props={href:'/stories'}) Read All Stories
+      h3(data-component='MediumEditor' data-props={field:'home_strategies_title'}) OUR STRATEGIES
+    section.cards
+      span.card
+        span.card-image(style='background-image:url(/static/img/card1.png)' data-component="BgFilepicker", data-props={field:'home_startegies_img-1', defaultURL:'/static/img/card1.png'})
+          span.h3.bg-title.bgt-3(data-component='MediumEditor' data-props={field:'home_startegies_incl'})
+            span Inclusive
+            br
+            span Business
+        span.card-content
+          span.card-text(data-component='MediumEditor' data-props={field:'home_startegies_incl_d'} style='min-height: 115px;').
+            Creating inclusive economic opportunities though the <strong>global value-chains</strong>
+          span.card-btn
+            a.btn(data-component='Link' data-props={href:'/inclusive-business'}) Learn more
+      span.card
+        span.card-image(style='background-image:url(/static/img/card2.png)')
+          span.h3.bg-title.bgt-4(data-component='MediumEditor' data-props={field:'home_startegies_glob'})
+            span Global Inclusive
+            br
+            span Leadership
+        span.card-content
+          span.card-text(data-component='MediumEditor' data-props={field:'home_startegies_glob_d'} style='min-height: 115px;')
+            | Developing #[strong transformational leadership] and next generation inclusive leaders who are ethical, purpose-driven and global-minded
+          span.card-btn
+            a.btn(data-component='Link' data-props={href:'/inclusive-leadership'}) Learn more
+
+  .team
+    h3(data-component='Inplace' data-props={field:'home_team_title'}) OUR TEAM
+    p(data-component='MediumEditor' data-props={field:'home_team_text'})
+      | The success of our platform, a diversified ecosystem, is built upon global partnerships and collaboration across different sectors, including world-class universities and educational institutions, business and industry sectors, governments and third sector. Keeping standards high is important within the organisation, and “Only the Best” serves as a useful motto in this respect: we bring the world-best and make it available to all.
+    section.t-slider
+      .t-slider-holder
+        span.ts-item-holder
+          span.ts-item(style='background-image: url(/static/img/carousel1.png)')
+        span.ts-item-holder
+          span.ts-item(style='background-image: url(/static/img/carousel2.png)')
+        span.ts-item-holder
+          span.ts-item(style='background-image: url(/static/img/carousel1.png)')
+        span.ts-item-holder
+          span.ts-item(style='background-image: url(/static/img/carousel2.png)')
+        span.ts-item-holder
+          span.ts-item(style='background-image: url(/static/img/carousel1.png)')
+        span.ts-item-holder
+          span.ts-item(style='background-image: url(/static/img/carousel2.png)')
+        span.ts-item-holder
+          span.ts-item(style='background-image: url(/static/img/carousel1.png)')
+        span.ts-item-holder
+          span.ts-item(style='background-image: url(/static/img/carousel2.png)')
+  .text-center
+    a.btn.btn-alt(data-component='Link' data-props={href:'/team'}) Meet the whole team
+  #get-involved
+    h3(data-component='Inplace' data-props={field:'home_involved_title'}) OUR TEAM GET INVOLVED
+    .wrapper2.involved-grid
+      .inv-item
+        .inv-item-content
+          span.inv-image.inv-image-1
+          h4(data-component='MediumEditor' data-props={field:'home_involved_head_1'})
+            strong Information
+          p(data-component='MediumEditor' data-props={field:'home_involved_cont_1'})
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis negat? Qui ita affectus, beatum esse numquam probabis; Negat esse eam, inquit, propter se expetendam.
+          a.btn.btn-invert(data-component='Link' data-props={href:'/team'}) Get More Info
+      .inv-item
+        .inv-item-content
+          span.inv-image.inv-image-2
+          h4(data-component='MediumEditor' data-props={field:'home_involved_head_2'})
+            strong Supporters
+          p(data-component='MediumEditor' data-props={field:'home_involved_cont_2'})
+            | Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. An vero, inquit, quisquam potest probare, quod perceptfum, quod.
+          a.btn.btn-invert(data-component='Link' data-props={href:'/support'}) Support us
+      .inv-item
+        .inv-item-content
+          span.inv-image.inv-image-3
+          h4(data-component='MediumEditor' data-props={field:'home_involved_head_3'})
+            strong Partners
+          p(data-component='MediumEditor' data-props={field:'home_involved_cont_3'})
+            | Ergo opifex plus sibi proponet ad formarum quam civis excellens ad factorum pulchritudinem? Nos paucis ad haec additis finem faciamus aliquando.
+          a.btn.btn-invert(data-component='Link' data-props={href:'/contact'}) Become a partner
+
+  section.stories
+    h3.text-center(data-component='Inplace' data-props={field:'home_stories_title'}) OUR TEAM OUR STORIES
+    .isotope
+      //- .isotope-content(data-component="Stories")
+      .isotope-content
+        script(src="https://npmcdn.com/contentful@latest/dist/contentful.min.js")
+        script.
+          var client = contentful.createClient({
+            // This is the space ID. A space is like a project folder in Contentful terms
+            space: 'nyuckn1zsrb0',
+            // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+            accessToken: '12205e0e396c5497b3956ec77b9923b929fe3b5aaa48d9932425eb4e758da4f2'
+          })
+          client.getEntries({ 
+            limit: 8,
+            content_type: 'story',
+            'fields.tag': 'story'
+          })
+          .then(function (entry) {
+            console.log('Entry:', entry)
+          })
+        span.isotope-item(data-type='Significant Stories')
+          span.ist-content
+            span.h4 Ita graviter et severe voluptatem secrevit a bono.
+            span.p
+              | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+            span.ist-bottom
+              span.ist-date 31 OCTOBER
+              span.ist-type
+                a(href='javascript:;') Stem+
+              span.ist-type
+                a(href='javascript:;') Stories
+        span.isotope-item(data-type='Significant Stories')
+          span.ist-image(style='background-image: url(/static/img/iso.1.png)')
+          span.ist-content
+            span.h4 Ita graviter et severe voluptatem secrevit a bono.
+            span.p
+              | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+            span.ist-bottom
+              span.ist-date 31 OCTOBER
+              span.ist-type
+                a(href='javascript:;') Stem+
+              span.ist-type
+                a(href='javascript:;') Stories
+        span.isotope-item(data-type='news')
+          span.ist-content
+            span.h4
+              | “An important, featured post. Scio enim esse quosdam, qui quavis lingua philosophari possint; At iste non dolendi status non vocatur voluptas.”
+            span.ist-bottom
+              span.ist-date 31 OCTOBER
+              span.ist-type
+                a(href='javascript:;') Stem+
+              span.ist-type
+                a(href='javascript:;') Stories
+        span.isotope-item.isotope-item-video(data-type='Significant Stories')
+          span.ist-image(style='background-image: url(/static/img/iso.2.png)')
+          span.ist-content
+            span.h4 Ita graviter et severe voluptatem secrevit a bono.
+            span.p
+              | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+            span.ist-bottom
+              span.ist-date 31 OCTOBER
+              span.ist-type
+                a(href='javascript:;') Stem+
+              span.ist-type
+                a(href='javascript:;') Stories
+    .text-center
+      a.btn.btn-alt(data-component='Link' data-props={href:'/stories'}) Read All Stories
