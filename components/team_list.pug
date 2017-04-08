@@ -9,5 +9,5 @@ each m in fields.teamMembers
     .member-info
       p !{m.content}
       span.btn.btn-alt.btn-medium Read more
-      if !production
-        a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}`) edit
+      unless production
+        a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}`) Edit

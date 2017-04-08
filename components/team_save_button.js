@@ -36,7 +36,7 @@ function saveGloabl (ctx, props, el) {
         )
       )
   )
-  debugger
+
   store.dispatch(update({ teamMembers: newTeamMembers }))
 }
 
