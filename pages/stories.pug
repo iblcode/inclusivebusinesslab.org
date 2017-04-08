@@ -7,6 +7,12 @@ block content
                 h1.bg-title.bgt-2
                     span(data-component='Inplace' data-props={field:'title'}) Our Stories
     section.stories(style='padding-top: 70px;')
+        .text-center
+          a.btn.btn-alt(href='javascript:addStory();' data-component="OnlyEditor") Add another story
+          script.
+            function addStory(){
+              url = prompt('What is the name of the new page?');
+            }
         .isotope
             script.
                 /***********************

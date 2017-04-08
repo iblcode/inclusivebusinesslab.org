@@ -23,10 +23,14 @@
       "SaveButton": "penguin-save-button",
       "SavedIndicator": "penguin-saved-indicator",
       "OnlyEditor": "penguin-only-editor"
-    }
+    },
+    "globals": [
+      "teamMembers"
+    ]
   },
   "dependencies": {
     "express": "^4.15.2",
+    "lodash": "^4.17.4",
     "penguin-filestack": "1.0.1",
     "penguin-inplace": "0.0.3",
     "penguin-link": "0.0.2",
@@ -38,7 +42,8 @@
     "penguin-save-button": "0.0.2",
     "penguin-saved-indicator": "1.0.2",
     "penguin.js": "1.0.0-rc.18",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "slugify": "^1.1.0"
   },
   "optionalDependencies": {
     "penguin-passwordless": "0.0.0",
