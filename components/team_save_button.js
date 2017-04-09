@@ -10,7 +10,7 @@ export function mount (ctx, props, el) {
 }
 
 function saveGloabl (ctx, props, el) {
-  console.log('jo')
+
   const id = window.location.pathname.split('/')[3]
 
   const { store } = ctx
@@ -21,16 +21,17 @@ function saveGloabl (ctx, props, el) {
   const image = fields.image
   const name = fields.name
   const content = fields.content
+  const url = fields.url
 
   const teamMember = find({ id }, teamMembers)
   const newTeamMembers = (
     teamMember == null
-      ? [...teamMembers, { id, image, name, content }]
+      ? [...teamMembers, { id, image, name, content, url }]
       : (
         teamMembers.map(
           m => (
             m.id === id
-              ? { id, image, name, content }
+              ? { id, image, name, content, url }
               : m
           )
         )

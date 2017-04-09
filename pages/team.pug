@@ -11,13 +11,15 @@ block content
         .text1
             p.big.text-center(data-component='Inplace' data-props={field: 'teaser'})
                 | The success of our platform, a diversified ecosystem, is built upon global partnerships and collaboration across different sectors, including world-class universities and educational institutions, business and industry sectors, governments and third sector. Keeping standards high is important within the organisation, and “Only the Best” serves as a useful motto in this respect: we bring the world-best and make it available to all.
+                
         .d-boss
             h3.text-center(data-component='Inplace' data-props={field: 'headline_director'}) DIRECTOR AND FOUNDER
             .team-member
-                span.tm-img(style='background-image: url(/static/img/team1.png)')
-                strong Dr Violet Lo
-                p
-                    | After 13 years in investment banking, Violet decided to devote her time to Inclusive Business & Leadership, Social Investment & Innovation. She founded Inclusive Business Lab and Inclusive Business Foundation.
+                span.tm-img(style='background-image: url(/static/img/team1.png)' data-component='BgImage' data-props={field:'violet', defaultURL:'/static/img/team1.png'})
+                strong(data-component='Inplace' data-props={field: 'violet-name'}) Dr. Violet Lo
+                p(data-component='MediumEditor' data-props={field: 'violet-content'})
+                  | After 13 years in investment banking, Violet decided to devote her time to Inclusive Business & Leadership, Social Investment & Innovation. She founded Inclusive Business Lab and Inclusive Business Foundation.
+                    
         h3.text-center(style='padding-bottom: 50px;' data-component='Inplace' data-props={field: 'headline_nextgen'}) NEXT GEN LEADERS
         .text-center
           a.btn.btn-large(href='#' data-component="TeamAddButton" style='margin-bottom: 20px;') Add Leader

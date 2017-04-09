@@ -7,13 +7,22 @@ block content
     ul.team-list
       li
         .team-member
-          span.tm-img(style='background-image: url(/static/img/team2.png)' data-component="BgImage" data-props={field: 'image', defaultURL: '/static/img/team2.png'})
-          strong(data-component="Inplace" data-props={field: 'name'}) Dr Violet Lo
+          span.tm-img(style='background-image: url(http://placehold.it/300x300); background-size: cover;' data-component="BgImage" data-props={field: 'image', defaultURL: 'http://placehold.it/300x300'})
+          strong(data-component="Inplace" data-props={field: 'name'}) Dr. Name Lastname
       li
         .member-info(style='opacity: 1; visibility: visible; -webkit-transform: scale(1) rotate(0); -moz-transform: scale(1) rotate(0); transform: scale(1) rotate(0); top: -30px;')
-          p(data-component='MediumEditor' data-props={field: 'content'})
+          p(data-component='MediumEditor' data-props={field: 'content', toolbar: {buttons: ['bold', 'italic']}})
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quippe: habes enim a rhetoribus; Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Atque haec ita iustitiae propria sunt, ut sint virtutum reliquarum communia. An hoc usque quaque, aliter in vita? Tum Lucius: Mihi vero ista valde probata sunt, quod item fratri puto. Cupiditates non Epicuri divisione finiebat, sed sua satietate.
           a.btn.btn-alt.btn-medium(href='#') Read more
+          div(style="margin-top: 10px")
+            small Link to the full Bio (Read More)
+          div(style="margin-top: 5px")
+            style.
+              span.penguin-empty:empty:before {
+                content: "Put a URL here... e.g. http://example.com";
+                font-size: 12px;
+              }
+            span.penguin-empty(data-component="Inplace" data-props={field: 'url'} style='background-color: lightgrey; padding: 10px;') http://example.com
 
 
 
