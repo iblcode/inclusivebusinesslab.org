@@ -1,10 +1,10 @@
 extends /includes/base
 block content
     section#hero.hero-100
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.life.jpg);')
-        .hero-layer.hero-layer-text
+        .hero-layer.paralax(style='background-image: url(/static/img/hero.roundtable.jpg);' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.roundtable.jpg'})
+        .hero-layer.hero-layer-text.penguin-bg-image-sibling
             .hero-layer-text-v.active
-                h1.bg-title.bgt-8(data-component='MediumEditor' data-props={field:'title'})
+                h1.bg-title.bgt-8.penguin-sp(data-component='MediumEditor' data-props={field:'title'})
                     span Training-the-Trainers Leadership
                     br
                     span Roundtables

@@ -1,10 +1,10 @@
 extends /includes/base
 block content
     section#hero
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.steam.jpg)')
-        .hero-layer.hero-layer-text
+        .hero-layer.paralax(style='background-image: url(/static/img/hero.steam.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.steam.jpg'})
+        .hero-layer.hero-layer-text.penguin-bg-image-sibling
             .hero-layer-text-v.active
-                img(data-component="Filestack", data-props={field:'title_image', defaultURL:'/static/img/steam.jpg'}, alt='')
+                img.penguin-sp(data-component="Filestack", data-props={field:'title_image', defaultURL:'/static/img/steam.jpg'}, alt='')
     .wrapper3
         .text1
             p.big.text-center(data-component='MediumEditor' data-props={field:'desc'})

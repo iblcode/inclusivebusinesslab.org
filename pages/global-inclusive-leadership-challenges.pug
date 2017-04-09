@@ -1,10 +1,10 @@
 extends /includes/base
 block content
     section#hero
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.challenges.jpg)')
-        .hero-layer.hero-layer-text
+        .hero-layer.paralax(style='background-image: url(/static/img/hero.challenges.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.challenges.jpg'})
+        .hero-layer.hero-layer-text.penguin-bg-image-sibling
             .hero-layer-text-v.active
-                h1.bg-title.bgt-2(data-component='MediumEditor' data-props={field:'title'})
+                h1.bg-title.bgt-2.penguin-sp(data-component='MediumEditor' data-props={field:'title'})
                     span Global Inclusive Leadership
                     br
                     span Challenges
@@ -13,9 +13,9 @@ block content
         .leadership-hello(style='padding-bottom: 0;' data-component='MediumEditor' data-props={field:'desc'})
             | The Challenges are a series of events, in which global leaders and experts from the different disciplines will share their stories of leadership journeys, present exciting discoveries in their own fields and give the next generation challenging questions on the real-world issues.
     .square-images
-        div(style='background-image: url(/static/img/sq1.jpg)')
-        div(style='background-image: url(/static/img/sq2.jpg)')
-        div(style='background-image: url(/static/img/sq3.jpg)')
+        div(style='background-image: url(/static/img/sq1.jpg)' data-component='BgImage' data-props={field:'sq1', defaultURL:'/static/img/sq1.jpg'})
+        div(style='background-image: url(/static/img/sq2.jpg)' data-component='BgImage' data-props={field:'sq2', defaultURL:'/static/img/sq2.jpg'})
+        div(style='background-image: url(/static/img/sq3.jpg)' data-component='BgImage' data-props={field:'sq3', defaultURL:'/static/img/sq3.jpg'})
     .section-info
         .text1.text-left
             h3(data-component='Inplace' data-props={field:'title2'}) MOTIVATION

@@ -1,10 +1,10 @@
 extends /includes/base
 block content
     section#hero
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.leadership.jpg)')
-        .hero-layer.hero-layer-text
+        .hero-layer.paralax(style='background-image: url(/static/img/hero.leadership.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.leadership.jpg'})
+        .hero-layer.hero-layer-text.penguin-bg-image-sibling
             .hero-layer-text-v.active
-                h1.bg-title.bgt-4
+                h1.bg-title.bgt-4.penguin-sp
                     span(data-component='Inplace' data-props={field:'title'}) Global Inclusive Leadership
     .wrapper3
         .leadership-hello(data-component='MediumEditor' data-props={field:'desc'} )

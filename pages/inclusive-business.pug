@@ -1,10 +1,10 @@
 extends /includes/base
 block content
     section#hero
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.inclusevebusiness.jpg)')
-        .hero-layer.hero-layer-text
+        .hero-layer.paralax(style='background-image: url(/static/img/hero.inclusevebusiness.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.inclusevebusiness.jpg'})
+        .hero-layer.hero-layer-text.penguin-bg-image-sibling
             .hero-layer-text-v.active
-                h1.bg-title.bgt-3
+                h1.bg-title.bgt-3.penguin-sp
                     span(data-component='Inplace' data-props={field:'title'}) Inclusive Business
     .wrapper3
         img(alt='OmniOikos', data-component="Filestack", data-props={field:'image-1', defaultURL:'/static/img/omnioikos.jpg'})
