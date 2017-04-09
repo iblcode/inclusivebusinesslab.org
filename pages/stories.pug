@@ -8,12 +8,9 @@ block content
                     span(data-component='Inplace' data-props={field:'title'}) Our Stories
     section.stories(style='padding-top: 70px;')
         .text-center
-          a.btn.btn-alt(href='javascript:addStory();' data-component="OnlyEditor") Add another story
-          script.
-            function addStory(){
-              url = prompt('What is the name of the new page?');
-            }
+          a.btn.btn-alt(href='javascript:;' data-component="StoryAddButton") Add another story
         .isotope
+            
             script.
                 /***********************
                 Just for a demo

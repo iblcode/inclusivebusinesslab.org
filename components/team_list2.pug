@@ -1,7 +1,8 @@
 span.ts-item-holder
   span.ts-item(style=`background-image: url(/static/img/team1.jpg)`)
-
-each m in fields.teamMembers
-  //- id, image, name, content
-  span.ts-item-holder
-    span.ts-item(style=`background-image: url(${m.image})`)
+  
+unless (fields.teamMembers == null)
+  each m in fields.teamMembers
+    //- id, image, name, content
+    span.ts-item-holder
+      span.ts-item(style=`background-image: url(${m.image})`)

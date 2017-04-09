@@ -1,14 +1,15 @@
-each m in fields.teamMembers
-  //- id, image, name, content
-  - var production = (process.env.PENGUIN_ENV === 'production')
-  
-  li
-    .team-member
-      span.tm-img(style=`background-image: url(${m.image}); background-size: cover;`)
-      strong !{m.name}
-    .member-info
-      p !{m.content}
-      unless (m.url === '' || m.url == null)
-        a.btn.btn-alt.btn-medium(href=m.url) Read more
-      unless production
-        a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}` style='margin-left: 15px;') Edit
+unless (fields.teamMembers == null)
+  each m in fields.teamMembers
+    //- id, image, name, content
+    - var production = (locals.env === 'production')
+    
+    li
+      .team-member
+        span.tm-img(style=`background-image: url(${m.image}); background-size: cover;`)
+        strong !{m.name}
+      .member-info
+        p !{m.content}
+        unless (m.url === '' || m.url == null)
+          a.btn.btn-alt.btn-medium(href=m.url) Read more
+        unless production
+          a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}` style='margin-left: 15px;') Edit
