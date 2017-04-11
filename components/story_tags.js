@@ -2,7 +2,20 @@ import Taggle from 'taggle'
 
 export function mount (ctx, props, el) {
 
-  registerModal(el)
+
+  var css = document.createElement("style")
+  css.type = "text/css"
+  css.innerHTML = style
+  document.head.appendChild(css)
+
+  document.body.insertAdjacentHTML('beforeend', template)
+
+  el.addEventListener('click', () => {
+    window.location.hash= modalId
+  })
+
+
+
   var taggle = new Taggle(inputId, {duplicateTagClass: 'bounce', preserveCase: false})
 
   document.getElementById(submitButtonId).addEventListener('click', () => {
@@ -14,7 +27,7 @@ export function mount (ctx, props, el) {
 }
 
 export function render (ctx, props) {
-
+  return {replace: ''}
 }
 
 
@@ -22,19 +35,6 @@ const localId = "tagmodal"
 const modalId = `modal-${localId}`
 const inputId = `input-${localId}`
 const submitButtonId = `submit-${localId}`
-
-function registerModal (el) {
-  var css = document.createElement("style")
-  css.type = "text/css"
-  css.innerHTML = style
-  document.head.appendChild(css)
-
-  document.body.insertAdjacentHTML('beforeend', template)
-
-  el.addEventListener('click', () => {
-    window.location.hash= modalId
-  })
-}
 
 const template = `
 <div id="${modalId}" class="overlay">
