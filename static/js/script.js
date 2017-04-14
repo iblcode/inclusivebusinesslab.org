@@ -37,7 +37,7 @@ ibl = {
       titleLayers = $(".hero-layer-text-v");
     $(".hero-home .hero-layer-text").each(function() {
       var el = $(this);
-      el.css({top: stop, height: win.height()})
+      el.css({height: win.height()})
     });
     if (stop > $(".hero-home").height() - 400) {
       titleLayers.each(function() {
@@ -52,10 +52,10 @@ ibl = {
     }
   },
   homeHero: function() {
-    $(".hero-home").height($(window).height() * 1.15)
+    $(".hero-home").height($(window).height())
     $(".hero-100").height($(window).height())
     $(window).on('load resize scroll', function() {
-      $(".hero-home").height($(window).height() * 1.15);
+      $(".hero-home").height($(window).height());
       $(".hero-100").height($(window).height())
       ibl.setVTitle()
     });
@@ -156,6 +156,7 @@ ibl = {
         slidesToShow: 5,
         slidesToScroll: 5,
         infinite: true,
+        centerMode: true,
         prevArrow: '<span class="slick-prev"><span></span></span>',
         nextArrow: '<span class="slick-next"><span></span></span>',
         responsive: [
@@ -207,15 +208,20 @@ $(document).ready(function() {
       el.height(el.parent().height());
     })
   });
-  $(".post-inner-date").each(function() {
-    var el = $(this);
-    el.css('marginLeft', -el.outerWidth() / 2)
-  })
+
+  // $(".post-inner-date").each(function() {
+  //   var el = $(this);
+  //   el.css('marginLeft', -el.outerWidth() / 2)
+  // })
 
   $(".team-list li").on('click', function() {
     $(this).toggleClass('active');
   })
 
   ibl.init()
+
+  $(function() {
+    $('.eqHeight').matchHeight();
+  });
 
 });

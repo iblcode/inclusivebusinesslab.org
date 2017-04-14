@@ -1,80 +1,79 @@
 extends /includes/base
 block content
-    section#hero
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.inclusevebusiness.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.inclusevebusiness.jpg'})
-        .hero-layer.hero-layer-text.penguin-bg-image-sibling
-            .hero-layer-text-v.active
-                h1.bg-title.bgt-3.penguin-sp
-                    span(data-component='Inplace' data-props={field:'title'}) Inclusive Business
-    .wrapper3
-        img(alt='OmniOikos', data-component="Filestack", data-props={field:'image-1', defaultURL:'/static/img/omnioikos.jpg'})
-        .r-grid.qed
-            .col
-                img(data-component="Filestack", data-props={field:'image-2', defaultURL:'/static/img/qed.png'}, width='320', alt='qed')
-            .col
-                .r-grid-main
-                    .text1
-                        p(data-component='MediumEditor' data-props={field:'content'})
-                            | OmniOikos is an e-m-digital platform with the vision “Economy for Everyone”,
-                            | where we will showcase, develop, upscale and distribute the Inclusive Brand Q.E.D of “Quality; Excellence; Dignity”.
-                            | Behind these quality and ethical brands and products, throughout the value-chains from seeds to stores, are the many significant stories that bring dignity to human lives.
-                    //- a.btn.btn-alt(href='javascript:;') Visit Omnioikos
-    section.stories
-        h3.text-center(data-component='Inplace' data-props={field:'stories'}) STORIES
-        .isotope
-            script.
-                /***********************
-                Just for a demo
-                ***********************/
-                setTimeout(()=>{
-                let iso = document.querySelector(".isotope-content");
-                iso.innerHTML = iso.innerHTML + iso.innerHTML;
-                },1)
-            .isotope-content
-                span.isotope-item(data-type='Significant Stories')
-                    span.ist-content
-                        span.h4 Ita graviter et severe voluptatem secrevit a bono.
-                        span.p
-                            | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
-                        span.ist-bottom
-                            span.ist-date 31 OCTOBER
-                            span.ist-type
-                                a(href='javascript:;') Stem+
-                            span.ist-type
-                                a(href='javascript:;') Stories
-                span.isotope-item(data-type='Significant Stories')
-                    span.ist-image(style='background-image: url(/static/img/iso.1.png)')
-                    span.ist-content
-                        span.h4 Ita graviter et severe voluptatem secrevit a bono.
-                        span.p
-                            | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
-                        span.ist-bottom
-                            span.ist-date 31 OCTOBER
-                            span.ist-type
-                                a(href='javascript:;') Stem+
-                            span.ist-type
-                                a(href='javascript:;') Stories
-                span.isotope-item(data-type='news')
-                    span.ist-content
-                        span.h4
-                            | “An important, featured post. Scio enim esse quosdam, qui quavis lingua philosophari possint; At iste non dolendi status non vocatur voluptas.”
-                        span.ist-bottom
-                            span.ist-date 31 OCTOBER
-                            span.ist-type
-                                a(href='javascript:;') Stem+
-                            span.ist-type
-                                a(href='javascript:;') Stories
-                span.isotope-item.isotope-item-video(data-type='Significant Stories')
-                    span.ist-image(style='background-image: url(/static/img/iso.2.png)')
-                    span.ist-content
-                        span.h4 Ita graviter et severe voluptatem secrevit a bono.
-                        span.p
-                            | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
-                        span.ist-bottom
-                            span.ist-date 31 OCTOBER
-                            span.ist-type
-                                a(href='javascript:;') Stem+
-                            span.ist-type
-                                a(href='javascript:;') Stories
-        .text-center
-            a.btn.btn-alt(href='javascript:;') Read All Stories
+  section#hero
+    .hero-layer.paralax(style='background-image: url(/static/img/hero.inclusevebusiness.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.inclusevebusiness.jpg'})
+    .hero-layer.hero-layer-text.penguin-bg-image-sibling
+      .hero-layer-text-v.active
+        h1.bg-title.penguin-sp
+          span.green(data-component='Inplace' data-props={field:'title'}) Inclusive Business
+  .wrapper3.pt-120
+    img(alt='OmniOikos', data-component="Filestack", data-props={field:'image-1', defaultURL:'/static/img/omnioikos_logo.svg'})
+    .r-grid.qed
+      .col
+        img(data-component="Filestack", data-props={field:'image-2', defaultURL:'/static/img/qed.png'}, width='300', alt='qed')
+      .col
+        .r-grid-main
+          .text2
+            p(data-component='MediumEditor' data-props={field:'content'}).
+              OmniOikos is an e-m-digital platform with the vision “Economy for Everyone”, where we will showcase, develop, upscale and distribute the Inclusive Brand Q.E.D of “Quality; Excellence; Dignity”. Behind these quality and ethical brands and products, throughout the value-chains from seeds to stores, are the many significant stories that bring dignity to human lives.
+
+          //- a.btn.btn-alt(href='javascript:;') Visit Omnioikos
+  section.stories.pt-120
+    h3.text-center(data-component='Inplace' data-props={field:'stories'}) STORIES
+    .isotope
+      script.
+        /***********************
+        Just for a demo
+        ***********************/
+        setTimeout(()=>{
+        let iso = document.querySelector(".isotope-content");
+        iso.innerHTML = iso.innerHTML + iso.innerHTML;
+        },1)
+      .isotope-content.bg-grey
+        span.isotope-item(data-type='Significant Stories')
+          span.ist-content
+            span.h4 Ita graviter et severe voluptatem secrevit a bono.
+            span.p
+              | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+            span.ist-bottom
+              span.ist-date 31 OCTOBER
+              span.ist-type
+                a(href='javascript:;') Stem+
+              span.ist-type
+                a(href='javascript:;') Stories
+        span.isotope-item(data-type='Significant Stories')
+          span.ist-image(style='background-image: url(/static/img/iso.1.png)')
+          span.ist-content
+            span.h4 Ita graviter et severe voluptatem secrevit a bono.
+            span.p
+              | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+            span.ist-bottom
+              span.ist-date 31 OCTOBER
+              span.ist-type
+                a(href='javascript:;') Stem+
+              span.ist-type
+                a(href='javascript:;') Stories
+        span.isotope-item(data-type='news')
+          span.ist-content
+            span.h4
+              | “An important, featured post. Scio enim esse quosdam, qui quavis lingua philosophari possint; At iste non dolendi status non vocatur voluptas.”
+            span.ist-bottom
+              span.ist-date 31 OCTOBER
+              span.ist-type
+                a(href='javascript:;') Stem+
+              span.ist-type
+                a(href='javascript:;') Stories
+        span.isotope-item.isotope-item-video(data-type='Significant Stories')
+          span.ist-image(style='background-image: url(/static/img/iso.2.png)')
+          span.ist-content
+            span.h4 Ita graviter et severe voluptatem secrevit a bono.
+            span.p
+              | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+            span.ist-bottom
+              span.ist-date 31 OCTOBER
+              span.ist-type
+                a(href='javascript:;') Stem+
+              span.ist-type
+                a(href='javascript:;') Stories
+    .text-center.btn-more.bg-grey
+      a.btn.btn-alt(href='javascript:;') Read All Stories
