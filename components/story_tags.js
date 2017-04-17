@@ -1,7 +1,9 @@
 import Taggle from 'taggle'
+import { update } from 'penguin.js'
 
 export function mount (ctx, props, el) {
-
+  if (process.env.PENGUIN_ENV === 'production') return
+  const {store} = ctx
 
   var css = document.createElement("style")
   css.type = "text/css"
@@ -10,24 +12,39 @@ export function mount (ctx, props, el) {
 
   document.body.insertAdjacentHTML('beforeend', template)
 
-  el.addEventListener('click', () => {
-    window.location.hash= modalId
-  })
-
-
-
   var taggle = new Taggle(inputId, {duplicateTagClass: 'bounce', preserveCase: false})
 
-  document.getElementById(submitButtonId).addEventListener('click', () => {
-    const input = taggle.getTags()
+  el.addEventListener('click', () => { window.location.hash= modalId })
 
-    el.innerText = input.values.join(', ')
+  document.getElementById(submitButtonId).addEventListener('click', () => {
+    const input = taggle.getTags().values
+
+    store.dispatch(update({[props.field] : input}))
     window.location.hash= ''
   })
+
+
+  const updateValue = () => {
+    var value = store.getState().fields[props.field]
+
+    if((typeof value == 'undefined') || value == null || value.length == 0) {
+      el.innerText = 'Add a tag!'
+    }
+    else {
+      taggle.removeAll()
+      taggle.add(value)
+      el.innerText = value.join(', ')
+    }
+  }
+
+  updateValue()
+  store.subscribe( updateValue )
 }
 
 export function render (ctx, props) {
-  return {replace: ''}
+  const value = ctx.store.getState().fields[props.field]
+  if (value != null) { return value.join(', ') }
+  else { return { replace: '' } }
 }
 
 
@@ -39,7 +56,7 @@ const submitButtonId = `submit-${localId}`
 const template = `
 <div id="${modalId}" class="overlay">
   <a class="cancel" href="#"></a>
-  <div class="modal">
+  <div class="penguin-modal">
     <a class="m-close" href="#">x</a>
     <h2>Add Tags</h2>
     <div class="content">
@@ -54,16 +71,16 @@ const template = `
 `
 
 const style = `
-.modal .penguin-btn {
+.penguin-modal .penguin-btn {
   padding: 10px 15px;
   margin: 20px 5px;
   display: inline-block;
   border: 1px solid black;
 }
-.modal .penguin-btn:hover {
+.penguin-modal .penguin-btn:hover {
   box-shadow: 0 0 10px 0px #888
 }
-.modal {
+.penguin-modal {
   z-index: 9999;
   margin: 100px auto;
   padding: 20px;
@@ -75,9 +92,9 @@ const style = `
   position: relative;
 }
 
-.modal h2 { margin-top: 0; }
+.penguin-modal h2 { margin-top: 0; }
 
-.modal .m-close {
+.penguin-modal .m-close {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -91,19 +108,19 @@ const style = `
   color: #777;
 }
 
-.modal .m-close:hover { opacity: 1; }
+.penguin-modal .m-close:hover { opacity: 1; }
 
-.modal .content {
+.penguin-modal .content {
   max-height: 400px;
   overflow: auto;
 }
 
-.modal p {
+.penguin-modal p {
   margin: 0 0 1em;
   text-align: left;
 }
 
-.modal p:last-child { margin: 0; }
+.penguin-modal p:last-child { margin: 0; }
 
 .overlay {
   z-index: 9999;

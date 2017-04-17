@@ -1,76 +1,43 @@
-// if (process.env.PENGUIN_ENV !== 'production') {import Pikaday from 'pikaday'}
-// import Pikaday from 'pikaday'
-// import moment from 'moment'
+import moment from 'moment'
+import { update } from 'penguin.js'
 
 export function mount (ctx, props, el) {
+  if (process.env.PENGUIN_ENV === 'production') return
+  window.moment = moment
+  const {store} = ctx
 
   var css = document.createElement("style")
   css.type = "text/css"
   css.innerHTML = style
   document.head.appendChild(css)
 
+  var Pikaday = pikaday()
   var picker = new Pikaday({
     field: el,
     format: 'D MMM YYYY',
     onSelect: function() {
-      console.log(this.getMoment().format('Do MMMM YYYY'))
+      store.dispatch(update({[props.field] : this.getMoment().unix()}))
       el.innerText = this.getMoment().format('Do MMMM YYYY')
     }
   })
 
-  // el.addEventListener('click', () => {
-  //   window.location.hash= modalId
-  // })
-  // var taggle = new Taggle(inputId, {duplicateTagClass: 'bounce', preserveCase: false})
-  //
-  // document.getElementById(submitButtonId).addEventListener('click', () => {
-  //   const input = taggle.getTags()
-  //
-  //   el.innerHTML = input.values.join(', ')
-  //   window.location.hash= ''
-  // })
+  const updateValue = () => {
+    var value = store.getState().fields[props.field]
+    if (value != null) { el.innerText = moment.unix(value).format('Do MMMM YYYY') }
+    else { el.innerText = moment().format('Do MMMM YYYY') }
+  }
+
+  updateValue()
+  store.subscribe( updateValue )
 }
 
-export function render (ctx, props) {
-  return {replace: ''}
+export function render ( ctx, props ) {
+  const { store } = ctx
+  var value = store.getState().fields[ props.field ]
+
+  if ( value != null ) { return moment.unix( value ).format( 'Do MMMM YYYY' ) }
+  else { return moment().format( 'Do MMMM YYYY' ) }
 }
-//
-//
-// const localId = "tagmodal"
-// const modalId = `modal-${localId}`
-// const inputId = `input-${localId}`
-// const submitButtonId = `submit-${localId}`
-//
-// function registerModal (el) {
-//   var css = document.createElement("style")
-//   css.type = "text/css"
-//   css.innerHTML = style
-//   document.head.appendChild(css)
-//
-//   document.body.insertAdjacentHTML('beforeend', template)
-//
-//   el.addEventListener('click', () => {
-//     window.location.hash= modalId
-//   })
-// }
-//
-// const template = `
-// <div id="${modalId}" class="overlay">
-//   <a class="cancel" href="#"></a>
-//   <div class="modal">
-//     <a class="m-close" href="#">x</a>
-//     <h2>Add Tags</h2>
-//     <div class="content">
-//       <p>Add and remove tags or click outside the modal to close.</p>
-//       <div id="${inputId}" style="width: 100%; position: relative;"></div>
-//     </div>
-//     <div class="content">
-//       <a class="penguin-btn" href="javascript:;" id="${submitButtonId}"> Submit</a>
-//     </div>
-//   </div>
-// </div>
-// `
-//
 
 
 const style = `
@@ -297,31 +264,9 @@ http://nicolasgallagher.com/micro-clearfix-hack/
  * Copyright © 2014 David Bushell | BSD & MIT license | https://github.com/dbushell/Pikaday
  */
 
-var Pikaday = (function (root, factory)
-{
-    'use strict';
-
-    var moment;
-    if (typeof exports === 'object') {
-        // CommonJS module
-        // Load moment.js as an optional dependency
-        try { moment = require('moment'); } catch (e) {}
-        module.exports = factory(moment);
-    } else if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define(function (req)
-        {
-            // Load moment.js as an optional dependency
-            var id = 'moment';
-            try { moment = req(id); } catch (e) {}
-            return factory(moment);
-        });
-    } else {
-        root.Pikaday = factory(root.moment);
-    }
-}(this, function (moment)
-{
-    'use strict';
+function pikaday () {
+   var fn = function (moment) {
+    // 'use strict';
 
     /**
      * feature detection and helper functions
@@ -1505,4 +1450,8 @@ var Pikaday = (function (root, factory)
 
     return Pikaday;
 
-}));
+  }
+
+  return fn(moment);
+
+}
