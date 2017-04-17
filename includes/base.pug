@@ -1,70 +1,71 @@
 doctype html
 html
-    head
-        title IBL
-        meta(charset='UTF-8')
-        meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
-          
-        include /includes/ico
-          
-        link(rel='stylesheet', type='text/css', href='/static/js/slick/slick.css')
-        link(rel='stylesheet', type='text/css', href='/static/css/ui.css')
-        link(rel='stylesheet', type='text/css', href='/static/css/style.css')
-          
-        //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-        //- JUST FOR DEVELOPMENT!!
-        script(src='/static/js/jquery.min.js')
-          
-        script(src='/static/js/slick/slick.min.js')
-        script(src='/static/js/isotope.pkgd.min.js')
-        script(src='/static/js/packery-mode.pkgd.js')
-        script(src='/static/js/script.js')
-          
-    body
-        div#container
-            header#header
-                .wrapper
-                    nav#top-menu
-                        //- a(data-component='Link' data-props={href:'/feedback'})
-                        //-     span.icon-comment
-                        //-     | Feedback
-                        //- a(data-component='Link' data-props={href:'/resources'})
-                        //-     span.icon-download
-                        //-     | Resources
-                        .lang-selector
-                            span.current-language
-                                span.icon-globus
-                                | English
-                            ul
-                                li
-                                    a(href='/en') English
-                                li
-                                    a(href='/cn') Chinese
-                    section#header-main
-                        a#logo(data-props={href:'/'} data-component='Link') Inclusive Business Lab
-                        nav#main-menu
-                            ul
-                                li
-                                    a(data-component='Link' data-props={href:'/strategies'}) Strategies
-                                li
-                                    a(data-component='Link' data-props={href:'/stories'})  Stories
-                                li
-                                    a(data-component='Link' data-props={href:'/team'})  The Team
-                                li
-                                    a(data-component='Link' data-props={href:'/contact'})  Contact
-        block content
-          
-        include /includes/cms  
-        
-        footer#footer
-            .wrapper
-                nav
-                    a(data-component='Link' data-props={href:'/strategies'}) Strategies
-                    a(data-component='Link' data-props={href:'/stories'})  Stories
-                    a(data-component='Link' data-props={href:'/team'})  The Team
-                    a(data-component='Link' data-props={href:'/contact'})  Contact
-                a#footer-logo(href='/')
-                address#copy
-                    | Inclusive Business Lab &
-                    br
-                    | Inclusive Business Foundation
+  head
+    title IBL
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
+    include /includes/ico
+
+    link(rel='stylesheet', type='text/css', href='/static/js/slick/slick.css')
+    link(rel='stylesheet', type='text/css', href='/static/css/ui.css')
+    link(rel='stylesheet', type='text/css', href='/static/css/style.css')
+
+    //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    //- JUST FOR DEVELOPMENT!!
+    script(src='/static/js/jquery.min.js')
+
+    script(src='/static/js/slick/slick.min.js')
+    script(src='/static/js/isotope.pkgd.min.js')
+    script(src='/static/js/packery-mode.pkgd.js')
+    script(src='/static/js/script.js')
+    script(src='/static/js/jquery.matchHeight-min.js')
+
+  body
+    div#container
+      header#header
+        .wrapper
+          nav#top-menu
+            //- a(data-component='Link' data-props={href:'/feedback'})
+            //-     span.icon-comment
+            //-     | Feedback
+            //- a(data-component='Link' data-props={href:'/resources'})
+            //-     span.icon-download
+            //-     | Resources
+            .lang-selector
+              span.current-language
+                span.icon-globus
+                | English
+              ul
+                li
+                  a(href='/en') English
+                li
+                  a(href='/cn') Chinese
+          section#header-main
+            a#logo(data-props={href:'/'} data-component='Link') Inclusive Business Lab
+            nav#main-menu
+              ul
+                li
+                  a(data-component='Link' data-props={href:'/strategies'}) Strategies
+                li
+                  a(data-component='Link' data-props={href:'/stories'})  Stories
+                li
+                  a(data-component='Link' data-props={href:'/team'})  The Team
+                li
+                  a(data-component='Link' data-props={href:'/contact'})  Contact
+    block content
+
+    include /includes/cms  
+
+    footer#footer
+      .wrapper
+        nav
+          a(data-component='Link' data-props={href:'/strategies'}) Strategies
+          a(data-component='Link' data-props={href:'/stories'})  Stories
+          a(data-component='Link' data-props={href:'/team'})  The Team
+          a(data-component='Link' data-props={href:'/contact'})  Contact
+        a#footer-logo(href='/')
+        address#copy
+          | Inclusive Business Lab &
+          br
+          | Inclusive Business Foundation

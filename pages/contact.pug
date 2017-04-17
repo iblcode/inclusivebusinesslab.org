@@ -1,42 +1,44 @@
 extends /includes/base
 block content
-    section#hero
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.contact.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.contact.jpg'})
-        .hero-layer.hero-layer-text.penguin-bg-image-sibling
-            .hero-layer-text-v.active
-                h1.bg-title.bgt-2.penguin-sp
-                    span(data-component='Inplace' data-props={field:'title'}) Get Involved
-    .wrapper3
-      .hello.hello-inner.text1(data-component='MediumEditor' data-props={field:'content'})
-        p
-          | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
-        p
-          | For general inquires, please contact us at:
-          br
-          a(href='mailto:office@inclusivebusinesslab.org') office@inclusivebusinesslab.org
-    #get-involved.get-involved-alt
-        .wrapper2.involved-grid
-            .inv-item
-                .inv-item-content
-                    span.inv-image.inv-image-1
-                    h4
-                        strong(data-component='MediumEditor' data-props={field:'subtitle_1'}) Information
-                    p(data-component='MediumEditor' data-props={field:'content_1'})
-                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis negat? Qui ita affectus, beatum esse numquam probabis; Negat esse eam, inquit, propter se expetendam.
-                    a.btn(data-component='Link' data-props={href:'/team'}) Get More Info
-            .inv-item
-                .inv-item-content
-                    span.inv-image.inv-image-2
-                    h4
-                        strong(data-component='MediumEditor' data-props={field:'subtitle_2'}) Supporters
-                    p(data-component='MediumEditor' data-props={field:'content_2'})
-                        | Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. An vero, inquit, quisquam potest probare, quod perceptfum, quod.
-                    a.btn(data-component='Link' data-props={href:'/support'}) Support us
-            .inv-item
-                .inv-item-content
-                    span.inv-image.inv-image-3
-                    h4
-                        strong(data-component='MediumEditor' data-props={field:'subtitle_3'}) Partners
-                    p(data-component='MediumEditor' data-props={field:'content_3'})
-                        | Ergo opifex plus sibi proponet ad formarum quam civis excellens ad factorum pulchritudinem? Nos paucis ad haec additis finem faciamus aliquando.
-                    a.btn(data-component='Link' data-props={href:'/contact'}) Become a partner
+  section#hero
+    .hero-layer.paralax(style='background-image: url(/static/img/hero.contact.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.contact.jpg'})
+    .hero-layer.hero-layer-text.penguin-bg-image-sibling
+      .hero-layer-text-v.active
+        .wrapper3
+          h1.bg-title.penguin-sp
+            span.orange(data-component='Inplace' data-props={field:'title'}) Get Involved
+  .wrapper3.pt-120.pb-90
+    .hello.hello-inner.text2(data-component='MediumEditor' data-props={field:'content'})
+      p
+        | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+        br
+        br
+        | For general inquires, please contact us at:
+        br
+        a(href='mailto:office@inclusivebusinesslab.org') office@inclusivebusinesslab.org
+  #get-involved.get-involved-alt.pb-120
+    .wrapper2.involved-grid
+      .inv-item
+        .inv-item-content
+          span.inv-image.inv-image-1
+          h4
+            strong(data-component='MediumEditor' data-props={field:'subtitle_1'}) Information
+          p(data-component='MediumEditor' data-props={field:'content_1'})
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis negat? Qui ita affectus, beatum esse numquam probabis; Negat esse eam, inquit, propter se expetendam.
+          a.btn(data-component='Link' data-props={href:'/team'}) Get More Info
+      .inv-item
+        .inv-item-content
+          span.inv-image.inv-image-2
+          h4
+            strong(data-component='MediumEditor' data-props={field:'subtitle_2'}) Supporters
+          p(data-component='MediumEditor' data-props={field:'content_2'})
+            | Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. An vero, inquit, quisquam potest probare, quod perceptfum, quod.
+          a.btn(data-component='Link' data-props={href:'/support'}) Support us
+      .inv-item
+        .inv-item-content
+          span.inv-image.inv-image-3
+          h4
+            strong(data-component='MediumEditor' data-props={field:'subtitle_3'}) Partners
+          p(data-component='MediumEditor' data-props={field:'content_3'})
+            | Ergo opifex plus sibi proponet ad formarum quam civis excellens ad factorum pulchritudinem? Nos paucis ad haec additis finem faciamus aliquando.
+          a.btn(data-component='Link' data-props={href:'/contact'}) Become a partner

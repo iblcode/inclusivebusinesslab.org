@@ -1,77 +1,76 @@
 extends /includes/base
 block content
-    section#hero
-        .hero-layer.paralax(style='background-image: url(/static/img/hero.challenges.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.challenges.jpg'})
-        .hero-layer.hero-layer-text.penguin-bg-image-sibling
-            .hero-layer-text-v.active
-                h1.bg-title.bgt-2.penguin-sp(data-component='MediumEditor' data-props={field:'title'})
-                    span Global Inclusive Leadership
-                    br
-                    span Challenges
-        span#hero-arrow
-    .wrapper3
-        .leadership-hello(style='padding-bottom: 0;' data-component='MediumEditor' data-props={field:'desc'})
-            | The Challenges are a series of events, in which global leaders and experts from the different disciplines will share their stories of leadership journeys, present exciting discoveries in their own fields and give the next generation challenging questions on the real-world issues.
-    .square-images
-        div(style='background-image: url(/static/img/sq1.jpg)' data-component='BgImage' data-props={field:'sq1', defaultURL:'/static/img/sq1.jpg'})
-        div(style='background-image: url(/static/img/sq2.jpg)' data-component='BgImage' data-props={field:'sq2', defaultURL:'/static/img/sq2.jpg'})
-        div(style='background-image: url(/static/img/sq3.jpg)' data-component='BgImage' data-props={field:'sq3', defaultURL:'/static/img/sq3.jpg'})
-    .section-info
-        .text1.text-left
-            h3(data-component='Inplace' data-props={field:'title2'}) MOTIVATION
-            p(data-component='MediumEditor' data-props={field:'desc2'})
-                | The program is intended to be an open-platform which will continue to be developed in collaboration with world-class universities and international and local schools, as well as with multinational corporations, industry leaders, experts, global inclusive business leaders, friends and supporters.
-    .challenges-box
-        h3(data-component='Inplace' data-props={field:'challenges'}) CHALLENGES
-        .isotope2
-            .isotope-content
-                .isotope-item-v.upcomming(data-type='Upcoming')
-                    span.iiv-date
-                        strong 27
-                        | nov
-                        br
-                        | 2016
-                    span.iiv-image(style='background-image: url(/static/img/iiv1.jpg)')
-                    span.iiv-content
-                        strong Jesse Wu
-                        span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
-                        span.btn.btn-alt.btn-medium Read more
-                .isotope-item-v.upcomming(data-type='Upcoming')
-                    span.iiv-date
-                        strong 27
-                        | nov
-                        br
-                        | 2016
-                    span.iiv-image(style='background-image: url(/static/img/iiv2.jpg)')
-                    span.iiv-content
-                        strong Jesse Wu
-                        span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
-                        span.btn.btn-alt.btn-medium Read more
-                .isotope-item-v(data-type='Past')
-                    span.iiv-date
-                        strong 27
-                        | nov
-                        br
-                        | 2016
-                    span.iiv-image(style='background-image: url(/static/img/iiv3.jpg)')
-                    span.iiv-content
-                        strong Jesse Wu
-                        span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
-                        span.btn.btn-alt.btn-medium Read more
-                .isotope-item-v(data-type='Past')
-                    span.iiv-date
-                        strong 27
-                        | nov
-                        br
-                        | 2016
-                    span.iiv-image(style='background-image: url(/static/img/iiv4.jpg)')
-                    span.iiv-content
-                        strong Jesse Wu
-                        span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
-                        strong Jesse Wu
-                        span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
-                        strong Jesse Wu
-                        span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
-                        strong Jesse Wu
-                        span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
-                        span.btn.btn-alt.btn-medium Read more
+  section#hero
+    .hero-layer.paralax(style='background-image: url(/static/img/hero.challenges.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.challenges.jpg'})
+    .hero-layer.hero-layer-text.penguin-bg-image-sibling
+      .hero-layer-text-v.active
+        .wrapper3
+          h1.bg-title.penguin-sp(data-component='MediumEditor' data-props={field:'title'})
+            span.orange Global Inclusive Leadership Challenges
+    span#hero-arrow
+  .wrapper3.pt-120.pb-90
+    .hello.hello-inner(data-component='MediumEditor' data-props={field:'desc'})
+      | The Challenges are a series of events, in which global leaders and experts from the different disciplines will share their stories of leadership journeys, present exciting discoveries in their own fields and give the next generation challenging questions on the real-world issues.
+  .square-images
+    div(style='background-image: url(/static/img/sq1.jpg)' data-component='BgImage' data-props={field:'sq1', defaultURL:'/static/img/sq1.jpg'})
+    div(style='background-image: url(/static/img/sq2.jpg)' data-component='BgImage' data-props={field:'sq2', defaultURL:'/static/img/sq2.jpg'})
+    div(style='background-image: url(/static/img/sq3.jpg)' data-component='BgImage' data-props={field:'sq3', defaultURL:'/static/img/sq3.jpg'})
+  .section-info
+    .text1.text-left.wrapper4
+      h3(data-component='Inplace' data-props={field:'title2'}) MOTIVATION
+      p(data-component='MediumEditor' data-props={field:'desc2'})
+        | The program is intended to be an open-platform which will continue to be developed in collaboration with world-class universities and international and local schools, as well as with multinational corporations, industry leaders, experts, global inclusive business leaders, friends and supporters.
+  .challenges-box.pb-120
+    h3(data-component='Inplace' data-props={field:'challenges'}) CHALLENGES
+    .isotope2
+      .isotope-content
+        .isotope-item-v.upcomming(data-type='Upcoming')
+          span.iiv-date
+            strong 27
+            | nov
+            br
+            | 2016
+          span.iiv-image(style='background-image: url(/static/img/iiv1.jpg)')
+          span.iiv-content
+            strong Jesse Wu
+            span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
+            span.btn.btn-alt.btn-medium Read more
+        .isotope-item-v.upcomming(data-type='Upcoming')
+          span.iiv-date
+            strong 27
+            | nov
+            br
+            | 2016
+          span.iiv-image(style='background-image: url(/static/img/iiv2.jpg)')
+          span.iiv-content
+            strong Jesse Wu
+            span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
+            span.btn.btn-alt.btn-medium Read more
+        .isotope-item-v(data-type='Past')
+          span.iiv-date
+            strong 27
+            | nov
+            br
+            | 2016
+          span.iiv-image(style='background-image: url(/static/img/iiv3.jpg)')
+          span.iiv-content
+            strong Jesse Wu
+            span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
+            span.btn.btn-alt.btn-medium Read more
+        .isotope-item-v(data-type='Past')
+          span.iiv-date
+            strong 27
+            | nov
+            br
+            | 2016
+          span.iiv-image(style='background-image: url(/static/img/iiv4.jpg)')
+          span.iiv-content
+            strong Jesse Wu
+            span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
+            strong Jesse Wu
+            span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
+            strong Jesse Wu
+            span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
+            strong Jesse Wu
+            span.iiv-content-text Former Worldwide Chairman of the Johnson & Johnson Consumer Group
+            span.btn.btn-alt.btn-medium Read more
