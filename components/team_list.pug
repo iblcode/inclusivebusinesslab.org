@@ -1,7 +1,7 @@
 unless (fields.teamMembers == null)
   each m in fields.teamMembers
     //- id, image, name, content
-    - var production = (locals.env === 'production')
+    - var production = (process.env.PENGUIN_ENV === 'production')
     
     li
       .team-member

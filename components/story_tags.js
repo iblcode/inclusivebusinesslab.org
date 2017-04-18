@@ -10,9 +10,66 @@ export function mount (ctx, props, el) {
   css.innerHTML = style
   document.head.appendChild(css)
 
+  const localId = `tagmodal-${props.field}`
+  const modalId = `modal-${props.field}`
+  const inputId = `input-${props.field}`
+  const submitButtonId = `submit-${props.field}`
+  const storySelectLink = `StorySelectLink-${props.field}`
+  const newsSelectLink = `NewsSelectLink-${props.field}`
+  const selectLink = `select-link-${props.field}`
+
+  const template = `
+  <div id="${modalId}" class="overlay">
+    <a class="cancel" href="#"></a>
+    <div class="penguin-modal">
+      <a class="m-close" href="#">x</a>
+      <h2>Add Tags</h2>
+      <div class="content">
+        <p>
+          Tags control the visibility of stories across the website.
+          Add the tag
+          <a href="javascript:;" id="${storySelectLink}">Significant Story</a>
+          for a story
+          or add
+          <a href="javascript:;" id="${newsSelectLink}">News</a>
+          for a news article.
+          <br>
+          Add
+          <a href="javascript:;" class="${selectLink}" data-tag="highlight">Highlight</a>
+          to shop it on home.
+          <br>
+          You can add the following tags to appear on the individual pages:
+          <a href="javascript:;" class="${selectLink}" data-tag="inclusive business">Inclusive Business</a>,
+          <a href="javascript:;" class="${selectLink}" data-tag="life upon life">Life Upon Life</a>,
+          <a href="javascript:;" class="${selectLink}" data-tag="leadership roundtable">Leadership roundtable</a>,
+          <a href="javascript:;" class="${selectLink}" data-tag="stem+">Stem+</a>,
+          <a href="javascript:;" class="${selectLink}" data-tag="vip weekly">VIP Weekly</a>,
+          <a href="javascript:;" class="${selectLink}" data-tag="leadership challenges">Leadership Challenges</a>
+
+
+        </p>
+      </div>
+      <div class="content" style="min-height: 150px;">
+        <p>Add and remove tags or click outside the modal to close.</p>
+        <div id="${inputId}" style="width: 100%; position: relative;"></div>
+      </div>
+      <div class="content">
+        <a class="penguin-btn" href="javascript:;" id="${submitButtonId}">Submit</a>
+      </div>
+    </div>
+  </div>
+  `
+
   document.body.insertAdjacentHTML('beforeend', template)
 
   var taggle = new Taggle(inputId, {duplicateTagClass: 'bounce', preserveCase: false})
+
+  var selectLinks = document.querySelectorAll(`.${selectLink}`)
+  for(var i=0;i<selectLinks.length;i++){
+    selectLinks[i].addEventListener('click', (e) => { taggle.add(e.target.getAttribute('data-tag')) })
+  }
+  document.getElementById(storySelectLink).addEventListener('click', () => { taggle.add("Significant Story") })
+  document.getElementById(newsSelectLink).addEventListener('click', () => { taggle.add("News") })
 
   el.addEventListener('click', () => { window.location.hash= modalId })
 
@@ -27,7 +84,7 @@ export function mount (ctx, props, el) {
   const updateValue = () => {
     var value = store.getState().fields[props.field]
 
-    if((typeof value == 'undefined') || value == null || value.length == 0) {
+    if(value == null || value.length == 0) {
       el.innerText = 'Add a tag!'
     }
     else {
@@ -47,29 +104,6 @@ export function render (ctx, props) {
   else { return { replace: '' } }
 }
 
-
-const localId = "tagmodal"
-const modalId = `modal-${localId}`
-const inputId = `input-${localId}`
-const submitButtonId = `submit-${localId}`
-
-const template = `
-<div id="${modalId}" class="overlay">
-  <a class="cancel" href="#"></a>
-  <div class="penguin-modal">
-    <a class="m-close" href="#">x</a>
-    <h2>Add Tags</h2>
-    <div class="content">
-      <p>Add and remove tags or click outside the modal to close.</p>
-      <div id="${inputId}" style="width: 100%; position: relative;"></div>
-    </div>
-    <div class="content">
-      <a class="penguin-btn" href="javascript:;" id="${submitButtonId}"> Submit</a>
-    </div>
-  </div>
-</div>
-`
-
 const style = `
 .penguin-modal .penguin-btn {
   padding: 10px 15px;
@@ -86,7 +120,9 @@ const style = `
   padding: 20px;
   background: #fff;
   border: 1px solid #666;
-  width: 400px;
+  width: 80%;
+  min-width: 400px;
+  max-width: 800px;
   border-radius: 6px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   position: relative;
@@ -114,7 +150,9 @@ const style = `
   max-height: 400px;
   overflow: auto;
 }
-
+.penguin-modal .content a {
+  color: rgba(249, 129, 27, 1);
+}
 .penguin-modal p {
   margin: 0 0 1em;
   text-align: left;
@@ -172,7 +210,11 @@ const style = `
           animation-name: bounce; }
 .taggle_list {
   float: left;
-  width: 100%; }
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: rgba(119, 136, 153, 0.5);
+  }
 
 .taggle_input {
   border: none;

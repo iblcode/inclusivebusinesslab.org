@@ -1,34 +1,169 @@
-unless (fields.stories == null)
-  each m, i in fields.stories
-    //- id, image, name, content
-    //- - var production = (locals.env === 'production')
+if ( fields.stories != null )
+  
+  //- Filter
+  if ( props.filter != null && props.filter != '' )
     
-    - var mode = (i%2? '' : 'new')
+    - var stories = fields.stories.filter( s => ( s.tags != null && Array.isArray( s.tags ) && s.tags.length != 0 && s.tags.indexOf( props.filter.toLowerCase() ) > -1 ))
+  else
+    - var stories = fields.stories
     
-    case mode
+  //- Sorting
+  -
+    function compare(a, b) {
+      // b first!
+      if ( b.date == null || b.date == '' ) { return 1 }
+      // a first!
+      if ( a.date == null || a.date == '' ) { return -1 }
+      // a first! (greater date)
+      if ( a.date > b.date) { return -1 }
+      // b first! (greater date)
+      if ( b.date > a.date ) { return 1 }
+      return 0;
+    }
+
+  each m, i in stories.sort(compare)
+    //- id, title, date, tags, teaser, content1, img1, img2, img3, content2
+    //- - var production = (process.env.PENGUIN_ENV === 'production')
+    
+    //- handle teaser
+    if ( m.teaser != null && m.teaser != '' )
+      - var teaser = m.teaser.replace(/<(?:.|\n)*?>/gm, '').replace(/^(.{200}[^\s]*).*/, "$1")
+    else
+      - var teaser = ""
+    
+    //- handle date
+    - var m_names = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+    if m.date
+      - var tmpDate = new Date( m.date * 1000 )
+      - var date = tmpDate.getDate() + ' ' + m_names[ tmpDate.getMonth() ]
+    else
+      - var date = "no date"
       
-      when "new"
-        span.isotope-item(data-type='news')
-            span.ist-content
-                span.h4
-                  a(href=`/${language}/stories/${m.id}` style='color: white;')
-                    | “An important, featured post. Scio enim esse quosdam, qui quavis lingua philosophari possint; At iste non dolendi status non vocatur voluptas.”
-                span.ist-bottom
-                    span.ist-date 31 OCTOBER
-                    span.ist-type
-                        a(href='javascript:;') Stem+
-                    span.ist-type
-                        a(href='javascript:;') Stories
-                        
-      default
+    //- handle tags
+    if ( m.tags != null && m.tags.length != 0 )
+      - var tags = m.tags.join( ', ' )
+      
+      - var downcaseTags = m.tags.map( t => ( t.toLowerCase() ) )
+      if downcaseTags.indexOf( 'significant story' ) > -1
+        - var type = "story"
+      else if downcaseTags.indexOf( 'news' ) > -1
+        - var type = "news"
+      else
+        - var type = "story"
+      
+    else
+      - var tags = ""
+      - var type = "story"
+    
+    //- handle layouts
+    if type == "news"
+      - var layout = "news"
+    else
+      - var layout = "story"
+      
+    case layout
+
+      when "story"
         span.isotope-item(data-type='Significant Stories')
-            span.ist-content
-                span.h4 Ita graviter et severe voluptatem secrevit a bono.
-                span.p
-                    | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
-                span.ist-bottom
-                    span.ist-date 31 OCTOBER
-                    span.ist-type
-                        a(href='javascript:;') Stem+
-                    span.ist-type
-                        a(href='javascript:;') Stories
+          span.ist-content
+            span.h4
+              a(href=`/${language}/stories/${ m.id }` style='color: black;') #{ m.title || "no title" }
+            span.p
+              | #{ teaser }
+              //- | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+            span.ist-bottom
+              span.ist-date #{ date }
+              span.ist-type
+                a(href='javascript:;') #{ tags }
+              span.ist-type
+                a(href='javascript:;') #{ type }
+      
+      when "image"
+        span.isotope-item(data-type='Significant Stories')
+          span.ist-image(style='background-image: url(/static/img/iso.1.png)')
+          span.ist-content
+            span.h4
+              a(href=`/${language}/stories/${ m.id }` style='color: black;') #{ m.title || "no title" }
+            span.p
+              | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+            span.ist-bottom
+              span.ist-date #{ date }
+              span.ist-type
+                a(href='javascript:;') #{ tags }
+              span.ist-type
+                a(href='javascript:;') #{ type }
+                
+      //- news
+      when "news"
+        span.isotope-item(data-type='news')
+          span.ist-content
+            span.h4
+              a(href=`/${language}/stories/${ m.id }` style='color: white;') #{ m.title || "no title" }
+            span.ist-bottom
+              span.ist-date #{ date }
+              span.ist-type
+                a(href='javascript:;') #{ tags }
+              span.ist-type
+                a(href='javascript:;') #{ type }
+                
+      //- video
+      //- when 4
+        span.isotope-item.isotope-item-video(data-type='Significant Stories')
+          span.ist-image(style='background-image: url(/static/img/iso.2.png)')
+          span.ist-content
+            span.h4
+              a(href=`/${language}/stories/${ m.id }` style='color: black;') #{m.title}
+            span.p
+              | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+            span.ist-bottom
+              span.ist-date 31 OCTOBER
+              span.ist-type
+                a(href='javascript:;') #{ tags }
+              span.ist-type
+                a(href='javascript:;') #{ type }
+else
+  span.isotope-item(data-type='Significant Stories')
+    span.ist-content
+      span.h4 Ita graviter et severe voluptatem secrevit a bono.
+      span.p
+        | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+      span.ist-bottom
+        span.ist-date 31 OCTOBER
+        span.ist-type
+          a(href='javascript:;') Stem+
+        span.ist-type
+          a(href='javascript:;') Stories
+  span.isotope-item(data-type='Significant Stories')
+    span.ist-image(style='background-image: url(/static/img/iso.1.png)')
+    span.ist-content
+      span.h4 Ita graviter et severe voluptatem secrevit a bono.
+      span.p
+        | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+      span.ist-bottom
+        span.ist-date 31 OCTOBER
+        span.ist-type
+          a(href='javascript:;') Stem+
+        span.ist-type
+          a(href='javascript:;') Stories
+  span.isotope-item(data-type='news')
+    span.ist-content
+      span.h4
+        | “An important, featured post. Scio enim esse quosdam, qui quavis lingua philosophari possint; At iste non dolendi status non vocatur voluptas.”
+      span.ist-bottom
+        span.ist-date 31 OCTOBER
+        span.ist-type
+          a(href='javascript:;') Stem+
+        span.ist-type
+          a(href='javascript:;') Stories
+  span.isotope-item.isotope-item-video(data-type='Significant Stories')
+    span.ist-image(style='background-image: url(/static/img/iso.2.png)')
+    span.ist-content
+      span.h4 Ita graviter et severe voluptatem secrevit a bono.
+      span.p
+        | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
+      span.ist-bottom
+        span.ist-date 31 OCTOBER
+        span.ist-type
+          a(href='javascript:;') Stem+
+        span.ist-type
+          a(href='javascript:;') Stories
