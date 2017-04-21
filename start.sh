@@ -13,7 +13,7 @@ penguin run \
       --redis-url "$REDIS_URL" \
       --delivery [ \
         penguin-passwordless-postmark \
-          --url https://website-ibl.herokuapp.com \
+          --url https://penguin.inclusivebusinesslab.org \
           --from bs@websites-smart.de \
           --apiKey "$POSTMARK_API_KEY" \
       ] \
