@@ -27,9 +27,24 @@ export function mount (ctx, props, el) {
   update()
   ctx.store.subscribe( update )
 
+  var tooltipWrap = createTip.call(el, ctx, props, url)
+
   el.addEventListener('click', function (e) {
+    e.preventDefault()
+
     if (e.altKey) { window.location.href = this.href }
-    else { createTip.call(el, e, ctx, props, url) }
+    else {
+
+      var firstChild = document.body.firstChild
+      firstChild.parentNode.insertBefore(tooltipWrap, firstChild)
+
+      const padding = 5
+      var linkProps = el.getBoundingClientRect()
+      var tooltipProps = tooltipWrap.getBoundingClientRect()
+      var topPos = linkProps.top + window.scrollY - (tooltipProps.height + padding)
+
+      tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+(linkProps.left + window.scrollX)+'px;')
+    }
   })
 
   mountInplace(ctx, props, el)
@@ -56,15 +71,13 @@ function renderUrl( { language }, url ) {
   return url.replace(pat, language)
 }
 
-function createTip (e, ctx, props, url) {
-
-  e.preventDefault()
+function createTip ( ctx, props, url ) {
 
   var tooltipWrap = document.createElement("div")
   tooltipWrap.className = 'penguin-tooltip'
   tooltipWrap.insertAdjacentHTML('beforeend', template)
-  var firstChild = document.body.firstChild
-  firstChild.parentNode.insertBefore(tooltipWrap, firstChild)
+  // var firstChild = document.body.firstChild
+  // firstChild.parentNode.insertBefore(tooltipWrap, firstChild)
 
   var input = tooltipWrap.querySelector('.link-editor-toolbar-input')
   var save = tooltipWrap.querySelector('.link-editor-toolbar-save')
@@ -75,7 +88,7 @@ function createTip (e, ctx, props, url) {
   input.value = url
   save.addEventListener('click', (e) => {
     e.preventDefault()
-    // this.href = input.value
+
     renderUrl(ctx, input.value)
     store.dispatch(update({[`${props.field}-link-editor-url`] : input.value}))
 
@@ -84,17 +97,19 @@ function createTip (e, ctx, props, url) {
   close.addEventListener('click', cancelTip)
   link.href = renderUrl(ctx, url)
 
-  const padding = 5
-  var linkProps = this.getBoundingClientRect()
-  var tooltipProps = tooltipWrap.getBoundingClientRect()
-  var topPos = linkProps.top + window.scrollY - (tooltipProps.height + padding)
-
-  tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+(linkProps.left + window.scrollX)+'px;')
+  // const padding = 5
+  // var linkProps = this.getBoundingClientRect()
+  // var tooltipProps = tooltipWrap.getBoundingClientRect()
+  // var topPos = linkProps.top + window.scrollY - (tooltipProps.height + padding)
+  //
+  // tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+(linkProps.left + window.scrollX)+'px;')
 
   function cancelTip (e){
     e.preventDefault()
     tooltipWrap.remove()
   }
+
+  return tooltipWrap
 }
 
 
