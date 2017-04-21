@@ -68,10 +68,10 @@ ibl = {
     ibl.teamSlider();
     ibl.isotope.init();
     ibl.iblvideo();
-    ibl.proportionBox('.square-images > div', '1:1');
+    // ibl.proportionBox('.square-images > div', '1:1');
     ibl.proportionBox('.ibl-video', '930:520');
     $(window).on('load resize', function() {
-      ibl.proportionBox('.square-images > div', '1:1');
+      // ibl.proportionBox('.square-images > div', '1:1');
       ibl.proportionBox('.ibl-video', '930:520');
     })
   },
