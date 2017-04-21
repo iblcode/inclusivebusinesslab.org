@@ -10,10 +10,10 @@ export function mount (ctx, props, el) {
 }
 
 function saveGloabl (ctx, props, el) {
-
   const id = window.location.pathname.split('/')[3]
   const { store } = ctx
   const { fields } = store.getState()
+  console.log(fields)
 
   // set the global element
   const globalElements = fields.stories || []
@@ -26,9 +26,9 @@ function saveGloabl (ctx, props, el) {
   const tags = fields.tags
   const teaser = fields.teaser
   const content1 = fields.content1
-  const img1 = fields.img1
-  const img2 = fields.img2
-  const img3 = fields.img3
+  const img1 = fields['image-0']
+  const img2 = fields['image-1']
+  const img3 = fields['image-2']
   const content2 = fields.content2
   const current = {id: id, title: title, date: date, tags: tags, teaser: teaser, content1: content1, img1: img1, img2: img2, img3: img3, content2: content2}
 

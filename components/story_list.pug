@@ -55,9 +55,18 @@ if ( fields.stories != null )
       - var tags = ""
       - var type = "story"
     
+    //- handle images
+    -
+      var images = []
+      if ( m.img1 != null && m.img1 != '' ) { images.push(m.img1) }
+      if ( m.img2 != null && m.img2 != '' ) { images.push(m.img2) }
+      if ( m.img3 != null && m.img3 != '' ) { images.push(m.img3) }
+    
     //- handle layouts
     if type == "news"
       - var layout = "news"
+    else if images.length > 0
+      - var layout = "image"
     else
       - var layout = "story"
       
@@ -80,7 +89,7 @@ if ( fields.stories != null )
       
       when "image"
         span.isotope-item(data-type='Significant Stories')
-          span.ist-image(style='background-image: url(/static/img/iso.1.png)')
+          span.ist-image(style=`background-image: url(${images[0]})`)
           span.ist-content
             span.h4
               a(href=`/${language}/stories/${ m.id }` style='color: black;') #{ m.title || "no title" }

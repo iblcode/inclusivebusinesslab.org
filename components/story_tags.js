@@ -24,7 +24,7 @@ export function mount (ctx, props, el) {
     <div class="penguin-modal">
       <a class="m-close" href="#">x</a>
       <h2>Add Tags</h2>
-      <div class="content">
+      <div class="content" style="margin-bottom: 1em;">
         <p>
           Tags control the visibility of stories across the website.
           Add the tag
@@ -36,7 +36,7 @@ export function mount (ctx, props, el) {
           <br>
           Add
           <a href="javascript:;" class="${selectLink}" data-tag="highlight">Highlight</a>
-          to shop it on home.
+          to show it on the homepage.
           <br>
           You can add the following tags to appear on the individual pages:
           <a href="javascript:;" class="${selectLink}" data-tag="inclusive business">Inclusive Business</a>,
@@ -44,13 +44,13 @@ export function mount (ctx, props, el) {
           <a href="javascript:;" class="${selectLink}" data-tag="leadership roundtable">Leadership roundtable</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="stem+">Stem+</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="vip weekly">VIP Weekly</a>,
-          <a href="javascript:;" class="${selectLink}" data-tag="leadership challenges">Leadership Challenges</a>
+          <a href="javascript:;" class="${selectLink}" data-tag="leadership challenges">Leadership Challenges</a>.
 
 
         </p>
       </div>
       <div class="content" style="min-height: 150px;">
-        <p>Add and remove tags or click outside the modal to close.</p>
+        <p><i>Add and remove tags or click outside the modal to close.</i></p>
         <div id="${inputId}" style="width: 100%; position: relative;"></div>
       </div>
       <div class="content">
@@ -276,7 +276,7 @@ const style = `
 
 .taggle_placeholder {
   position: absolute;
-  color: #CCC;
+  color: rgba(255, 255, 255, 0.87);
   top: 12px;
   left: 8px;
   transition: opacity, .25s;
