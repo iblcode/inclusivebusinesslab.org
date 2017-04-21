@@ -822,6 +822,18 @@ body.is-touchscreen-false .lang-selector:hover ul {
   background-size: cover
 }
 
+.square-images.one > div {
+  width: 100%;
+}
+
+.square-images.two > div {
+  width: 50%;
+}
+
+.square-images.three > div {
+  width: 33.333%;
+}
+
 .challenges-box {
   padding: 90px 0;
   margin: 0;

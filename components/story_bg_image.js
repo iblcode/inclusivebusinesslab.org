@@ -13,9 +13,14 @@ export function mount ( ctx, props, el ) {
   var options = document.getElementById( 'story-bg-image-select' ).querySelectorAll( 'option' )
   var selected = ( store.getState().fields[props.field] || 3 )
   options.forEach( ( e ) => { if ( e.value == selected ) { e.selected = true } })
+  el.classList.add( classFromNumber(selected) )
+
+
 
   document.getElementById( 'story-bg-image-select' ).addEventListener( 'change', (e) => {
     store.dispatch( update( { [ props.field ] : e.target.value } ) )
+    el.classList.remove( 'one', 'two', 'three')
+    el.classList.add(classFromNumber( e.target.value ))
   })
 
   var images = el.querySelectorAll( '.story-image' )
@@ -73,13 +78,19 @@ export function render ( ctx, props ) {
   // return "hallo welt"
   if ( images.length !== 0 ) {
     var html = `
-      <div class="square-images ${ images.length }">
+      <div class="square-images ${ classFromNumber(images.length) }">
         ${ images.join( '' ) }
       </div>`
     return html
   }
   else { return { replace: '' } }
 
+}
+
+
+function classFromNumber (n) {
+  const text = ['one', 'two', 'three']
+  return text[parseInt(n)-1]
 }
 
 const template = `
