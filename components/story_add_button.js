@@ -102,7 +102,7 @@ export function mount (ctx, props, el) {
   document.body.insertAdjacentHTML('beforeend', template)
 
   function relocate (slug) {
-    window.location.href = `/${ctx.language}/stories/${slug}`
+    window.location.href = `/en/stories/${slug}?new=true`
   }
 
   el.addEventListener('click', () => {
