@@ -32,15 +32,15 @@ html
             //- a(data-component='Link' data-props={href:'/resources'})
             //-     span.icon-download
             //-     | Resources
-            .lang-selector
+            .lang-selector(data-component='LangSelector')
               span.current-language
                 span.icon-globus
-                | English
+                span(data-show) English
               ul
                 li
-                  a(href='/en') English
+                  a(href='/en' data-selector='en') English
                 li
-                  a(href='/cn') Chinese
+                  a(href='/cn' data-selector='cn') Chinese
           section#header-main
             a#logo(data-props={href:'/'} data-component='Link') Inclusive Business Lab
             nav#main-menu
@@ -55,7 +55,7 @@ html
                   a(data-component='Link' data-props={href:'/contact'})  Contact
     block content
 
-    include /includes/cms  
+    include /includes/cms
 
     footer#footer
       .wrapper
