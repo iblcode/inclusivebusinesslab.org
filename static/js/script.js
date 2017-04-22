@@ -120,6 +120,15 @@ ibl = {
       return menu;
     },
     init: function() {
+      $(".isotope2").each(function(i, el) {
+        $(el).find('.isotope-item-v').each(function(ii, elem) {
+        	if (elem.querySelector('[data-date]').dataset.date > Math.floor(Date.now() / 1000)) {
+            console.log(elem)
+            $(elem).addClass('upcomming')
+            elem.dataset.type = 'Upcoming'
+          }
+        })
+      })
       $(".isotope,.isotope2").each(function() {
         var scope = $(this);
         var menuString = ibl.isotope.buildMenu(this);

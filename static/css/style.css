@@ -907,6 +907,9 @@ body.is-touchscreen-false .lang-selector:hover ul {
   float: right;
   display: block;
 }
+.no-img .iiv-content {
+  width: 690px;
+}
 
 .iiv-content strong {
   display: block;
@@ -958,11 +961,17 @@ body.is-touchscreen-false .lang-selector:hover ul {
     float: none;
     width: 100%;
   }
+  .no-img .iiv-content {
+    float: none;
+    width: 100%;
+    padding-top: 90px;
+  }
   .iiv-date strong {
     font-size: 0.9em;
     line-height: normal;
   }
   .iiv-date {
+    z-index: 100;
     font-size: 0.8em;
     position: absolute;
     width: auto;

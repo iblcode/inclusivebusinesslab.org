@@ -11,6 +11,10 @@ export function mount (ctx, props, el) {
   css.innerHTML = style
   document.head.appendChild(css)
 
+  if ( store.getState().fields[props.field] == null || store.getState().fields[props.field] == '' ) {
+    store.dispatch(update({[props.field] : moment().unix()}))
+  }
+
   var Pikaday = pikaday()
   var picker = new Pikaday({
     field: el,

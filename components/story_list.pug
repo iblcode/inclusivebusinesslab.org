@@ -28,14 +28,22 @@ if ( fields.stories != null )
     //- handle teaser
     if ( m.teaser != null && m.teaser != '' )
       - var teaser = m.teaser.replace(/<(?:.|\n)*?>/gm, '').replace(/^(.{200}[^\s]*).*/, "$1")
+      if props.layout
+        - var teaserShort = m.teaser.replace(/<(?:.|\n)*?>/gm, '').replace(/^(.{65}[^\s]*).*/, "$1")
     else
       - var teaser = ""
+      - var teaserShort = ""
     
     //- handle date
     - var m_names = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+    - var m_names_short = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
     if m.date
       - var tmpDate = new Date( m.date * 1000 )
       - var date = tmpDate.getDate() + ' ' + m_names[ tmpDate.getMonth() ]
+      if props.layout
+        - var eventDay = tmpDate.getDate()
+        - var eventMonth = m_names_short[ tmpDate.getMonth() ]
+        - var eventYear = tmpDate.getFullYear()
     else
       - var date = "no date"
       
@@ -63,7 +71,11 @@ if ( fields.stories != null )
       if ( m.img3 != null && m.img3 != '' ) { images.push(m.img3) }
     
     //- handle layouts
-    if type == "news"
+    if props.layout && images.length > 0
+      - var layout = "eventImg"
+    else if props.layout
+      - var layout = "event"
+    else if type == "news"
       - var layout = "news"
     else if images.length > 0
       - var layout = "image"
@@ -130,6 +142,52 @@ if ( fields.stories != null )
                 a(href='javascript:;') #{ tags }
               span.ist-type
                 a(href='javascript:;') #{ type }
+                
+      //- Event upcoming
+      when "event"
+        .isotope-item-v.no-img(data-type='Past')
+          span.iiv-date(data-date=m.date)
+            strong #{ eventDay }
+            | #{ eventMonth }
+            br
+            | #{ eventYear }
+          span.iiv-content
+            strong #{ m.title || "no title" }
+            span.iiv-content-text #{ teaserShort }
+            a.btn.btn-alt.btn-medium(href=`/${language}/stories/${ m.id }` style='color: black;') Read more
+      //- Event past
+      when "eventImg"
+        .isotope-item-v(data-type='Past')
+          span.iiv-date(data-date=m.date)
+            strong #{ eventDay }
+            | #{ eventMonth }
+            br
+            | #{ eventYear }
+          span.iiv-image(style=`background-image: url(${images[0]})`)
+          span.iiv-content
+            strong #{ m.title || "no title" }
+            span.iiv-content-text #{ teaserShort }
+            a.btn.btn-alt.btn-medium(href=`/${language}/stories/${ m.id }` style='color: black;') Read more
+          
+          
+          
+          
+          
+            //- //- Event upcoming
+            //- when "event"
+            //-   .isotope-item-v.upcomming(data-type='Upcoming')
+            //-     span.iiv-date
+            //-       strong #{ eventDay }
+            //-       | #{ eventMonth }
+            //-       br
+            //-       | #{ eventYear }
+            //-     span.iiv-image(style='background-image: url(/static/img/iiv2.jpg)')
+            //-     span.iiv-content
+            //-       strong  #{ m.title || "no title" }
+            //-       span.iiv-content-text #{ teaserShort }
+            //-       a.btn.btn-alt.btn-medium(href=`/${language}/stories/${ m.id }` style='color: black;') Read more
+          
+          
 else
   span.isotope-item(data-type='Significant Stories')
     span.ist-content
