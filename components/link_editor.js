@@ -35,17 +35,32 @@ export function mount (ctx, props, el) {
     if (e.altKey) { window.location.href = this.href }
     else {
 
-      var firstChild = document.body.firstChild
-      firstChild.parentNode.insertBefore(tooltipWrap, firstChild)
+      // var firstChild = document.body.firstChild
+      // firstChild.parentNode.insertBefore(tooltipWrap, firstChild)
+      document.body.appendChild(tooltipWrap)
+
 
       const padding = 5
       var linkProps = el.getBoundingClientRect()
       var tooltipProps = tooltipWrap.getBoundingClientRect()
       var topPos = linkProps.top + window.scrollY - (tooltipProps.height + padding)
-
-      tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+(linkProps.left + window.scrollX)+'px;')
+      var overflow = linkProps.left + window.scrollX + tooltipProps.width - window.innerWidth
+      var left = linkProps.left + window.scrollX
+      if ( overflow > 0 ) { left -= overflow }
+      tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+left+'px;')
     }
   })
+
+  // document.addEventListener('scroll', function (e) {
+  //   const padding = 5
+  //   var linkProps = el.getBoundingClientRect()
+  //   var tooltipProps = tooltipWrap.getBoundingClientRect()
+  //   var topPos = linkProps.top + window.scrollY - (tooltipProps.height + padding)
+  //   var overflow = linkProps.left + window.scrollX + tooltipProps.width - window.innerWidth
+  //   var left = linkProps.left + window.scrollX
+  //   if ( overflow > 0 ) { left -= overflow }
+  //   tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+left+'px;')
+  // })
 
   mountInplace(ctx, props, el)
 }
@@ -154,6 +169,7 @@ const style = `
   background: #242424;
   border-radius: 5px;
   color: #999;
+  white-space: nowrap;
 }
 .penguin-tooltip .link-editor-toolbar-form .link-editor-toolbar-input {
   border: none;
