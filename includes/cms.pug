@@ -78,28 +78,17 @@ style(data-component='OnlyEditor').
   
 block cms_bar
   ul.list-inline.cms-btn-bar(data-component='OnlyEditor')
-    li
-      a.cms-btn.btn-save(style='color:white; background: #007F08;' href="#" data-component='SaveButton')
-        //- i.fa.fa-check
-        | Save
-    li
-      a.cms-btn.btn-save(style='color:white;  background: #F9821B;' href='#' data-component='PublishButton')
-        //- i.fa.fa-rocket
-        | Publish
-    li
-      a(href="/auth/passwordless/logout").cms-btn.btn-logout
-        //- i.fa.fa-unlock-alt
-        | Logout
+    li: a.cms-btn.btn-save(style='color:white; background: #007F08;' href="#" data-component='SaveButton') Save
+    li: a.cms-btn.btn-save(style='color:white;  background: #F9821B;' href='#' data-component='PublishButton') Publish
+    li: a(href="/auth/passwordless/logout").cms-btn.btn-logout Logout
       
-div(style='position: fixed; top: 10px; right: 10px; display:none; background-color: white; z-index: 99999; padding: 25px; color: green;' data-component='SavedIndicator' data-props='{"timeout":1700}')
+div(style='position: fixed; top: 10px; right: 10px; display:none; background-color: white; z-index: 99999; padding: 25px; color: green;' data-component='SavedIndicator' data-props='{"timeout":2500}')
   strong Successfully saved!
-  
-div.publishing-indicator(style='position: fixed; top: 10px; right: 10px; display:none; background-color: white; z-index: 99999; padding: 25px; color: green;' data-component='OnlyEditor')
-  strong Publishing...
-  .spinner
     
-div(style='position: fixed; top: 10px; right: 10px; display:none; background-color: white; z-index: 99999; padding: 25px; color: green;' data-component='PublishedIndicator' data-props='{"timeout":1700}')
+div(style='position: fixed; top: 10px; right: 10px; display:none; background-color: white; z-index: 99999; padding: 25px; color: green;' data-component='PublishedIndicator' data-props='{"timeout":3500}')
   strong Successfully published. Penguin!
+  
+div(data-component='PublishingIndicator')
 
 script(data-component='OnlyEditor').
   $('.penguin-sp').on('click', function(e){e.stopPropagation();})
