@@ -37,11 +37,127 @@ html
         margin-top: 15px;
         padding: 15px;
       }
+      .flex {
+        display: flex;
+      }
+      .fw4 {
+        font-weight: 400;
+      }
+      .blue {
+        color: #357edd;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .lh-title {
+        line-height: 1.25;
+      }
+
+      .w1 {
+        width: 1rem;
+      }
+
+      .navy {
+        color: #001b44;
+      }
+
+      .bg-lightest-blue {
+        background-color: #cdecff;
+      }
+
+      .pa4 {
+        padding: 2rem;
+      }
+
+      .ml3 {
+        margin-left: 1rem;
+      }
+      .mb3 {
+        margin-bottom: 1rem;
+      }
+
+      .mt0 {
+        margin-top: 0;
+      }
+      .black-70 {
+        color: rgba(0, 0, 0, .7);
+      }
+      .mv0 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .measure {
+        max-width: 30em;
+      }
+      .lh-copy {
+        line-height: 1.5;
+      }
+      .dt {
+        display: table;
+      }
+
+      .dtc {
+        display: table-cell;
+      }
+
+      .vh-100 {
+        height: 100vh;
+      }
+
+      .w-100 {
+        width: 100%;
+      }
+
+      .white {
+        color: #fff;
+      }
+
+      .v-mid {
+        vertical-align: middle;
+      }
+      .bg-washed-green {
+        background-color: #e8fdf5;
+      }
+      .dark-green {
+        color: #137752;
+      }
+      .sans-serif {
+        font-family: -apple-system, BlinkMacSystemFont,
+                     'avenir next', avenir,
+                     'helvetica neue', helvetica,
+                     ubuntu,
+                     roboto, noto,
+                     'segoe ui', arial,
+                     sans-serif;
+      }
+      body {
+        margin: 0
+      }
+      .hidden {
+        display: none !important;
+      }
+
+      
   body
-    .login
-      form(action="/auth/passwordless" method="POST")
-        input(name="user" type="email" placeholder="E-Mail")
-        br
-        button(type="submit") Send
+    div(data-component='LoginMessages')
+      article.vh-100.dt.w-100.sans-serif.success.hidden
+        .dtc.v-mid.tc.white.ph4-l
+          .flex.items-center.justify-center.pa4.bg-washed-green.dark-green
+            div
+              h2.fw4.mt0.mb3 Success. Check your email
+              p.black-70.measure.lh-copy.mv0
+                | We have sent you an email. It contains a link to login.
+      
+      .login
+        form(action="/auth/passwordless" method="POST")
+          input(name="user" type="email" placeholder="E-Mail")
+          br
+          button(type="submit") Send
     .footer
       a(href='https://www.websites-smart.de') created by websites einfach smart
