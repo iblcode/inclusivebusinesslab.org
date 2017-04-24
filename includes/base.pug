@@ -45,14 +45,12 @@ html
             a#logo(data-props={href:'/'} data-component='Link') Inclusive Business Lab
             nav#main-menu
               ul
-                li
-                  a(data-component='Link' data-props={href:'/strategies'}) Strategies
-                li
-                  a(data-component='Link' data-props={href:'/stories'})  Stories
-                li
-                  a(data-component='Link' data-props={href:'/team'})  The Team
-                li
-                  a(data-component='Link' data-props={href:'/contact'})  Contact
+                li(data-component='BaseLink' data-props={field:'global-footer-link-strategies', defaultURL:'/strategies'}) Strategies
+                li(data-component='BaseLink' data-props={field:'global-footer-link-stories', defaultURL:'/stories'}) Stories
+                li(data-component='BaseLink' data-props={field:'global-footer-link-team', defaultURL:'/team'}) The Team
+                li(data-component='BaseLink' data-props={field:'global-footer-link-contact', defaultURL:'/contact'}) Contact
+                
+                
     block content
 
     include /includes/cms
@@ -60,11 +58,11 @@ html
     footer#footer
       .wrapper
         nav
-          a(data-component='Link' data-props={href:'/strategies'}) Strategies
-          a(data-component='Link' data-props={href:'/stories'})  Stories
-          a(data-component='Link' data-props={href:'/team'})  The Team
-          a(data-component='Link' data-props={href:'/contact'})  Contact
-        a#footer-logo(href='/')
+          a(data-component='LinkEditor' data-props={field:'global-footer-link-strategies', defaultURL:'/{{lang}}/strategies'}) Strategies
+          a(data-component='LinkEditor' data-props={field:'global-footer-link-stories', defaultURL:'/{{lang}}/stories'})  Stories
+          a(data-component='LinkEditor' data-props={field:'global-footer-link-team', defaultURL:'/{{lang}}/team'})  The Team
+          a(data-component='LinkEditor' data-props={field:'global-footer-link-contact', defaultURL:'/{{lang}}/contact'})  Contact
+        a#footer-logo(data-component='Link' data-props={href:'/'})
         address#copy
           | Inclusive Business Lab &
           br

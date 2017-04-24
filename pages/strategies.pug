@@ -7,12 +7,17 @@ block content
         .wrapper3
           h1.bg-title.penguin-sp
             span.orange(data-component='Inplace' data-props={field:'title'} ) Our strategies
+            
+            
   section.hello.hello-inner
     .hello-wrapper.pb-90
       p(data-component='MediumEditor' data-props={field:'content'})
         | Inclusive Business Lab and Inclusive Business Foundation work together to create an ecosystem that address the systemic poverty and rich-poor gap issues, by
+        
+        
   .strategies.wrapper2.pb-120
     section.cards
+      
       span.card
         span.card-image(style='background-image:url(/static/img/card1.png)')
           span.h3.bg-title(data-component='MediumEditor' data-props={field:'home_startegies_incl'})
@@ -22,7 +27,8 @@ block content
             | Creating inclusive economic opportunities though the 
             strong global value-chains
           span.card-btn
-            a.btn(data-component='Link' data-props={href:'/inclusive-business'}) Learn more
+            a.btn(data-component='LinkEditor' data-props={field:'home_startegies_incl_url', defaultURL:'/{{lang}}/inclusive-business'}) Learn more
+            
       span.card
         span.card-image(style='background-image:url(/static/img/card2.png)')
           span.h3.bg-title(data-component='MediumEditor' data-props={field:'home_startegies_glob'})
@@ -31,4 +37,4 @@ block content
           span.card-text.eqHeight(data-component='MediumEditor' data-props={field:'home_startegies_glob_d'})
             | Developing #[strong transformational leadership] and next generation inclusive leaders who are ethical, purpose-driven and global-minded
           span.card-btn
-            a.btn(data-component='Link' data-props={href:'/inclusive-leadership'}) Learn more
+            a.btn(data-component='LinkEditor' data-props={field:'home_startegies_glob_url', defaultURL:'/{{lang}}/inclusive-leadership'}) Learn more

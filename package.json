@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "IBLs Website. Made 3/2017",
   "scripts": {
-    "serve": "penguin serve -v pug -t [ ./pug-transform ] --middleware [ penguin-filestack/middleware --api-key APkI1JP79Q5Wh28llgIj6z --secret QD3MEQPQDNFNRLGOJOCDIVGWPQ ]",
-    "prebuild": "penguin pack -v pug -t [ ./pug-transform ]",
+    "serve": "penguin serve -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ] --middleware [ penguin-filestack/middleware --api-key APkI1JP79Q5Wh28llgIj6z --secret QD3MEQPQDNFNRLGOJOCDIVGWPQ ]",
+    "prebuild": "penguin pack -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ]",
     "build": "penguin build",
     "buildOnly": "penguin build",
-    "heroku-postbuild": "penguin pack -v pug -t [ ./pug-transform ]",
+    "heroku-postbuild": "penguin pack -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ]",
     "start": "bash start.sh",
     "listusers": "heroku run bash -c 'node_modules/.bin/penguin-passwordless list_users --pg-url $DATABASE_URL'"
   },
@@ -27,7 +27,11 @@
     },
     "globals": [
       "teamMembers",
-      "stories"
+      "stories",
+      "global-footer-link-strategies",
+      "global-footer-link-stories",
+      "global-footer-link-team",
+      "global-footer-link-contact"
     ]
   },
   "dependencies": {

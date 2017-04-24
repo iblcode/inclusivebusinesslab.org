@@ -25,7 +25,7 @@ block content
             strong(data-component='MediumEditor' data-props={field:'subtitle_1'}) Information
           p(data-component='MediumEditor' data-props={field:'content_1'})
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis negat? Qui ita affectus, beatum esse numquam probabis; Negat esse eam, inquit, propter se expetendam.
-          a.btn(data-component='Link' data-props={href:'/team'}) Get More Info
+          a.btn(data-component='LinkEditor' data-props={field:'url_1', defaultURL:'mailto:info@inclusivebusinesslab.org'}) Get More Info
       .inv-item
         .inv-item-content
           span.inv-image.inv-image-2
@@ -33,7 +33,7 @@ block content
             strong(data-component='MediumEditor' data-props={field:'subtitle_2'}) Supporters
           p(data-component='MediumEditor' data-props={field:'content_2'})
             | Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. An vero, inquit, quisquam potest probare, quod perceptfum, quod.
-          a.btn(data-component='Link' data-props={href:'/support'}) Support us
+          a.btn(data-component='LinkEditor' data-props={field:'url_2', defaultURL:'mailto:supporters@inclusivebusinesslab.org'}) Support us
       .inv-item
         .inv-item-content
           span.inv-image.inv-image-3
@@ -41,4 +41,4 @@ block content
             strong(data-component='MediumEditor' data-props={field:'subtitle_3'}) Partners
           p(data-component='MediumEditor' data-props={field:'content_3'})
             | Ergo opifex plus sibi proponet ad formarum quam civis excellens ad factorum pulchritudinem? Nos paucis ad haec additis finem faciamus aliquando.
-          a.btn(data-component='Link' data-props={href:'/contact'}) Become a partner
+          a.btn(data-component='LinkEditor' data-props={field:'url_3', defaultURL:'mailto:partners@inclusivebusinesslab.org'}) Become a partner

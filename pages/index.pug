@@ -15,10 +15,14 @@ block content
           h1.bg-title(data-component='MediumEditor' data-props={field:'title_2'})
             span.orange End Systemic Poverty. End Modern Slavery. Economy for Everyone.
     span#hero-arrow
+      
+      
   section.hello
     .hello-wrapper
       p(data-component='MediumEditor' data-props={field:'home_hello_text'}).
         #[strong Inclusive Business Lab] and #[strong Inclusive Business Foundation] work together to create an ecosystem that addresses systemic poverty and rich-poor gap issues.
+        
+        
   .strategies.wrapper2
     .text-center
       h3(data-component='MediumEditor' data-props={field:'home_strategies_title'}) OUR STRATEGIES
@@ -41,6 +45,7 @@ block content
             | Developing #[strong transformational leadership] and next generation inclusive leaders who are ethical, purpose-driven and global-minded
           span.card-btn
             a.btn(data-component='LinkEditor' data-props={field:'home_startegies_glob_url', defaultURL:'/{{lang}}/inclusive-leadership'}) Learn more
+            
 
   .team
     h3(data-component='Inplace' data-props={field:'home_team_title'}) OUR TEAM
@@ -50,7 +55,9 @@ block content
     section.t-slider
       .t-slider-holder(data-component="TeamList2")
   .text-center
-    a.btn.btn-alt(data-component='Link' data-props={href:'/team'}) Meet the whole team
+    a.btn.btn-alt(data-component='LinkEditor' data-props={field:'home_team_url', defaultURL:'/{{lang}}/team'}) Meet the whole team
+    
+    
   #get-involved
     h3(data-component='Inplace' data-props={field:'home_involved_title'}) GET INVOLVED
     .wrapper2.involved-grid
