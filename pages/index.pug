@@ -31,7 +31,7 @@ block content
           span.card-text.eqHeight(data-component='MediumEditor' data-props={field:'home_startegies_incl_d'})
             | Creating inclusive economic opportunities though the <strong>global value-chains</strong>
           span.card-btn
-            a.btn(data-component='Link' data-props={href:'/inclusive-business'}) Learn more
+            a.btn(data-component='LinkEditor' data-props={field:'home_startegies_incl_url', defaultURL:'/{{lang}}/inclusive-business'}) Learn more
       span.card
         span.card-image(style='background-image:url(/static/img/card2.png)' data-component="BgImage" data-props={field:'home_startegies_img-2', defaultURL:'/static/img/card2.png'})
           span.penguin-sp.h3.bg-title(data-component='MediumEditor' data-props={field:'home_startegies_glob'})
@@ -40,7 +40,7 @@ block content
           span.card-text.eqHeight(data-component='MediumEditor' data-props={field:'home_startegies_glob_d'})
             | Developing #[strong transformational leadership] and next generation inclusive leaders who are ethical, purpose-driven and global-minded
           span.card-btn
-            a.btn(data-component='Link' data-props={href:'/inclusive-leadership'}) Learn more
+            a.btn(data-component='LinkEditor' data-props={field:'home_startegies_glob_url', defaultURL:'/{{lang}}/inclusive-leadership'}) Learn more
 
   .team
     h3(data-component='Inplace' data-props={field:'home_team_title'}) OUR TEAM
