@@ -20,8 +20,9 @@ block content
       
       span.card
         span.card-image(style='background-image:url(/static/img/card1.png)')
-          span.h3.bg-title(data-component='MediumEditor' data-props={field:'home_startegies_incl'})
-            span.green Inclusive Business
+          span.h3.bg-title
+            span.green(data-component='Inplace' data-props={field:'home_startegies_incl'}) 
+              | Inclusive Business
         span.card-content
           span.card-text.eqHeight(data-component='MediumEditor' data-props={field:'home_startegies_incl_d'})
             | Creating inclusive economic opportunities though the 
@@ -31,8 +32,9 @@ block content
             
       span.card
         span.card-image(style='background-image:url(/static/img/card2.png)')
-          span.h3.bg-title(data-component='MediumEditor' data-props={field:'home_startegies_glob'})
-            span.purple Global Inclusive Leadership
+          span.h3.bg-title
+            span.purple(data-component='Inplace' data-props={field:'home_startegies_glob'}) 
+              | Global Inclusive Leadership
         span.card-content
           span.card-text.eqHeight(data-component='MediumEditor' data-props={field:'home_startegies_glob_d'})
             | Developing #[strong transformational leadership] and next generation inclusive leaders who are ethical, purpose-driven and global-minded
