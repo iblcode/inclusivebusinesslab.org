@@ -30,3 +30,5 @@ penguin run \
             --api-key "$FILEPICKER_API_KEY" \
             --secret "$FILEPICKER_API_SECRET" \
         ]
+
+# https://penguin.inclusivebusinesslab.org || http://localhost:3000

@@ -1,0 +1,11 @@
+{
+  "fields": [
+    ["title", { "localized": false }],
+    ["date", { "localized": false }],
+    ["tags", { "localized": false }],
+    ["teaser", { "localized": false }],
+    ["content1", { "localized": false }],
+    ["image", { "localized": false }],
+    ["content2", { "localized": false }]
+  ]
+}

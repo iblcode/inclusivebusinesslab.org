@@ -9,7 +9,8 @@
     "buildOnly": "penguin build",
     "heroku-postbuild": "penguin pack -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ]",
     "start": "bash start.sh",
-    "listusers": "heroku run bash -c 'node_modules/.bin/penguin-passwordless list_users --pg-url $DATABASE_URL'"
+    "listusers": "heroku run bash -c 'node_modules/.bin/penguin-passwordless list_users --pg-url $DATABASE_URL'",
+    "test": "npm run build && http-server ./build -o -c-1"
   },
   "penguin": {
     "languages": [
@@ -27,11 +28,12 @@
     },
     "globals": [
       "teamMembers",
-      "stories",
+      ["stories", { "localized": false }],
       "global-footer-link-strategies",
       "global-footer-link-stories",
       "global-footer-link-team",
-      "global-footer-link-contact"
+      "global-footer-link-contact",
+      "violet"
     ]
   },
   "dependencies": {

@@ -32,15 +32,16 @@ html
             //- a(data-component='Link' data-props={href:'/resources'})
             //-     span.icon-download
             //-     | Resources
-            .lang-selector(data-component='LangSelector')
-              span.current-language
-                span.icon-globus
-                span(data-show) English
-              ul
-                li
-                  a(href='/en' data-selector='en') English
-                li
-                  a(href='/cn' data-selector='cn') Chinese
+            block language
+              .lang-selector(data-component='LangSelector')
+                span.current-language
+                  span.icon-globus
+                  span(data-show) English
+                ul
+                  li
+                    a(href='/en' data-selector='en') English
+                  li
+                    a(href='/cn' data-selector='cn') Chinese
           section#header-main
             a#logo(data-props={href:'/'} data-component='Link') Inclusive Business Lab
             nav#main-menu
