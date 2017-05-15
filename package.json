@@ -28,12 +28,7 @@
     },
     "globals": [
       "teamMembers",
-      [
-        "stories",
-        {
-          "localized": false
-        }
-      ],
+      [ "stories", { "localized": false } ],
       "global-footer-link-strategies",
       "global-footer-link-stories",
       "global-footer-link-team",

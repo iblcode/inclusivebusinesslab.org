@@ -1,5 +1,5 @@
 {
-  "fields": [
+  "keys": [
     ["title", { "localized": false }],
     ["date", { "localized": false }],
     ["tags", { "localized": false }],
