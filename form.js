@@ -1,8 +1,10 @@
 const google = require('googleapis')
 const express = require('express')
+const cors = require('cors')
 
 module.exports = () => {
   const app = express();
+  app.use(cors())
 
   app.get('/form', (req, res) => {
     query( 'get', {}, (response) => {
