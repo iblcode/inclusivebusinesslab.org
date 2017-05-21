@@ -1,4 +1,13 @@
 extends /includes/base
+
+block styles
+  style.
+    .tm-img{
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
 block content
   section#hero
     .hero-layer.paralax(style='background-image: url(/static/img/hero.team.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.team.jpg'})

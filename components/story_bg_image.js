@@ -75,13 +75,13 @@ export function render ( ctx, props ) {
     const img = `<div class="story-image" style="background-image: url('${imgUrl}')"></div>`
     images.push(img)
   }
-  // return "hallo welt"
+
   if ( images.length !== 0 ) {
     var html = `
       <div class="square-images ${ classFromNumber(images.length) }">
         ${ images.join( '' ) }
       </div>`
-    return html
+    return { replace: html }
   }
   else { return { replace: '' } }
 
