@@ -16,16 +16,16 @@ export function mount(ctx, props, el) {
       document.getElementById('spinner').style.display = 'block'
 
       var request = new XMLHttpRequest()
-      request.open("GET","/form")
+      request.open("GET", "https://penguin.inclusivebusinesslab.org/form")
 
-      request.addEventListener('load', function(event) {
-         if (request.status == 200) {
-          success(request.responseText, city, school)
-         } else {
-          document.getElementById("action").innerHTML = "Error! Contact us."
-          console.warn(request.statusText, request.responseText)
-         }
-      })
+      request.onload = function() {
+        success(request.responseText, city, school)
+      }
+      
+      request.onerror = function() {
+        document.getElementById("action").innerHTML = "Error! Contact us."
+        console.warn(request.statusText, request.responseText)
+      }
 
       request.send()
     }
