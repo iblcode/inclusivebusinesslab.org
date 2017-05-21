@@ -1,6 +1,6 @@
 export function mount(ctx, props, el) {
   var request = new XMLHttpRequest()
-  request.open("GET", props.query)
+  request.open("GET", `https://penguin.inclusivebusinesslab.org${props.query}`)
 
   var data = {}
 
