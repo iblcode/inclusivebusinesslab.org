@@ -2,14 +2,13 @@ export function mount(ctx, props, el) {
   var request = new XMLHttpRequest()
   request.open("GET", `https://penguin.inclusivebusinesslab.org${props.query}`)
 
-  request.addEventListener('load', function(event) {
-     if (request.status == 200) {
-      renderList(JSON.parse(request.responseText).content)
-     } else {
-      document.getElementById("action").innerHTML = "Error! Contact us."
-      console.warn(request.statusText, request.responseText)
-     }
-  })
+  request.onload = function() {
+    renderList(JSON.parse(request.responseText).content)
+  }
+  request.onerror = function() {
+    document.getElementById("action").innerHTML = "Error! Contact us."
+    console.warn(request.statusText, request.responseText)
+  }
 
   request.send()
 

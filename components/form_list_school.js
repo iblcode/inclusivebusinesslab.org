@@ -4,15 +4,13 @@ export function mount(ctx, props, el) {
 
   var data = {}
 
-  request.addEventListener('load', function(event) {
-     if (request.status == 200) {
-      data = JSON.parse(request.responseText).content
-     } else {
-      document.getElementById("action").innerHTML = "Error! Contact us."
-      console.warn(request.statusText, request.responseText)
-     }
-  })
-
+  request.onload = function() {
+    data = JSON.parse(request.responseText).content
+  }
+  request.onerror = function() {
+    document.getElementById("action").innerHTML = "Error! Contact us."
+    console.warn(request.statusText, request.responseText)
+  }
   request.send()
 
   var trigger = document.getElementById(props.filter)
