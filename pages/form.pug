@@ -1,0 +1,123 @@
+extends /includes/base
+
+block nav
+  nav#top-menu
+    .lang-selector(data-component='LangSelector')
+      span.current-language
+        span.icon-globus
+        span(data-show) English
+      ul
+        li
+          a(href='/en' data-selector='en') English
+        li
+          a(href='/cn' data-selector='cn') Chinese
+      
+block footer
+  
+block content
+  section#hero(style='height: 350px;')
+    .hero-layer.paralax(style='background-image: url(/static/img/hero.contact.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.contact.jpg'})
+    .hero-layer.hero-layer-text.penguin-bg-image-sibling
+      .hero-layer-text-v.active
+        .wrapper3
+          h1.bg-title.penguin-sp
+            span.orange(data-component='Inplace' data-props={field:'title'}) Form
+            
+            
+  .wrapper3.pt-120.pb-60
+    .hello.hello-inner.text2(data-component='MediumEditor' data-props={field:'content'})
+      p
+        | Hello! Start with the form by providing your city and school!
+        
+  .wrapper3.pb-90
+    .hello.hello-inner.text2
+      
+      .form-group(style="text-align:left; width:33.333%; margin-left: 33.333%;")
+        label(for="city" data-component='Inplace' data-props={field:'city_label'}) Select your city
+        select.form-control(data-component='FormListCity' data-props={query:'/cities'})#city
+          option(value="") Loading...
+          
+      .form-group(style="text-align:left; width:33.333%; margin-left: 33.333%;")
+        label(for="school" data-component='Inplace' data-props={field:'school_label'}) Select your school
+        select.form-control(data-component='FormListSchool' data-props={query:'/schools', filter: 'city'})#school
+          option(value="") Select your city!
+          
+    .hello.hello-inner#action
+      button.btn(data-component='Form' data-props={field:'send'}) Send
+      .spinner#spinner(style='margin: 20px auto; display: none')
+        .double-bounce1
+        .double-bounce2
+      
+        
+  .wrapper3.pt-120.pb-90
+    .hello.hello-inner.text2(data-component='MediumEditor' data-props={field:'content2'})
+      p
+        | For problems and general inquires, please contact us at:
+        br
+        a(href='mailto:office@inclusivebusinesslab.org') office@inclusivebusinesslab.org
+              
+        
+block styles
+  style.
+    .form-control {
+      display: block;
+      width: 100%;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+    .pb-60 {
+      padding-bottom: 60px !important;
+    }
+    
+    @-webkit-keyframes sk-bounce {
+      0%, 100% { -webkit-transform: scale(0.0) }
+      50% { -webkit-transform: scale(1.0) }
+    }
+
+    @keyframes sk-bounce {
+      0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+      } 50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+      
+    .spinner {
+      width: 40px;
+      height: 40px;
+
+      position: relative;
+      margin: 100px auto;
+    }
+
+    .double-bounce1, .double-bounce2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #333;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+      animation: sk-bounce 2.0s infinite ease-in-out;
+    }
+
+    .double-bounce2 {
+      -webkit-animation-delay: -1.0s;
+      animation-delay: -1.0s;
+    }

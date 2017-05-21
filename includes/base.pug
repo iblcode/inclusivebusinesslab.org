@@ -11,10 +11,9 @@ html
     link(rel='stylesheet', type='text/css', href='/static/css/ui.css')
     link(rel='stylesheet', type='text/css', href='/static/css/style.css')
 
-    //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-    //- JUST FOR DEVELOPMENT!!
+    block styles
+      
     script(src='/static/js/jquery.min.js')
-
     script(src='/static/js/slick/slick.min.js')
     script(src='/static/js/isotope.pkgd.min.js')
     script(src='/static/js/packery-mode.pkgd.js')
@@ -25,46 +24,48 @@ html
     div#container
       header#header
         .wrapper
-          nav#top-menu
-            //- a(data-component='Link' data-props={href:'/feedback'})
-            //-     span.icon-comment
-            //-     | Feedback
-            //- a(data-component='Link' data-props={href:'/resources'})
-            //-     span.icon-download
-            //-     | Resources
-            block language
-              .lang-selector(data-component='LangSelector')
-                span.current-language
-                  span.icon-globus
-                  span(data-show) English
+          block nav
+            nav#top-menu
+              //- a(data-component='Link' data-props={href:'/feedback'})
+              //-     span.icon-comment
+              //-     | Feedback
+              //- a(data-component='Link' data-props={href:'/resources'})
+              //-     span.icon-download
+              //-     | Resources
+              block language
+                .lang-selector(data-component='LangSelector')
+                  span.current-language
+                    span.icon-globus
+                    span(data-show) English
+                  ul
+                    li
+                      a(href='/en' data-selector='en') English
+                    li
+                      a(href='/cn' data-selector='cn') Chinese
+            section#header-main
+              a#logo(data-props={href:'/'} data-component='Link') Inclusive Business Lab
+              nav#main-menu
                 ul
-                  li
-                    a(href='/en' data-selector='en') English
-                  li
-                    a(href='/cn' data-selector='cn') Chinese
-          section#header-main
-            a#logo(data-props={href:'/'} data-component='Link') Inclusive Business Lab
-            nav#main-menu
-              ul
-                li(data-component='BaseLink' data-props={field:'global-footer-link-strategies', defaultURL:'/strategies'}) Strategies
-                li(data-component='BaseLink' data-props={field:'global-footer-link-stories', defaultURL:'/stories'}) Stories
-                li(data-component='BaseLink' data-props={field:'global-footer-link-team', defaultURL:'/team'}) The Team
-                li(data-component='BaseLink' data-props={field:'global-footer-link-contact', defaultURL:'/contact'}) Contact
+                  li(data-component='BaseLink' data-props={field:'global-footer-link-strategies', defaultURL:'/strategies'}) Strategies
+                  li(data-component='BaseLink' data-props={field:'global-footer-link-stories', defaultURL:'/stories'}) Stories
+                  li(data-component='BaseLink' data-props={field:'global-footer-link-team', defaultURL:'/team'}) The Team
+                  li(data-component='BaseLink' data-props={field:'global-footer-link-contact', defaultURL:'/contact'}) Contact
                 
                 
     block content
 
     include /includes/cms
-
-    footer#footer
-      .wrapper
-        nav
-          a(data-component='LinkEditor' data-props={field:'global-footer-link-strategies', defaultURL:'/{{lang}}/strategies'}) Strategies
-          a(data-component='LinkEditor' data-props={field:'global-footer-link-stories', defaultURL:'/{{lang}}/stories'})  Stories
-          a(data-component='LinkEditor' data-props={field:'global-footer-link-team', defaultURL:'/{{lang}}/team'})  The Team
-          a(data-component='LinkEditor' data-props={field:'global-footer-link-contact', defaultURL:'/{{lang}}/contact'})  Contact
-        a#footer-logo(data-component='Link' data-props={href:'/'})
-        address#copy
-          | Inclusive Business Lab &
-          br
-          | Inclusive Business Foundation
+    
+    block footer
+      footer#footer
+        .wrapper
+          nav
+            a(data-component='LinkEditor' data-props={field:'global-footer-link-strategies', defaultURL:'/{{lang}}/strategies'}) Strategies
+            a(data-component='LinkEditor' data-props={field:'global-footer-link-stories', defaultURL:'/{{lang}}/stories'})  Stories
+            a(data-component='LinkEditor' data-props={field:'global-footer-link-team', defaultURL:'/{{lang}}/team'})  The Team
+            a(data-component='LinkEditor' data-props={field:'global-footer-link-contact', defaultURL:'/{{lang}}/contact'})  Contact
+          a#footer-logo(data-component='Link' data-props={href:'/'})
+          address#copy
+            | Inclusive Business Lab &
+            br
+            | Inclusive Business Foundation

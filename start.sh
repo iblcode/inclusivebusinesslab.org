@@ -12,6 +12,7 @@ penguin run \
         [ penguin.js/git \
             --url "$GIT_REPO" \
             --branch gh-pages ] \
+        --middleware [ ./form ] \
         --middleware \
         [ penguin-passwordless \
             --delivery \
@@ -30,5 +31,6 @@ penguin run \
             --api-key "$FILEPICKER_API_KEY" \
             --secret "$FILEPICKER_API_SECRET" \
         ]
+
 
 # https://penguin.inclusivebusinesslab.org || http://localhost:3000

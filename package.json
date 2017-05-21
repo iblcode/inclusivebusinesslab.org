@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "IBLs Website. Made 3/2017",
   "scripts": {
-    "serve": "penguin serve -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ] --middleware [ penguin-filestack/middleware --api-key APkI1JP79Q5Wh28llgIj6z --secret QD3MEQPQDNFNRLGOJOCDIVGWPQ ]",
+    "serve": "penguin serve -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ] --middleware [ ./form ] --middleware [ penguin-filestack/middleware --api-key APkI1JP79Q5Wh28llgIj6z --secret QD3MEQPQDNFNRLGOJOCDIVGWPQ ]",
     "prebuild": "penguin pack -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ]",
     "build": "penguin build",
     "buildOnly": "penguin build",
@@ -28,7 +28,12 @@
     },
     "globals": [
       "teamMembers",
-      [ "stories", { "localized": false } ],
+      [
+        "stories",
+        {
+          "localized": false
+        }
+      ],
       "global-footer-link-strategies",
       "global-footer-link-stories",
       "global-footer-link-team",
@@ -38,6 +43,7 @@
   },
   "dependencies": {
     "express": "^4.15.2",
+    "googleapis": "^19.0.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "penguin-filestack": "1.0.1",
@@ -50,7 +56,7 @@
     "penguin-pug-transform": "^0.1.1",
     "penguin-save-button": "0.0.2",
     "penguin-saved-indicator": "1.0.2",
-    "penguin.js": "^1.0.0-rc.19",
+    "penguin.js": "^1.0.0-rc.20",
     "pikaday": "^1.5.1",
     "redux": "^3.6.0",
     "slugify": "^1.1.0",
