@@ -717,7 +717,7 @@ blockquote footer:before {
   margin: auto;
 }
 
-.ibl-video:after {
+/*.ibl-video:after {
   position: absolute;
   display: block;
   width: 60px;
@@ -733,7 +733,7 @@ blockquote footer:before {
 
 .ibl-video.active:after {
   display: none;
-}
+}*/
 
 .ibl-video iframe,
 .ibl-video embed,

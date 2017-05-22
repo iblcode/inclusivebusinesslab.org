@@ -6,6 +6,7 @@
     ["teaser", { "localized": false }],
     ["content1", { "localized": false }],
     ["image", { "localized": false }],
-    ["content2", { "localized": false }]
+    ["content2", { "localized": false }],
+    ["video", { "localized": false }]
   ]
 }
