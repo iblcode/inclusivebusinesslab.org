@@ -150,14 +150,14 @@ ibl = {
     }
   },
   iblvideo: function() {
-    $(".ibl-video").each(function() {
-      $(this).on('click', function() {
-        if (!this.__done) {
-          this.__done = true;
-          $(this).html($(this).find('[type="ibl/video"]').html()).addClass('active');
-        }
-      })
-    })
+    // $(".ibl-video").each(function() {
+    //   $(this).on('click', function() {
+    //     if (!this.__done) {
+    //       this.__done = true;
+    //       $(this).html($(this).find('[type="ibl/video"]').html()).addClass('active');
+    //     }
+    //   })
+    // })
   },
   teamSlider: function() {
     $(".t-slider-holder").each(function() {
