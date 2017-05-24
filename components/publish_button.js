@@ -5,6 +5,4 @@ export function mount(ctx, props, el) {
   })
 }
 
-export function render(ctx, props) {
-  return {replace: ''}
-}
+export function render(ctx, props) { return {replace: ''} }
