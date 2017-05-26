@@ -1,7 +1,7 @@
 extends /includes/base
 block content
   .wrapper3(style='margin-top: 180px; margin-bottom: 180px;')
-    h3.text-center(style='padding-bottom: 50px;') ADD #[i NEXT GEN LEADERS]
+    h3.text-center(style='padding-bottom: 50px;') ADD #[i LEADERS]
     
     
     ul.team-list
@@ -9,6 +9,11 @@ block content
         .team-member
           span.tm-img(style='background-image: url(http://placehold.it/300x300); background-size: cover;' data-component="BgImage" data-props={field: 'image', defaultURL: 'http://placehold.it/300x300'})
           strong(data-component="Inplace" data-props={field: 'name'}) Dr. Name Lastname
+          label Type&nbsp;
+          select(data-component="TeamType" data-props={field: 'type'} style="display: inline-block; position: relative; text-align: center; vertical-align: middle; font-weight: 700; font-size: 15px; letter-spacing: .1em; padding: 12px 30px 13px; background: #F9811B; border: 1px solid #F9811B; border-radius: 50px; color: white; text-transform: uppercase; cursor: pointer; -webkit-transition: box-shadow 0.2s; -moz-transition: box-shadow 0.2s; transition: box-shadow 0.2s; margin: 5px;")
+            option(value="") Select...
+            option(value="nextgen") NEXT GEN LEADERS
+            option(value="stem") STEM+ Leadership Team
       li
         .member-info(style='opacity: 1; visibility: visible; -webkit-transform: scale(1) rotate(0); -moz-transform: scale(1) rotate(0); transform: scale(1) rotate(0); top: -30px;')
           p(data-component='MediumEditor' data-props={field: 'content', toolbar: {buttons: ['bold', 'italic']}})

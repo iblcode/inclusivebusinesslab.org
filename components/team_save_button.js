@@ -22,16 +22,17 @@ function saveGloabl (ctx, props, el) {
   const name = fields.name
   const content = fields.content
   const url = fields.url
+  const type = fields.type
 
   const teamMember = find({ id }, teamMembers)
   const newTeamMembers = (
     teamMember == null
-      ? [...teamMembers, { id, image, name, content, url }]
+      ? [...teamMembers, { id, image, name, content, url, type }]
       : (
         teamMembers.map(
           m => (
             m.id === id
-              ? { id, image, name, content, url }
+              ? { id, image, name, content, url, type }
               : m
           )
         )
