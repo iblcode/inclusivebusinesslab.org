@@ -19,6 +19,27 @@ html
     script(src='/static/js/packery-mode.pkgd.js')
     script(src='/static/js/script.js')
     script(src='/static/js/jquery.matchHeight-min.js')
+      
+    style(data-component='OnlyEditor').
+      [contenteditable=true]:hover {
+        outline-color: rgba(255, 0, 0, 0.3);
+        outline-offset: 0px;
+        outline-style: dotted;
+        outline-width: thin;
+      }
+
+      [contenteditable=true]:empty{
+        background-color: rgba(255, 0, 0, 0.3);
+        //- min-width: 35px;
+      }
+
+      [contenteditable=true]:empty:before{
+        content: "empty";
+      }
+      [contenteditable=true]:empty:focus:before{
+        background-color: rgba(0, 255, 0, 0.3);
+        content: none;
+      }
 
   body
     div#container
