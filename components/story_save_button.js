@@ -2,34 +2,37 @@ import find from 'lodash/fp/find'
 import includes from 'lodash/fp/includes'
 import { update } from 'penguin.js'
 
-export function mount (ctx, props, el) {
+export function mount(ctx, props, el) {
   const { store } = ctx
 
-  if ( window.location.href.indexOf("new=true") !== -1 && includes(store.getState().fields.exists, ctx.language) ) {
+  if (
+    window.location.href.indexOf('new=true') !== -1 &&
+    includes(store.getState().fields.exists, ctx.language)
+  ) {
     document.head.insertAdjacentHTML('beforeend', style)
     document.body.insertAdjacentHTML('beforeend', template)
-    window.location.hash= "modal-story-save-button-warning"
-    document.getElementById('modal-story-save-button-warning-a').addEventListener('click', () => {
-      window.location.href = location.href.split(/\?|#/)[0]
-    })
-    document.getElementById('modal-story-save-button-warning-a-goback').addEventListener('click', () => {
-      window.location.href = `/en/stories`
-    })
-
+    window.location.hash = 'modal-story-save-button-warning'
+    document
+      .getElementById('modal-story-save-button-warning-a')
+      .addEventListener('click', () => {
+        window.location.href = location.href.split(/\?|#/)[0]
+      })
+    document
+      .getElementById('modal-story-save-button-warning-a-goback')
+      .addEventListener('click', () => {
+        window.location.href = `/en/stories`
+      })
   }
 
-
-
-  el.addEventListener("click", e => {
+  el.addEventListener('click', e => {
     e.preventDefault()
 
     const { store } = ctx
 
-    if ( !includes(store.getState().fields.exists, ctx.language) ) {
-      if ( store.getState().fields.exists == null ) {
+    if (!includes(store.getState().fields.exists, ctx.language)) {
+      if (store.getState().fields.exists == null) {
         store.dispatch(update({ exists: [ctx.language] }))
-      }
-      else {
+      } else {
         const ex = store.getState().fields.exists
         ex.push(ctx.language)
         store.dispatch(update({ exists: ex }))
@@ -41,7 +44,7 @@ export function mount (ctx, props, el) {
   })
 }
 
-function saveGloabl (ctx, props, el) {
+function saveGloabl(ctx, props, el) {
   const id = window.location.pathname.split('/')[3]
   const { store } = ctx
   const { fields } = store.getState()
@@ -61,31 +64,31 @@ function saveGloabl (ctx, props, el) {
   const img2 = fields['image-1']
   const img3 = fields['image-2']
   const content2 = fields.content2
-  const current = { id, title, date, tags, teaser, content1, img1, img2, img3, content2 }
+  const current = {
+    id,
+    title,
+    date,
+    tags,
+    teaser,
+    content1,
+    img1,
+    img2,
+    img3,
+    content2
+  }
 
   const element = find({ id }, globalElements)
-  const newElements = (
-    element == null
-      ? [...globalElements, current]
-      : (
-        globalElements.map(
-          m => (
-            m.id === id
-              ? current
-              : m
-          )
-        )
-      )
-  )
+  const newElements = element == null
+    ? [...globalElements, current]
+    : globalElements.map(m => (m.id === id ? current : m))
 
   // set the new global element
   store.dispatch(update({ stories: newElements }))
 }
 
-export function render (ctx, props) {
+export function render(ctx, props) {
   return { replace: '' }
 }
-
 
 const template = `
 <div id="modal-story-save-button-warning" class="overlay">
