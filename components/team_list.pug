@@ -1,6 +1,23 @@
+- var production = (process.env.PENGUIN_ENV === 'production')
+-
+  function compare(a, b) {
+    // b first!
+    if ( b.startdate == null || b.startdate == '' ) { return 1 }
+    // a first!
+    if ( a.startdate == null || a.startdate == '' ) { return -1 }
+    // a first! (greater date)
+    if ( a.startdate > b.startdate) { return -1 }
+    // b first! (greater date)
+    if ( b.startdate > a.startdate ) { return 1 }
+    return 0;
+  }
+
+
 unless (fields.teamMembers == null)
   
+  - var sortedTeamMembers = fields.teamMembers.sort(compare)
   - var small = (props.type == 'stem' ? true : false )
+  
   if small
     style.
       @media (min-width: 681px) {
@@ -18,15 +35,32 @@ unless (fields.teamMembers == null)
         }
       }
   
-  each m in fields.teamMembers
+  each m in sortedTeamMembers
     //- id, image, name, content, type
     if ( props.type == m.type )
-      - var production = (process.env.PENGUIN_ENV === 'production')
       
       li(class=small ? 'small' : '')
         .team-member
           span.tm-img(style=`background-image: url(${m.image}); background-size: cover;`)
           strong !{m.name}
+          small !{m.startdate}!{ (m.enddate != null && m.enddate != '') ? ' - ' + m.enddate : ''}
+          if ( small && !production )
+            br
+            a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}`) Edit
+        unless small
+          .member-info
+            p !{m.content}
+            unless (m.url === '' || m.url == null)
+              a.btn.btn-alt.btn-medium(href=m.url) Read more
+            unless production
+              a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}`) Edit
+              
+    //- TYPE MISSING!
+    else if ( ( m.type == null || m.type === '' ) && !production && props.type == 'stem' )
+      li(class=small ? 'small' : '' style='background-color: #F9211B; padding: 15px; opacity: 0.5;')
+        .team-member
+          span.tm-img(style=`background-image: url(${m.image}); background-size: cover;`)
+          strong !{m.name} #[br] #[small TYPE MISSING!]
           if ( small && !production )
             a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}`) Edit
         unless small
