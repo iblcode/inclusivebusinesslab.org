@@ -24,7 +24,7 @@ unless (fields.teamMembers == null)
     //- id, image, name, content, type
     if ( props.type == m.type )
       
-      li(class=small ? 'small' : '')
+      li(class=small ? 'small' : '').eqHeight
         .team-member
           .wrapper
             .tm-img(style=`background-image: url(${m.image}); background-size: cover;`)
