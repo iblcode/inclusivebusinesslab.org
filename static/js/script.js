@@ -122,7 +122,7 @@ ibl = {
     init: function() {
       $(".isotope2").each(function(i, el) {
         $(el).find('.isotope-item-v').each(function(ii, elem) {
-        	if (elem.querySelector('[data-date]').dataset.date > Math.floor(Date.now() / 1000)) {
+          if (elem.querySelector('[data-date]').dataset.date > Math.floor(Date.now() / 1000)) {
             console.log(elem)
             $(elem).addClass('upcomming')
             elem.dataset.type = 'Upcoming'
@@ -223,14 +223,44 @@ $(document).ready(function() {
   //   el.css('marginLeft', -el.outerWidth() / 2)
   // })
 
-  $(".team-list li").on('click', function() {
-    $(this).toggleClass('active');
-  })
+  // $(".team-list li").on('click', function() {
+  //   $(this).toggleClass('active');
+  // })
 
   ibl.init()
 
   $(function() {
     $('.eqHeight').matchHeight();
+  });
+
+  // ++++++++++++++
+
+  function bodyOverflow() {
+    if ($(".member-info:visible").length) {
+      $('body').css('overflow', 'hidden');
+    } else {
+      $('body').css('overflow', 'auto');
+    }
+  };
+
+  $.fn.appear = function() {
+    $(this).addClass('js-visible');
+  };
+
+  $.fn.disappear = function() {
+    $(this).removeClass('js-visible');
+  };
+
+  $('.team-member:not(.small .team-member)').not('.js-visible').click(function() {
+    $('.team-member').disappear();
+    $(this).appear();
+    bodyOverflow();
+  });
+
+  $('.info-close').click(function() {
+    $('.team-member').disappear();
+    bodyOverflow();
+    return false;
   });
 
 });
