@@ -49,7 +49,7 @@ unless (fields.teamMembers == null)
             .tm-info
               .member-title
                 strong !{m.name}
-                small !{m.startdate}!{ (m.enddate != null && m.enddate != '') ? ' — ' + m.enddate : ''}
+                small !{m.startdate}!{(m.enddate != null && m.enddate != '') ? ' — ' + m.enddate : ' - current'}
               if ( small && !production )
                 br
                 a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}`) Edit
