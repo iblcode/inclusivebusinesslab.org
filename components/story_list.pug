@@ -26,10 +26,14 @@ if ( fields.stories != null )
     //- - var production = (process.env.PENGUIN_ENV === 'production')
     
     //- handle teaser
+    //- if ( m.teaser != null && m.teaser != '' )
+    //-   - var teaser = m.teaser.replace(/<(?:.|\n)*?>/gm, '').replace(/^(.{200}[^\s]*).*/, "$1")
+    //-   if props.layout
+    //-     - var teaserShort = m.teaser.replace(/<(?:.|\n)*?>/gm, '').replace(/^(.{65}[^\s]*).*/, "$1")
     if ( m.teaser != null && m.teaser != '' )
-      - var teaser = m.teaser.replace(/<(?:.|\n)*?>/gm, '').replace(/^(.{200}[^\s]*).*/, "$1")
+      - var teaser = m.teaser.replace(/<\/h[1-6]>/, ". ").replace(/<(?:.)*?>/gm, ' ').replace(/^(.{200}[^\s]*).*/, "$1").replace(/&nbsp;/g, " ")
       if props.layout
-        - var teaserShort = m.teaser.replace(/<(?:.|\n)*?>/gm, '').replace(/^(.{65}[^\s]*).*/, "$1")
+        - var teaserShort = m.teaser.replace(/<\/h[1-6]>/, ". ").replace(/<(?:.)*?>/gm, ' ').replace(/^(.{65}[^\s]*).*/, "$1").replace(/&nbsp;/g, " ")
     else
       - var teaser = ""
       - var teaserShort = ""

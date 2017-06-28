@@ -831,6 +831,25 @@ body.is-touchscreen-false .lang-selector:hover ul {
   background-size: cover;
   margin: 0 auto;
   display: inline-block;
+  background-image: url(../img/img_placeholder.png);
+  background-color: #e4e4e4;
+  position: relative;
+  z-index: -1;
+}
+
+.square-images>div:nth-child(2n) {
+  background-color: #cccccc;
+}
+
+.square-images > div:after {
+  position: absolute;
+  display: inline-block;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(91, 91, 91, 0.5)
 }
 
 .square-images.one > div {
@@ -838,13 +857,25 @@ body.is-touchscreen-false .lang-selector:hover ul {
   max-width: 960px;
 }
 
+.square-images.one > div:after {
+  content: 'MIN WIDTH: 960px | MIN HEIGHT: 480px'
+}
+
 .square-images.two > div {
   width: 50%;
   max-width: 660px
 }
 
+.square-images.two > div:after {
+  content: 'MIN WIDTH: 660px | MIN HEIGHT: 480px'
+}
+
 .square-images.three > div {
   width: 33.333%;
+}
+
+.square-images.three > div:after {
+  content: 'MIN WIDTH: 480px | MIN HEIGHT: 480px'
 }
 
 .challenges-box {
