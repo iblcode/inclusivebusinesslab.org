@@ -834,7 +834,7 @@ body.is-touchscreen-false .lang-selector:hover ul {
   background-image: url(../img/img_placeholder.png);
   background-color: #e4e4e4;
   position: relative;
-  z-index: -1;
+  /*z-index: -1;*/
 }
 
 .square-images>div:nth-child(2n) {
@@ -849,7 +849,8 @@ body.is-touchscreen-false .lang-selector:hover ul {
   width: 100%;
   text-align: center;
   font-size: 12px;
-  color: rgba(91, 91, 91, 0.5)
+  color: rgba(91, 91, 91, 0.5);
+  pointer-events: none;
 }
 
 .square-images.one > div {

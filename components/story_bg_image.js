@@ -15,8 +15,6 @@ export function mount ( ctx, props, el ) {
   options.forEach( ( e ) => { if ( e.value == selected ) { e.selected = true } })
   el.classList.add( classFromNumber(selected) )
 
-
-
   document.getElementById( 'story-bg-image-select' ).addEventListener( 'change', (e) => {
     store.dispatch( update( { [ props.field ] : e.target.value } ) )
     el.classList.remove( 'one', 'two', 'three')
@@ -94,7 +92,7 @@ function classFromNumber (n) {
 }
 
 const template = `
-<span style="position: absolute; background-color: rgba(0, 0, 0, 0.65); border-radius: 0px 0px 10px 10px; left: 50%; margin-right: -50%; transform: translate(-50%, 0);">
+<span style="position: absolute; background-color: rgba(0, 0, 0, 0.65); border-radius: 0px 0px 10px 10px; left: 50%; margin-right: -50%; transform: translate(-50%, 0); z-index: 999">
   <p style="padding: 15px; color: white;">How many images shall be shown?
     <select id="story-bg-image-select">
       <option value="1">one</option>
