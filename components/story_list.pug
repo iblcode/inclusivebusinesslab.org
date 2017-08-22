@@ -119,7 +119,8 @@ if ( fields.stories != null )
       //- news
       when "news"
         span.isotope-item(data-type='news')
-          span.ist-image(style=`background-image: url(${images[0]})`)
+          if images.length > 0
+            span.ist-image(style=`background-image: url(${images[0]})`)
           span.ist-content
             span.h4
               a(href=`/${language}/stories/${ m.id }` style='color: white;') #{ m.title || "no title" }
