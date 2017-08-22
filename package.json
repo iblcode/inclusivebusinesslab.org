@@ -13,10 +13,7 @@
     "test": "npm run build && http-server ./build -o -c-1"
   },
   "penguin": {
-    "languages": [
-      "en",
-      "cn"
-    ],
+    "languages": ["en", "cn"],
     "components": {
       "Link": "penguin-link",
       "Filestack": "penguin-filestack",
@@ -57,7 +54,7 @@
     "penguin-pug-transform": "^0.1.1",
     "penguin-save-button": "0.0.2",
     "penguin-saved-indicator": "1.0.2",
-    "penguin.js": "^1.0.0-rc.20",
+    "penguin.js": "^1.0.0-rc.22",
     "pikaday": "^1.5.1",
     "redis": "^2.7.1",
     "redux": "^3.6.0",
