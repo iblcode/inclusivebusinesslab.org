@@ -36,7 +36,7 @@ unless (fields.teamMembers == null)
       }
     )
 
-  - var small = (props.type == 'stem' ? true : false )  
+  - var small = (props.type == 'stem' || 'former' ? true : false )  
   //- each m in sortedTeamMembers
   each m in currentSorted.concat(pastSorted)
     //- id, image, name, content, type
@@ -45,7 +45,8 @@ unless (fields.teamMembers == null)
       li(class=small ? 'small' : '').eqHeight
         .team-member
           .wrapper
-            .tm-img(style=`background-image: url(${m.image}); background-size: cover;`)
+            if ( m.image )
+              .tm-img(style=`background-image: url(${m.image}); background-size: cover;`)
             .tm-info
               .member-title
                 strong !{m.name}
