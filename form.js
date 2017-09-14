@@ -3,37 +3,41 @@ const express = require('express')
 const cors = require('cors')
 const redis = require('redis')
 
-const client = redis.createClient(process.env.REDIS_URL)
+if (process.env.PENGUIN_ENV === 'production') {
+  const client = redis.createClient(process.env.REDIS_URL)
+}
 
 module.exports = () => {
   const app = express()
   app.use(cors())
 
-  app.get('/form', (req, res) => {
-    client.incr('iblid', (err, id) => {
-      if (err) {
-        console.log(err)
-        return res.status(500).send('error')
-      }
-
-      const response = {
-        range: 'id!A2',
-        majorDimension: 'ROWS',
-        values: [[id]]
-      }
-
-      query('set', response, updated => {
-        if (!('updatedCells' in updated)) {
+  if (process.env.PENGUIN_ENV === 'production') {
+    app.get('/form', (req, res) => {
+      client.incr('iblid', (err, id) => {
+        if (err) {
+          console.log(err)
           return res.status(500).send('error')
         }
-        console.log('id', parseInt(response.values[0][0]))
 
-        res.json({
-          id: parseInt(response.values[0][0])
+        const response = {
+          range: 'id!A2',
+          majorDimension: 'ROWS',
+          values: [[id]]
+        }
+
+        query('set', response, updated => {
+          if (!('updatedCells' in updated)) {
+            return res.status(500).send('error')
+          }
+          console.log('id', parseInt(response.values[0][0]))
+
+          res.json({
+            id: parseInt(response.values[0][0])
+          })
         })
       })
     })
-  })
+  }
 
   app.get('/schools', (req, res) => {
     query('getSchools', {}, response => {
