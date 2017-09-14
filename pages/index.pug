@@ -22,7 +22,35 @@ block content
       p(data-component='MediumEditor' data-props={field:'home_hello_text'}).
         #[strong Inclusive Business Lab] and #[strong Inclusive Business Foundation] work together to create an ecosystem that addresses systemic poverty and rich-poor gap issues.
         
-        
+  section.milestones-home
+    .wrapper
+      h3 Milestones
+    .milestones-home-container
+      .wrapper
+        .ml-col
+          a.ml-item
+            span.ml-img(style='background-image:url(/static/img/ml1.jpg)')
+            span.ml-item-content
+              span.ml-title We achieved something awesome!
+              .btn.btn-alt Read more
+              span.ml-date JAN 2017
+        .ml-col
+          a.ml-item
+            span.ml-img(style='background-image:url(/static/img/ml1.jpg)')
+            span.ml-item-content
+              span.ml-title We achieved something awesome!
+              .btn.btn-alt Read more
+              span.ml-date JAN 2017
+        .ml-col
+          a.ml-item
+            span.ml-img(style='background-image:url(/static/img/ml1.jpg)')
+            span.ml-item-content
+              span.ml-title We achieved something awesome!
+              .btn.btn-alt Read more
+              span.ml-date JAN 2017
+    .wrapper.wrapper-milestonesbtn
+      a.btn.btn-invert(data-component='LinkEditor' data-props={field:'home_milestones_btn', defaultURL:'/{{lang}}/milestones'}) All Milestones
+
   .strategies.wrapper2
     .text-center
       h3(data-component='MediumEditor' data-props={field:'home_strategies_title'}) OUR STRATEGIES
