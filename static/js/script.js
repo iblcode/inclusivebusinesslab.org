@@ -136,10 +136,13 @@ ibl = {
         })
       })
       $(".isotope,.isotope2").each(function() {
+        $( ".isotope-item:lt(10)", this).addClass('active');
         var scope = $(this);
+        this._isocurr = 10;
+        this._pause = false;
         var menuString = ibl.isotope.buildMenu(this);
         $(this).prepend(menuString);
-        var $grid = $('.isotope-content', this).isotope({itemSelector: '.isotope-item, .isotope-item-v', layoutMode: 'packery'});
+        var $grid = this._grid = $('.isotope-content', this).isotope({itemSelector: '.isotope-item, .isotope-item-v', layoutMode: 'packery'});
         $(".isotope-menu span", this).on('click', function() {
           if (!$(this).hasClass('active')) {
             var type = $(this).attr('data-filter');
@@ -152,6 +155,21 @@ ibl = {
           }
 
         })
+        $(window).on('resize scroll', function(){
+          if(scope[0]._pause==false){
+            scope[0]._pause = true;
+           if($(this).scrollTop() >= scope.offset().top-$(this).height()/2) {
+                scope[0]._isocurr += 10;
+                $( ".isotope-item:lt("+scope[0]._isocurr+")", scope[0]).addClass('active');
+                scope[0]._grid.isotope('layout');
+            }
+            setTimeout(function(){
+              scope[0]._pause = false;
+            }, 700)
+          }
+
+        })
+
       });
     }
   },
