@@ -1,4 +1,10 @@
 ibl = {
+  milestones:function(){
+    var max = 0;
+    $(".ml-item").each(function(){
+      max = Math.max(max, $(this).outerHeight())
+    }).height(max)
+  },
   paralax: function() {
     $(window).on('scroll load resize', function() {
       $(".hero-layer.paralax").each(function() {
