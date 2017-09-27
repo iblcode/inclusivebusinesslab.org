@@ -347,6 +347,11 @@
   width: calc(25% + 1px);
   width: -webkit-calc(25% + 1px);
   margin-left: -1px;
+  display: none;
+}
+
+.isotope-item.active{
+  display: block;
 }
 
 .isotope-item[data-type="news"] .ist-content {
