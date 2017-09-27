@@ -1,0 +1,55 @@
+extends /includes/base
+block content
+  section#hero
+    .hero-layer.paralax(style='background-image: url(/static/img/hero.contact.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.contact.jpg'})
+    .hero-layer.hero-layer-text.penguin-bg-image-sibling
+      .hero-layer-text-v.active
+        .wrapper3
+          h1.bg-title.penguin-sp
+            span.orange(data-component='Inplace' data-props={field:'title'}) Get Involved
+  .wrapper3.pt-120.pb-90(style='text-align:center;')
+    .hello.hello-inner.text2(data-component='MediumEditor' data-props={field:'content'})
+      p
+        | This is a Typeform integration example.
+      br
+        
+    a.typeform-share.button.btn(href='https://iblfeedback.typeform.com/to/vqwi2R', data-mode='popup', data-hide-headers='true', data-hide-footer='true', target='_blank') Launch me 
+    script.
+      (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
+
+        
+
+
+  #get-involved.get-involved-alt.pb-120
+    .hello.hello-inner.text2(data-component='MediumEditor' data-props={field:'conte2nt'})
+      p
+        | This is a bigger Typeform integration example.
+      br
+        
+    .wrapper2.involved-grid
+      .inv-item
+        .inv-item-content
+          h4
+            strong(data-component='MediumEditor' data-props={field:'subtitle_1'}) Roundtable 1
+          br
+          a.typeform-share.button.btn(href='https://iblfeedback.typeform.com/to/vqwi2R', data-mode='popup', data-hide-headers='true', data-hide-footer='true', target='_blank') Launch me 
+          script.
+            (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
+
+      .inv-item
+        .inv-item-content
+          h4
+            strong(data-component='MediumEditor' data-props={field:'subtitle_2'}) Roundtable 1
+          br
+          a.typeform-share.button.btn(href='https://iblfeedback.typeform.com/to/vqwi2R', data-mode='popup', data-hide-headers='true', data-hide-footer='true', target='_blank') Launch me 
+          script.
+            (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
+
+      .inv-item
+        .inv-item-content
+          h4
+            strong(data-component='MediumEditor' data-props={field:'subtitle_3'}) Roundtable 1
+          br
+          a.typeform-share.button.btn(href='https://iblfeedback.typeform.com/to/vqwi2R', data-mode='popup', data-hide-headers='true', data-hide-footer='true', target='_blank') Launch me 
+          script.
+            (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
