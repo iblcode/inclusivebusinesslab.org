@@ -234,7 +234,24 @@ $(document).ready(function() {
   $("#hero-arrow").on('click', function() {
     $("body,html").animate({scrollTop: $("#hero").height()})
   });
-  $(window).on('load', function() {});
+  $(window).on('load', function() {
+    setInterval(function(){
+      var max = 0;
+      $(".inv-item-content p").height('auto').each(function(){
+        var h = $(this).outerHeight();
+        if(h > max){
+          max = h;
+        }
+      }).each(function(){ this.style.height = max + 'px'; })
+
+    }, 777)
+    $(".inv-item-content p.medium-editor-element").on('keydown', function(e){
+      if(e.keyCode === 13){
+        e.preventDefault();
+        document.execCommand('insertHTML', false, '<br>');
+      }
+    });
+  });
   $(window).on('load resize', function() {
     $(".chk-content").each(function() {
       var el = $(this);
