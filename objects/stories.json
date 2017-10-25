@@ -11,6 +11,7 @@
     ["image-2", { "localized": false }],
     ["content2", { "localized": false }],
     ["exists", { "localized": false }],
-    ["video", { "localized": false }]
+    ["video", { "localized": false }],
+    ["sproutid", { "localized": false }]
   ]
 }

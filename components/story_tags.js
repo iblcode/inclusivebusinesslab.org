@@ -1,12 +1,12 @@
 import Taggle from 'taggle'
 import { update } from 'penguin.js'
 
-export function mount (ctx, props, el) {
+export function mount(ctx, props, el) {
   if (process.env.PENGUIN_ENV === 'production') return
-  const {store} = ctx
+  const { store } = ctx
 
-  var css = document.createElement("style")
-  css.type = "text/css"
+  var css = document.createElement('style')
+  css.type = 'text/css'
   css.innerHTML = style
   document.head.appendChild(css)
 
@@ -45,7 +45,9 @@ export function mount (ctx, props, el) {
           <a href="javascript:;" class="${selectLink}" data-tag="stem+">Stem+</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="vip weekly">VIP Weekly</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="leadership challenges">Leadership Challenges</a>.
-
+          <br>
+          To show a story as a milestone on the first page, tag it with <a href="javascript:;" class="${selectLink}" data-tag="milestone">Milestone</a>.
+          Heads up: Milestones will not be shown on the "Stories" page. So add the tag <a href="javascript:;" class="${selectLink}" data-tag="story">Story</a> to make sure it will appear there.
 
         </p>
       </div>
@@ -62,32 +64,41 @@ export function mount (ctx, props, el) {
 
   document.body.insertAdjacentHTML('beforeend', template)
 
-  var taggle = new Taggle(inputId, {duplicateTagClass: 'bounce', preserveCase: false})
+  var taggle = new Taggle(inputId, {
+    duplicateTagClass: 'bounce',
+    preserveCase: false
+  })
 
   var selectLinks = document.querySelectorAll(`.${selectLink}`)
-  for(var i=0;i<selectLinks.length;i++){
-    selectLinks[i].addEventListener('click', (e) => { taggle.add(e.target.getAttribute('data-tag')) })
+  for (var i = 0; i < selectLinks.length; i++) {
+    selectLinks[i].addEventListener('click', e => {
+      taggle.add(e.target.getAttribute('data-tag'))
+    })
   }
-  document.getElementById(storySelectLink).addEventListener('click', () => { taggle.add("Significant Story") })
-  document.getElementById(newsSelectLink).addEventListener('click', () => { taggle.add("News") })
+  document.getElementById(storySelectLink).addEventListener('click', () => {
+    taggle.add('Significant Story')
+  })
+  document.getElementById(newsSelectLink).addEventListener('click', () => {
+    taggle.add('News')
+  })
 
-  el.addEventListener('click', () => { window.location.hash= modalId })
+  el.addEventListener('click', () => {
+    window.location.hash = modalId
+  })
 
   document.getElementById(submitButtonId).addEventListener('click', () => {
     const input = taggle.getTags().values
 
-    store.dispatch(update({[props.field] : input}))
-    window.location.hash= ''
+    store.dispatch(update({ [props.field]: input }))
+    window.location.hash = ''
   })
-
 
   const updateValue = () => {
     var value = store.getState().fields[props.field]
 
-    if(value == null || value.length == 0) {
+    if (value == null || value.length == 0) {
       el.innerText = 'Add a tag!'
-    }
-    else {
+    } else {
       taggle.removeAll()
       taggle.add(value)
       el.innerText = value.join(', ')
@@ -95,13 +106,16 @@ export function mount (ctx, props, el) {
   }
 
   updateValue()
-  store.subscribe( updateValue )
+  store.subscribe(updateValue)
 }
 
-export function render (ctx, props) {
+export function render(ctx, props) {
   const value = ctx.store.getState().fields[props.field]
-  if (value != null) { return value.join(', ') }
-  else { return { replace: '' } }
+  if (value != null) {
+    return value.join(', ')
+  } else {
+    return { replace: '' }
+  }
 }
 
 const style = `

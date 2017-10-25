@@ -64,6 +64,8 @@ function saveGloabl(ctx, props, el) {
   const img2 = fields['image-1']
   const img3 = fields['image-2']
   const content2 = fields.content2
+  const video = fields.video
+  const sproutid = fields['video-sproutid']
   const current = {
     id,
     title,
@@ -74,13 +76,16 @@ function saveGloabl(ctx, props, el) {
     img1,
     img2,
     img3,
-    content2
+    content2,
+    video,
+    sproutid
   }
 
   const element = find({ id }, globalElements)
-  const newElements = element == null
-    ? [...globalElements, current]
-    : globalElements.map(m => (m.id === id ? current : m))
+  const newElements =
+    element == null
+      ? [...globalElements, current]
+      : globalElements.map(m => (m.id === id ? current : m))
 
   // set the new global element
   store.dispatch(update({ stories: newElements }))

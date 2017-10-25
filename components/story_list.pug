@@ -1,12 +1,11 @@
 if ( fields.stories != null )
-  
+
   //- Filter
   if ( props.filter != null && props.filter != '' )
-    
     - var stories = fields.stories.filter( s => ( s.tags != null && Array.isArray( s.tags ) && s.tags.length != 0 && s.tags.indexOf( props.filter.toLowerCase() ) > -1 ))
   else
     - var stories = fields.stories
-    
+
   //- Sorting
   -
     function compare(a, b) {
@@ -20,8 +19,15 @@ if ( fields.stories != null )
       if ( b.date > a.date ) { return 1 }
       return 0;
     }
+    
+    
+  if props.layout == "milestones"
+    - var Stories = stories.sort(compare).reverse()
+  else
+    - var Stories = stories.sort(compare)
+  
 
-  each m, i in stories.sort(compare)
+  each m, i in Stories
     //- id, title, date, tags, teaser, content1, img1, img2, img3, content2
     //- - var production = (process.env.PENGUIN_ENV === 'production')
     
@@ -32,29 +38,29 @@ if ( fields.stories != null )
     //-     - var teaserShort = m.teaser.replace(/<(?:.|\n)*?>/gm, '').replace(/^(.{65}[^\s]*).*/, "$1")
     if ( m.teaser != null && m.teaser != '' )
       - var teaser = m.teaser.replace(/<\/h[1-6]>/, ". ").replace(/<(?:.)*?>/gm, ' ').replace(/^(.{200}[^\s]*).*/, "$1").replace(/&nbsp;/g, " ")
-      if props.layout
+      if props.layout == "event"
         - var teaserShort = m.teaser.replace(/<\/h[1-6]>/, ". ").replace(/<(?:.)*?>/gm, ' ').replace(/^(.{65}[^\s]*).*/, "$1").replace(/&nbsp;/g, " ")
     else
       - var teaser = ""
       - var teaserShort = ""
-    
+
     //- handle date
     - var m_names = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
     - var m_names_short = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
     if m.date
       - var tmpDate = new Date( m.date * 1000 )
       - var date = tmpDate.getDate() + ' ' + m_names[ tmpDate.getMonth() ]
-      if props.layout
+      if props.layout == "event" || props.layout == "milestones"
         - var eventDay = tmpDate.getDate()
         - var eventMonth = m_names_short[ tmpDate.getMonth() ]
         - var eventYear = tmpDate.getFullYear()
     else
       - var date = "no date"
-      
+
     //- handle tags
     if ( m.tags != null && m.tags.length != 0 )
       - var tags = m.tags.join( ', ' )
-      
+
       - var downcaseTags = m.tags.map( t => ( t.toLowerCase() ) )
       if downcaseTags.indexOf( 'significant story' ) > -1
         - var type = "story"
@@ -62,11 +68,11 @@ if ( fields.stories != null )
         - var type = "news"
       else
         - var type = "story"
-      
+
     else
       - var tags = ""
       - var type = "story"
-    
+
     //- handle images
     -
       var images = []
@@ -74,10 +80,18 @@ if ( fields.stories != null )
       if ( m.img2 != null && m.img2 != '' ) { images.push(m.img2) }
       if ( m.img3 != null && m.img3 != '' ) { images.push(m.img3) }
     
+    //- handle video
+    -
+      // var video = undefined
+      if ( m.video != null && m.video != 'a' ) { var video = m.video }
+    
+    
     //- handle layouts
-    if props.layout && images.length > 0
+    if props.layout == "milestones"
+      - var layout = "milestone"
+    else if props.layout == "event" && images.length > 0
       - var layout = "eventImg"
-    else if props.layout
+    else if props.layout == "event"
       - var layout = "event"
     else if type == "news"
       - var layout = "news"
@@ -172,7 +186,21 @@ if ( fields.stories != null )
             span.iiv-content-text #{ teaserShort }
             a.btn.btn-alt.btn-medium(href=`/${language}/stories/${ m.id }` style='color: black;') Read more
           
-          
+      //- Milestone
+      when "milestone"
+        .ml-col
+          a.ml-item(href=`/${language}/stories/${ m.id }` class=(video != null && video != '') ? 'ml-item-video' : '')
+            -
+              if (m.sproutid != null && m.sproutid != '') {
+                var src = `//cdn-thumbnails.sproutvideo.com/${m.sproutid}/0/btn_false,w_640,h_360/poster.jpg`
+              } else {
+                var src = images[0] || '/static/img/ml1.jpg'
+              }
+            span.ml-img(style=`background-image:url(${src})`)
+            span.ml-item-content
+              span.ml-title #{ m.title || "no title" }
+              .btn.btn-alt Read more
+              span.ml-date #{eventMonth} #{eventYear}
           
           
           
