@@ -16,19 +16,22 @@ export function mount(ctx, props, el) {
       document.getElementById('spinner').style.display = 'block'
 
       var request = new XMLHttpRequest()
+      request.timeout = 20000
       request.open('GET', 'https://penguin.inclusivebusinesslab.org/form')
 
       request.onload = function() {
         // success(request.responseText, city, school)
-        let id = `${city +
-          school +
-          JSON.parse(request.responseText).id}``${city + school + id}`
+        let id = `${city + school + JSON.parse(request.responseText).id}`
         document.getElementById('action').innerHTML = `Your ID is: ${id}`
       }
 
       request.onerror = function() {
         document.getElementById('action').innerHTML = 'Error! Contact us.'
         console.warn(request.statusText, request.responseText)
+      }
+      request.ontimeout = function(e) {
+        document.getElementById('action').innerHTML =
+          'Error! Contact us or try again!'
       }
 
       request.send()
