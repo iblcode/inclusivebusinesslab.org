@@ -19,7 +19,11 @@ export function mount(ctx, props, el) {
       request.open('GET', 'https://penguin.inclusivebusinesslab.org/form')
 
       request.onload = function() {
-        success(request.responseText, city, school)
+        // success(request.responseText, city, school)
+        let id = `${city +
+          school +
+          JSON.parse(request.responseText).id}``${city + school + id}`
+        document.getElementById('action').innerHTML = `Your ID is: ${id}`
       }
 
       request.onerror = function() {
