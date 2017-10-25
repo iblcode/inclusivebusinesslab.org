@@ -83,7 +83,8 @@ if ( fields.stories != null )
     //- handle video
     -
       // var video = undefined
-      if ( m.video != null && m.video != 'a' ) { var video = m.video }
+      if ( m.video != null && m.video != '' ) { var video = m.video }
+      else { var video = ''}
     
     
     //- handle layouts
@@ -189,7 +190,7 @@ if ( fields.stories != null )
       //- Milestone
       when "milestone"
         .ml-col
-          a.ml-item(href=`/${language}/stories/${ m.id }` class=(video != null && video != '') ? 'ml-item-video' : '')
+          a.ml-item(href=`/${language}/stories/${ m.id }` class=`${video ? 'ml-item-video' : ''}`)
             -
               if (m.sproutid != null && m.sproutid != '') {
                 var src = `//cdn-thumbnails.sproutvideo.com/${m.sproutid}/0/btn_false,w_640,h_360/poster.jpg`
