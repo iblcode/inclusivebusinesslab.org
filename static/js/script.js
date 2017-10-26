@@ -1,8 +1,8 @@
 ibl = {
   milestones:function(){
     var max = 0;
-    $(".ml-item").each(function(){
-      max = Math.max(max, $(this).outerHeight())
+    $(".ml-item-content").height('auto').each(function(){
+      max = Math.max(max, $(this).height())
     }).height(max)
   },
   paralax: function() {
@@ -72,6 +72,7 @@ ibl = {
     ibl.homeHero();
     ibl.mobileMenu();
     ibl.teamSlider();
+    ibl.milestones();
     ibl.isotope.init();
     ibl.iblvideo();
     // ibl.proportionBox('.square-images > div', '1:1');
@@ -79,7 +80,7 @@ ibl = {
     $(window).on('load resize', function() {
       // ibl.proportionBox('.square-images > div', '1:1');
       ibl.proportionBox('.ibl-video', '930:520');
-    })
+    });
   },
   mobileMenu: function() {
     $("#main-menu").append('<span id="mobile-menu"><span></span><span></span><span></span></span>');
