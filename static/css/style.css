@@ -1289,4 +1289,45 @@ body.is-touchscreen-false .lang-selector:hover ul {
 
 }
 
-
+/* React form specific */
+.form-react {
+  text-align: left;
+  width: 33% !important;
+  margin-left: 33% !important;
+  margin-bottom:.6em;
+}
+@media (max-width:1024px){
+  .form-react {
+    width:50% !important;
+    margin-left: 25% !important;
+  }
+}
+@media (max-width:640px){
+  .form-react {
+    width:100% !important;
+    margin:0 !important;
+  }
+}
+.typeform {
+  display: block;       /* iframes are inline by default */
+  background: #000;
+  border: none;         /* Reset default border */
+  height: 100vh;        /* Viewport-relative units */
+  width: 100vw;
+}
+.modal.modal-wrapper{
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100vw;
+  height: 100vh;
+  z-index:9999;
+  position:fixed;
+  top:0;
+  left:0;
+}
+.modal.modal-container{
+  margin-top:40vh;
+  text-align:center;
+}
+.btn,button{
+  outline:none;
+}

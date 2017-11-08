@@ -15,6 +15,13 @@ block nav
 block footer
   
 block content
+  .modal.modal-wrapper(style='display:none')#modal-loader
+    .modal.modal-container
+      .spinner(style='display:inline-block;margin:0')
+        .double-bounce1
+        .double-bounce2
+      p please wait..
+
   section#hero(style='height: 350px;')
     .hero-layer.paralax(style='background-image: url(/static/img/hero.contact.jpg)' data-component='BgImage' data-props={field:'hero', defaultURL:'/static/img/hero.contact.jpg'})
     .hero-layer.hero-layer-text.penguin-bg-image-sibling
@@ -23,38 +30,8 @@ block content
           h1.bg-title.penguin-sp
             span.orange(data-component='Inplace' data-props={field:'title'}) Form
             
-            
-  .wrapper3.pt-120.pb-60
-    .hello.hello-inner.text2(data-component='MediumEditor' data-props={field:'content'})
-      p
-        | Hello! Start with the form by providing your city and school!
-        
-  .wrapper3.pb-90
-    .hello.hello-inner.text2
-      
-      .form-group(style="text-align:left; width:33.333%; margin-left: 33.333%;")
-        label(for="city" data-component='Inplace' data-props={field:'city_label'}) Select your city
-        select.form-control(data-component='FormListCity' data-props={query:'/cities'})#city
-          option(value="") Loading...
-          
-      .form-group(style="text-align:left; width:33.333%; margin-left: 33.333%;")
-        label(for="school" data-component='Inplace' data-props={field:'school_label'}) Select your school
-        select.form-control(data-component='FormListSchool' data-props={query:'/schools', filter: 'city'})#school
-          option(value="") Select your city!
-          
-    .hello.hello-inner#action
-      button.btn(data-component='Form' data-props={field:'send'}) Generate ID
-      .spinner#spinner(style='margin: 20px auto; display: none')
-        .double-bounce1
-        .double-bounce2
-      
-        
-  .wrapper3.pt-120.pb-90
-    .hello.hello-inner.text2(data-component='MediumEditor' data-props={field:'content2'})
-      p
-        | For problems and general inquires, please contact us at:
-        br
-        a(href='mailto:office@inclusivebusinesslab.org') office@inclusivebusinesslab.org
+  .pt-60.pb-60.react(id='reactApps') 
+    div(style='text-align:center;margin:3em') loading..
               
         
 block styles
@@ -121,3 +98,7 @@ block styles
       -webkit-animation-delay: -1.0s;
       animation-delay: -1.0s;
     }
+
+
+
+    

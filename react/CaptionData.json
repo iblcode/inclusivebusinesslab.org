@@ -1,0 +1,72 @@
+{
+	"en":{
+		"signin":{
+			"please_input_id_or_email":"Please provide your User ID or registered Email",
+			"notregistered":"Not registered?",
+			"clickregister":"Click here!",
+			"err_empty":"Please input User ID or email",
+			"err_notfound":"User profile not found, please register first"
+		},
+		"general":{
+			"btn_proceed":"proceed"
+		},
+		"signup":{
+			"signupform":"New User Profile Registration",
+			"btn_submit":"submit",
+			"rememberreginfo":"Please remember your registered information",
+			"regsuccess":"Registered successfully",
+			"err_exception":"Error occured while trying to register, please contact administrator."
+		},
+		"form":{
+			"country":"Country",
+			"city":"City",
+			"org":"School",
+			"name_eng":"Name",
+			"name_chi":"Chinese name(optional)",
+			"gender":"Gender",
+			"birthday":"Date of birth",
+			"age":"Age",
+			"email":"Email Address",
+			"mobile":"Mobile number",
+			"userid":"User ID",
+			"ph_idoremail":"User ID or Email",
+			"ph_select":"Please select",
+			"ph_input":"Please input"
+		}
+	},
+	"cn":{
+		"signin":{
+			"please_input_id_or_email":"請輸入已註冊之使用者帳號或電郵地址",
+			"notregistered":"還未註冊?",
+			"clickregister":"請按此,",
+			"err_empty":"必須輸入使用者帳號或電郵地址",
+			"err_notfound":"找不到相關資料, 請註冊新帳號"
+		},
+		"general":{
+			"btn_proceed":"繼續"
+		},
+		"signup":{
+			"signupform":"註冊新帳號",
+			"btn_submit":"提交",
+			"rememberreginfo":"請保存已註冊的資料作日後登入之用",
+			"regsuccess":"登記成功",
+			"err_exception":"發生錯誤, 請聯絡管理人員"
+		},
+		"form":{
+			"country":"國家/地區",
+			"city":"城市",
+			"org":"機構/學院",
+			"name_eng":"英文姓名",
+			"name_chi":"中文姓名(可選填)",
+			"age":"年齡",
+			"birthday":"出生日期",
+			"gender":"性別",
+			"email":"電郵",
+			"mobile":"手提電話",
+			"userid":"使用者帳號",
+			"ph_idoremail":"使用者帳號 或 電郵地址",
+			"ph_select":"請選擇",
+			"ph_input":"請輸入"
+		}
+	}
+}
