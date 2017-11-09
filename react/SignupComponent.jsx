@@ -35,9 +35,11 @@ class Signup extends React.Component {
 
   
   updateSelectData(key,obj){
+    $("#modal-loader").show();
     let newSelectData = Object.assign({}, this.state.selectData);
     newSelectData[key]=obj;
     this.setState({selectData:newSelectData});
+    $("#modal-loader").hide();
   }
 
   getSelectData(){
@@ -66,7 +68,7 @@ class Signup extends React.Component {
     xhr.open('POST',iblConfig.baseUrl+'user',true);
     for(var i=0;i<this.regFields.length;i++){
       if(this.regFields[i].type=='select'){
-        data[this.regFields[i].name]=$("select[name='"+this.regFields[i].name+"'] option:selected").val();
+        data[this.regFields[i].name]=parseInt($("select[name='"+this.regFields[i].name+"'] option:selected").val());
       }else if(this.regFields[i].type=='radio'){
         data[this.regFields[i].name]=$("input[name='"+this.regFields[i].name+"']:checked").val();
       }else{
