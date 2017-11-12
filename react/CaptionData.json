@@ -8,7 +8,9 @@
 			"err_notfound":"User profile not found, please register first"
 		},
 		"general":{
-			"btn_proceed":"proceed"
+			"btn_proceed":"proceed",
+			"err_exception":"Error occured, please contact administrator.",
+			"please_wait":"please wait..."
 		},
 		"signup":{
 			"signupform":"New User Profile Registration",
@@ -43,14 +45,16 @@
 			"err_notfound":"找不到相關資料, 請註冊新帳號"
 		},
 		"general":{
-			"btn_proceed":"繼續"
+			"btn_proceed":"繼續",
+			"err_exception":"系統發生錯誤, 請聯絡管理人員",
+			"please_wait":"請稍候..."
 		},
 		"signup":{
 			"signupform":"註冊新帳號",
 			"btn_submit":"提交",
 			"rememberreginfo":"請保存已註冊的資料作日後登入之用",
 			"regsuccess":"登記成功",
-			"err_exception":"發生錯誤, 請聯絡管理人員"
+			"err_exception":"系統發生錯誤, 請聯絡管理人員"
 		},
 		"form":{
 			"country":"國家/地區",

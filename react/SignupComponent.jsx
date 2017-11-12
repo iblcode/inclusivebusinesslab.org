@@ -45,15 +45,26 @@ class Signup extends React.Component {
   getSelectData(){
     if(!this.state.selectData.length){
       var apis=['country','city','school'],_this=this;
-      for(var i=0;i<apis.length;i++){
-        var xhr = new XMLHttpRequest()
-        xhr.open('GET',iblConfig.baseUrl+apis[i],true);
-        xhr.send();
-        xhr.onload=function(){
-          var key = this.responseURL.split('v1/')[1]
-          _this.updateSelectData(key,JSON.parse(this.responseText));
+      
+        for(var i=0;i<apis.length;i++){
+          var xhr = new XMLHttpRequest()
+          xhr.open('GET',iblConfig.baseUrl+apis[i],true);
+          xhr.send();
+          xhr.apis = apis;
+          var currentKey = apis[i];
+          xhr.onload=function(){
+            try{
+              var key = this.responseURL.split('v1/')[1]
+              _this.updateSelectData(key,JSON.parse(this.responseText));
+            }catch(e){
+              alert(_this.state.strings.general.err_exception+currentKey+'(signup_selection_data) : '+"\n"+e);
+              $('#modal-loader').find("p").html(_this.state.strings.general.err_exception);
+              $('#modal-loader').find(".spinner").hide();
+              $('#modal-loader').show();
+            }
+          }
         }
-      }  
+       
     }
   }
 
@@ -163,7 +174,7 @@ class Signup extends React.Component {
                   </div>
                 )
               }else{
-                return (<div key={index}>something else</div>)
+                return (<div key={index}>Error while rendering the input for {field.name}</div>)
               }
             })
           }

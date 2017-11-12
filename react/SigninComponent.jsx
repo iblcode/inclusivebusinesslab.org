@@ -13,6 +13,7 @@ class Signin extends React.Component {
     
     this.state = {active:props.active,lookupData : null,lookupType:'id',currentView:'signin',strings:new LocalizedStrings(CaptionData)};
     this.state.strings.setLanguage(nowLang);
+    $('#modal-loader').find('p').html(this.state.strings.general.please_wait);
 
     this.userLookup = this.userLookup.bind(this);
     this.userSignup = this.userSignup.bind(this);
@@ -47,15 +48,20 @@ class Signin extends React.Component {
     xhr.setRequestHeader("Accept", "application/json");
     xhr.send(data);
     xhr.onload = function(){
-      var res = JSON.parse(this.responseText);
-      if(res.code==0){
-        _this.proceedForm(_this.state.lookupData);
-      }else if(res.user_id){
-        _this.proceedForm(res.user_id);
-      }else{
+      try{
+        var res = JSON.parse(this.responseText);
+        if(res.code==0){
+          _this.proceedForm(_this.state.lookupData);
+        }else if(res.user_id){
+          _this.proceedForm(res.user_id);
+        }else{
+          $("#modal-loader").hide();
+          alert(_this.state.strings.signin.err_notfound);
+          _this.props.callbackSignup();
+        }
+      }catch(e){
+        alert(_this.state.strings.general.err_exception+"\n"+e);
         $("#modal-loader").hide();
-        alert(_this.state.strings.signin.err_notfound);
-        _this.props.callbackSignup();
       }
     }
   }
