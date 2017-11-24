@@ -11,8 +11,7 @@ block nav
           a(href='/en' data-selector='en') English
         li
           a(href='/cn' data-selector='cn') Chinese
-      
-block footer
+
   
 block content
   section#hero(style='height: 350px;')
@@ -21,33 +20,123 @@ block content
       .hero-layer-text-v.active
         .wrapper3
           h1.bg-title.penguin-sp
-            span.orange(data-component='Inplace' data-props={field:'title'}) Form
+            span.orange(data-component='Inplace' data-props={field:'title'}) Inclusive Business Lab
             
             
-  .wrapper3.pt-120.pb-60
+  .wrapper3.pt-120.pb-90#authenticate
+    .hello.hello-inner.text2
+      h2(data-component='Inplace' data-props={field:'authenticate-h2'}) Please Authenticate
+      //- p(data-component='Inplace' data-props={field:'success-p'}) Please provide your User ID or registered Email:
+      br
+      .form-group(style='text-align: center; ')
+        label(for="authenticate_input" data-component='Inplace' data-props={field:'authenticate_label'}) Please provide your User ID or registered Email:
+        input.form-control#authenticate_input
+
+      br
+      button.btn(data-component='FormAuth') Proceed
+      br
+      small: a(href='javascript:;' data-component='FormRegistered') Not registered? Click here!
+                  
+                  
+            
+  form.wrapper3.pt-120.pb-90#signup(style='display: none;')
     .hello.hello-inner.text2(data-component='MediumEditor' data-props={field:'content'})
       p
         | Hello! Start with the form by providing your city and school!
-        
-  .wrapper3.pb-90
-    .hello.hello-inner.text2
+    .hello.hello-inner.text2(style='padding-top: 15px;')
       
-      .form-group(style="text-align:left; width:33.333%; margin-left: 33.333%;")
-        label(for="city" data-component='Inplace' data-props={field:'city_label'}) Select your city
-        select.form-control(data-component='FormListCity' data-props={query:'/cities'})#city
+      .form-group
+        label surname
+        input.form-control(name="surname" required)
+      .form-group
+        label residence
+        input.form-control(name="residence" required)
+      .form-group
+        label location
+        input.form-control(name="location" required)
+      .form-group
+        label education
+        input.form-control(name="education" required)
+      
+      .form-group
+        label(for="country" data-component='Inplace' data-props={field:'country_label'}) Country
+        select.form-control(name="country" data-component='FormOptionList' data-props={query:'/country'})#country
+          option(value="") Loading...
+      
+      .form-group
+        label(for="city" data-component='Inplace' data-props={field:'city_label'}) City
+        select.form-control(name="city" data-component='FormOptionList' data-props={query:'/city'})#city
           option(value="") Loading...
           
-      .form-group(style="text-align:left; width:33.333%; margin-left: 33.333%;")
-        label(for="school" data-component='Inplace' data-props={field:'school_label'}) Select your school
-        select.form-control(data-component='FormListSchool' data-props={query:'/schools', filter: 'city'})#school
-          option(value="") Select your city!
+      .form-group
+        label(for="school" data-component='Inplace' data-props={field:'school_label'}) School
+        select.form-control(name="school" data-component='FormOptionList' data-props={query:'/school'})#school
+          option(value="") Loading...
+          
+      //- .form-group
+      //-   label(for="school" data-component='Inplace' data-props={field:'school_label'}) School
+      //-   select.form-control(data-component='FormListSchool' data-props={query:'/schools', filter: 'city'})#school
+      //-     option(value="") Select your city!
+      
+      .form-group
+        label(for="name" data-component='Inplace' data-props={field:'name_label'}) Name
+        input.form-control#name(name="name" required)
+          
+      .form-group
+        label(for="cnname" data-component='Inplace' data-props={field:'cnname_label'}) Chinese Name (optional)
+        input.form-control#cnname(name="cnname")
+          
+      .form-group
+        label(for="sex" data-component='Inplace' data-props={field:'sex_label'}) Gender
+        br
+        label Male&nbsp;
+          input(type="radio" name="sex" value="M" required)
+        br
+        label Female&nbsp;
+          input(type="radio" name="sex" value="F")
+        
+      .form-group
+        label(for="birth" data-component='Inplace' data-props={field:'birth_label'}) Date of Birth
+        input.form-control#birth(required name="birth")
+          
+      .form-group
+        label(for="age" data-component='Inplace' data-props={field:'age_label'}) Age
+        input.form-control#age(required name="age" type="number" min="0" step="1")
+          
+      .form-group
+        label(for="email" data-component='Inplace' data-props={field:'email_label'}) Email Address
+        input.form-control#email(required name="email" type="email")
+          
+      .form-group
+        label(for="mobile" data-component='Inplace' data-props={field:'mobile_label'}) Mobile Number
+        input.form-control#mobile(required name="mobile")
+          
           
     .hello.hello-inner#action
-      button.btn(data-component='Form' data-props={field:'send'}) Generate ID
+      input.btn(type="submit" data-component='Form' data-props={field:'send'} value="Register")
       .spinner#spinner(style='margin: 20px auto; display: none')
         .double-bounce1
         .double-bounce2
       
+            
+  .wrapper3.pt-120.pb-90#success(style='display: none;')
+    .hello.hello-inner.text2
+      h2(data-component='Inplace' data-props={field:'success-h2'}) REGISTERED SUCCESSFULLY
+      p(data-component='Inplace' data-props={field:'success-p'}) Please remember your registered information:
+      br
+      p
+        span User ID:
+        br
+        strong#userid
+      br
+      p
+        span Email Address:
+        br
+        strong#useremail
+          
+    .hello.hello-inner
+      button.btn#proceed Proceed to Questionnaire
+        
         
   .wrapper3.pt-120.pb-90
     .hello.hello-inner.text2(data-component='MediumEditor' data-props={field:'content2'})
@@ -56,6 +145,7 @@ block content
         br
         a(href='mailto:office@inclusivebusinesslab.org') office@inclusivebusinesslab.org
               
+
         
 block styles
   style.
@@ -94,6 +184,7 @@ block styles
         transform: scale(1.0);
         -webkit-transform: scale(1.0);
       }
+    }
       
     .spinner {
       width: 40px;
@@ -121,3 +212,11 @@ block styles
       -webkit-animation-delay: -1.0s;
       animation-delay: -1.0s;
     }
+    .form-group {
+      text-align:left;
+      width:50%;
+      margin-left: 25%;
+      margin-top: 15px;
+    }
+
+block footer
