@@ -24,7 +24,11 @@ export function mount(ctx, props, el) {
         document.getElementById('proceed').addEventListener('click', e => {
           let formid = URI(window.location.href).search(true).form
           if (formid != null && formid != '') {
-            document.body.innerHTML = typeformhtml(formid, msg.user_id)
+            document.body.innerHTML = typeformhtml(
+              formid,
+              msg.user_id,
+              msg.email
+            )
           } else {
             alert('Link not valid. Please contact the support.')
           }
@@ -109,10 +113,12 @@ function success(answer, city, school) {
   window.location.href = form.toString()
 }
 
-function typeformhtml(formid, userid) {
+function typeformhtml(formid, userid, email) {
   return `
 <iframe id="typeform-full" width="100%" height="100%" frameborder="0"
-src="https://iblfeedback.typeform.com/to/${formid}?id=${userid}"></iframe>
+src="https://iblfeedback.typeform.com/to/${formid}?id=${userid}&email=${
+    email
+  }"></iframe>
 <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
 `
 }

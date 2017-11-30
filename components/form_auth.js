@@ -33,7 +33,7 @@ function authEmail(input) {
       if (msg.user_id != null && msg.user_id != '') {
         let formid = URI(window.location.href).search(true).form
         if (formid != null && formid != '') {
-          document.body.innerHTML = typeformhtml(formid, msg.user_id)
+          document.body.innerHTML = typeformhtml(formid, msg.user_id, msg.email)
         } else {
           alert('Link not valid. Please contact the support.')
         }
@@ -67,7 +67,7 @@ function authID(input) {
       if (msg.user_id != null && msg.user_id != '') {
         let formid = URI(window.location.href).search(true).form
         if (formid != null && formid != '') {
-          document.body.innerHTML = typeformhtml(formid, msg.user_id)
+          document.body.innerHTML = typeformhtml(formid, msg.user_id, msg.email)
         } else {
           alert('Link not valid. Please contact the support.')
         }
@@ -88,10 +88,12 @@ function authID(input) {
   XHR.send(JSON.stringify({ user_id: input }))
 }
 
-function typeformhtml(formid, userid) {
+function typeformhtml(formid, userid, email) {
   return `
 <iframe id="typeform-full" width="100%" height="100%" frameborder="0"
-src="https://iblfeedback.typeform.com/to/${formid}?id=${userid}"></iframe>
+src="https://iblfeedback.typeform.com/to/${formid}?id=${userid}&email=${
+    email
+  }"></iframe>
 <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
 `
 }
