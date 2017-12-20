@@ -12,7 +12,6 @@ penguin run \
         [ penguin.js/git \
             --url "$GIT_REPO" \
             --branch gh-pages ] \
-        --middleware [ ./form ] \
         --middleware \
         [ penguin-passwordless \
             --delivery \

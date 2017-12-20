@@ -4,7 +4,7 @@
   "description": "IBLs Website. Made 3/2017",
   "scripts": {
     "serve":
-      "penguin serve -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ] --middleware [ ./form ] --middleware [ penguin-filestack/middleware --api-key APkI1JP79Q5Wh28llgIj6z --secret QD3MEQPQDNFNRLGOJOCDIVGWPQ ]",
+      "penguin serve -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ] --middleware [ penguin-filestack/middleware --api-key APkI1JP79Q5Wh28llgIj6z --secret QD3MEQPQDNFNRLGOJOCDIVGWPQ ]",
     "prebuild":
       "penguin pack -v pug -t [ ./pug-transform ] -t [ ./pug-live-transform ]",
     "build": "penguin build",
