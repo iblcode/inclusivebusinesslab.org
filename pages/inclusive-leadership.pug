@@ -51,8 +51,8 @@ block content
     section.cards
       
       span.card
-        span.card-image(style='background-image:url(/static/img/c1.jpg)')
-          span.h3.bg-title
+        span.card-image(style='background-image:url(/static/img/c1.jpg)' data-component="BgImage" data-props={field:'b1_img', defaultURL:'/static/img/c1.jpg'})
+          span.h3.bg-title.penguin-sp
             span.yellow(data-component='Inplace' data-props={field:'b1_title'}) 
               | Global Inclusive Leadership Challenge
         span.card-content
@@ -62,8 +62,8 @@ block content
             a.btn.btn-alt(data-component='LinkEditor' data-props={field:'b1_url', defaultURL:'/{{lang}}/global-inclusive-leadership-challenges'}) Learn more
             
       span.card
-        span.card-image(style='background-image:url(/static/img/c2.jpg)')
-          span.h3.bg-title
+        span.card-image(style='background-image:url(/static/img/c2.jpg)' data-component="BgImage" data-props={field:'b2_img', defaultURL:'/static/img/c2.jpg'})
+          span.h3.bg-title.penguin-sp
             span.purple(data-component='Inplace' data-props={field:'b2_title'}) 
               | Stem + Studio
         span.card-content
@@ -73,9 +73,9 @@ block content
             a.btn.btn-alt(data-component='LinkEditor' data-props={field:'b2_url', defaultURL:'/{{lang}}/stem-plus-studio'}) Learn more
             
       span.card
-        span.card-image(style='background-image:url(/static/img/c3.jpg)')
-          span.h3.bg-title
-            span.light-blue(data-component='Inplace' data-props={field:'b3_title'}) 
+        span.card-image(style='background-image:url(/static/img/c3.jpg)' data-component="BgImage" data-props={field:'b3_img', defaultURL:'/static/img/c3.jpg'})
+          span.h3.bg-title.penguin-sp
+            span.light-blue(data-component='Inplace' data-props={field:'b3_title'})
               | VIP Weekly
         span.card-content
           span.card-text.eqHeight(data-component='MediumEditor' data-props={field:'b3_cont'})
@@ -84,8 +84,8 @@ block content
             a.btn.btn-alt(data-component='LinkEditor' data-props={field:'b3_url', defaultURL:'/{{lang}}/vip-weekly'}) Learn more
             
       span.card
-        span.card-image(style='background-image:url(/static/img/c4.jpg)')
-          span.h3.bg-title
+        span.card-image(style='background-image:url(/static/img/c4.jpg)' data-component="BgImage" data-props={field:'b4_img', defaultURL:'/static/img/c4.jpg'})
+          span.h3.bg-title.penguin-sp
             span.light-green(data-component='Inplace' data-props={field:'b4_title'}) 
               | Life Upon Life
         span.card-content
@@ -95,8 +95,8 @@ block content
             a.btn.btn-alt(data-component='LinkEditor' data-props={field:'b4_url', defaultURL:'/{{lang}}/life-upon-life'}) Learn more
             
       span.card
-        span.card-image(style='background-image:url(/static/img/c4.jpg)')
-          span.h3.bg-title
+        span.card-image(style='background-image:url(/static/img/c4.jpg)' data-component="BgImage" data-props={field:'b5_img', defaultURL:'/static/img/c4.jpg'})
+          span.h3.bg-title.penguin-sp
             span.dark-blue(data-component='Inplace' data-props={field:'b5_title'}) 
               | Training-the-Trainers Leadership Roundtables
         span.card-content
@@ -106,9 +106,10 @@ block content
             a.btn.btn-alt(data-component='LinkEditor' data-props={field:'b5_url', defaultURL:'/{{lang}}/leadership-roundtables'}) Learn more
             
       span.card
-        span.card-image(style='background-image:url(/static/img/chk3.jpg)')
-          span.h3.bg-title(data-component='MediumEditor' data-props={field:'b6_title_v2'})
-            span.purple STEM+ Leadership Program
+        span.card-image(style='background-image:url(/static/img/chk3.jpg)' data-component="BgImage" data-props={field:'b6_img', defaultURL:'/static/img/chk3.jpg'})
+          span.h3.bg-title.penguin-sp
+            span.purple(data-component='Inplace' data-props={field:'b6_title_v3'}) 
+              | STEM+ Leadership Program
         span.card-content
           span.card-text.eqHeight(data-component='MediumEditor' data-props={field:'b6_cont'})
             | STEM + Leadership Weeks consist of leadership development workshops and group activities designed to train next generation.
