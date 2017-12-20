@@ -36,7 +36,7 @@ unless (fields.teamMembers == null)
       }
     )
 
-  - var small = (props.type == 'stem' || 'former' ? true : false )  
+  - var small = (props.type == ('stem' || 'former') ? true : false )  
   //- each m in sortedTeamMembers
   each m in currentSorted.concat(pastSorted)
     //- id, image, name, content, type
@@ -66,8 +66,8 @@ unless (fields.teamMembers == null)
             img(src='/static/img/close-icon.svg', width='20px', alt='')
               
     //- TYPE MISSING!
-    else if ( ( m.type == null || m.type === '' ) && !production && props.type == 'stem' )
-      li(class=small ? 'small' : '' style='background-color: #F9211B; padding: 15px; opacity: 0.5;')
+    else if ( ( m.type == null || m.type === '' ) && !production)
+      li(class=small ? 'small' : '' style='background-color: #F00; padding: 15px; opacity: 0.8;')
         .team-member
           span.tm-img(style=`background-image: url(${m.image}); background-size: cover;`)
           strong !{m.name} #[br] #[small TYPE MISSING!]
