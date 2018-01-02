@@ -35,8 +35,8 @@ unless (fields.teamMembers == null)
         return 0;
       }
     )
-
-  - var small = (props.type == ('stem' || 'former') ? true : false )  
+    
+  - var small = true  
   //- each m in sortedTeamMembers
   each m in currentSorted.concat(pastSorted)
     //- id, image, name, content, type
@@ -51,16 +51,13 @@ unless (fields.teamMembers == null)
               .member-title
                 strong !{m.name}
                 small !{m.startdate}!{(m.enddate != null && m.enddate != '') ? ' — ' + m.enddate : ' - current'}
-              if ( small && !production )
+              if ( !production )
                 br
-                a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}`) Edit
-              unless small
                 .member-info
                   p !{m.content}
                   unless (m.url === '' || m.url == null)
                     a.btn.btn-alt.btn-medium(href=m.url) Read more
-                  unless production
-                    a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}`) Edit
+              a.btn.btn-alt.btn-medium(href=`/${language}/team/${m.id}`) Edit    
                     
           .info-close
             img(src='/static/img/close-icon.svg', width='20px', alt='')
