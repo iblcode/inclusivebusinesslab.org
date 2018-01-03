@@ -855,9 +855,9 @@ blockquote footer:before {
   cursor: pointer;
 }
 
-/* .small .team-member:hover {
+.notClickable .team-member:hover {
   cursor: default;
-} */
+}
 
 .team-member:not(.js-visible):hover .tm-img {
   -webkit-transform: scale(1.1);
@@ -866,10 +866,10 @@ blockquote footer:before {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* .small .team-member:hover .tm-img {
+.notClickable .team-member:hover .tm-img {
   transform: none;
   box-shadow: none;
-} */
+}
 
 .team-member.js-visible {
   width: 100%;

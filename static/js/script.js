@@ -349,7 +349,7 @@ $(document).ready(function() {
     $(this).removeClass('js-visible')
   }
 
-  $('.team-member')
+  $('.team-member:not(.notClickable .team-member)')
     .not('.js-visible')
     .click(function() {
       $('.team-member').disappear()
