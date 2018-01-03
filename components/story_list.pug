@@ -21,10 +21,8 @@ if ( fields.stories != null )
     }
     
     
-  if props.layout == "milestones"
-    - var Stories = stories.sort(compare).reverse()
-  else
-    - var Stories = stories.sort(compare)
+
+  - var Stories = stories.sort(compare)
   
 
   each m, i in Stories
