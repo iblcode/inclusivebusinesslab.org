@@ -42,7 +42,10 @@ block content
         .member-info(style='display: block; opacity: 1; visibility: visible; -webkit-transform: scale(1) rotate(0); -moz-transform: scale(1) rotate(0); transform: scale(1) rotate(0); top: -30px;')
           p(data-component='MediumEditor' data-props={field: 'content', toolbar: {buttons: ['bold', 'italic']}})
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quippe: habes enim a rhetoribus; Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Atque haec ita iustitiae propria sunt, ut sint virtutum reliquarum communia. An hoc usque quaque, aliter in vita? Tum Lucius: Mihi vero ista valde probata sunt, quod item fratri puto. Cupiditates non Epicuri divisione finiebat, sed sua satietate.
-          
+          div
+            small Link to video
+            p(data-component='Inplace' data-props={field: 'video'} style='background-color: lightgrey; padding: 10px; font-size: 12px;')
+              | Put a URL here... e.g. http://example.com
             
           div.text-center(style="padding-top: 50px")
             
@@ -58,6 +61,7 @@ block content
                     font-size: 12px;
                   }
                 span.penguin-empty(data-component="Inplace" data-props={field: 'url'} style='background-color: lightgrey; padding: 10px;')
+                  
 
 block cms_bar
 
@@ -67,7 +71,7 @@ block cms_bar
     li
       a.cms-btn.btn-save(style='color:white; background: #007F08;' href="#" data-component='TeamSaveButton' data-props={
         field: "teamMembers",
-        keys: ["image", "name", "content", "url", "type", "startdate", "enddate", "homepage"]
+        keys: ["image", "name", "content", "url", "type", "startdate", "enddate", "homepage", "video"]
       })
         //- i.fa.fa-check
         | Save
