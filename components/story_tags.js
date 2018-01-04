@@ -42,7 +42,7 @@ export function mount(ctx, props, el) {
           <a href="javascript:;" class="${selectLink}" data-tag="inclusive business">Inclusive Business</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="life upon life">Life Upon Life</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="leadership roundtable">Leadership Roundtable</a>,
-          <a href="javascript:;" class="${selectLink}" data-tag="stem+ studios">Stem+ Studios</a>,
+          <a href="javascript:;" class="${selectLink}" data-tag="stem+ studio">Stem+ Studio</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="vip weekly">VIP Weekly</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="stem leadership week">STEM+ Leadership Week</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="leadership challenges">Leadership Challenges</a>.
