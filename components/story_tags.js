@@ -41,9 +41,10 @@ export function mount(ctx, props, el) {
           You can add the following tags to appear on the individual pages:
           <a href="javascript:;" class="${selectLink}" data-tag="inclusive business">Inclusive Business</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="life upon life">Life Upon Life</a>,
-          <a href="javascript:;" class="${selectLink}" data-tag="leadership roundtable">Leadership roundtable</a>,
-          <a href="javascript:;" class="${selectLink}" data-tag="stem+">Stem+</a>,
+          <a href="javascript:;" class="${selectLink}" data-tag="leadership roundtable">Leadership Roundtable</a>,
+          <a href="javascript:;" class="${selectLink}" data-tag="stem+ studio">Stem+ Studio</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="vip weekly">VIP Weekly</a>,
+          <a href="javascript:;" class="${selectLink}" data-tag="stem leadership week">STEM+ Leadership Week</a>,
           <a href="javascript:;" class="${selectLink}" data-tag="leadership challenges">Leadership Challenges</a>.
           <br>
           To show a story as a milestone on the first page, tag it with <a href="javascript:;" class="${selectLink}" data-tag="milestone">Milestone</a>.
