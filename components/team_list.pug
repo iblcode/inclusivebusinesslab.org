@@ -51,7 +51,6 @@ unless (fields.teamMembers == null)
               .member-title
                 strong !{m.name}
                 small !{m.startdate}!{(m.enddate != null && m.enddate != '') ? ' — ' + m.enddate : ' - current'}
-              if (!production)
                 br
                 .member-info
                   p !{m.content}
@@ -70,7 +69,6 @@ unless (fields.teamMembers == null)
         .team-member
           span.tm-img(style=`background-image: url(${m.image}); background-size: cover;`)
           strong !{m.name} #[br] #[small TYPE MISSING!]
-          if (!production)
             br
             .member-info
               p !{m.content}
