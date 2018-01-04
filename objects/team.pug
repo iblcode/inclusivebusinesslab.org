@@ -21,15 +21,28 @@ block content
           label Type&nbsp;
           select(data-component="TeamType" data-props={field: 'type'} style="display: inline-block; position: relative; text-align: center; vertical-align: middle; font-weight: 700; font-size: 15px; letter-spacing: .1em; padding: 12px 30px 13px; background: #F9811B; border: 1px solid #F9811B; border-radius: 50px; color: white; text-transform: uppercase; cursor: pointer; -webkit-transition: box-shadow 0.2s; -moz-transition: box-shadow 0.2s; transition: box-shadow 0.2s; margin: 5px;")
             option(value="") Select...
-            option(value="nextgen") NEXT GEN LEADERS
-            option(value="stem") STEM+ Leadership Team
-            option(value="significant") SIGNIFICANT STORY TEAM
-            option(value="founder") DIRECTOR AND FOUNDER
-            option(value="former") FORMER FELLOW
+            option(value="nextgen") STRATEGY
+            option(value="stem") STEM+ 
+            option(value="omnioikos") OMNIOIKOS
+            option(value="vip") TTLR VIP
+            option(value="significant") SIGNIFICANT STORY 
+            option(value="media") MEDIA
+            option(value="music") MUSIC
+            option(value="edtech") EDTECH DEVELOPMENT
+            option(value="bigdata") BIG DATA SCIENCE
+            option(value="inclusive") INCLUSIVE DEVELOPMENT
+            option(value="technology") TECHNOLOGY
+            option(value="champions") REGIONAL CHAMPIONS
+            option(value="former") FORMER
+          br
+          input(type='checkbox' data-props={field: 'homepage'})
+          label Show team member on front page&nbsp;
+          
       li(style='width: 50%')
         .member-info(style='display: block; opacity: 1; visibility: visible; -webkit-transform: scale(1) rotate(0); -moz-transform: scale(1) rotate(0); transform: scale(1) rotate(0); top: -30px;')
           p(data-component='MediumEditor' data-props={field: 'content', toolbar: {buttons: ['bold', 'italic']}})
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quippe: habes enim a rhetoribus; Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Atque haec ita iustitiae propria sunt, ut sint virtutum reliquarum communia. An hoc usque quaque, aliter in vita? Tum Lucius: Mihi vero ista valde probata sunt, quod item fratri puto. Cupiditates non Epicuri divisione finiebat, sed sua satietate.
+          
             
           div.text-center(style="padding-top: 50px")
             
@@ -54,7 +67,7 @@ block cms_bar
     li
       a.cms-btn.btn-save(style='color:white; background: #007F08;' href="#" data-component='TeamSaveButton' data-props={
         field: "teamMembers",
-        keys: ["image", "name", "content", "url", "type", "startdate", "enddate"]
+        keys: ["image", "name", "content", "url", "type", "startdate", "enddate", "homepage"]
       })
         //- i.fa.fa-check
         | Save
