@@ -55,7 +55,7 @@ unless (fields.teamMembers == null)
                 .member-info
                   p !{m.content}
                   .ibl-video(data-component="StoryVideo" data-props={field: 'video'})
-                    iframe(src=m.video width="560" height="315" frameborder='0')
+                    iframe(src=m.video style='position:absolute;width:100%;height:100%;left:0;top:0'  frameborder='0')
                   unless (m.url === '' || m.url == null)
                     a.btn.btn-alt.btn-medium(href=m.url) Read more
               unless (production)   
