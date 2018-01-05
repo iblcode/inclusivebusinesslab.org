@@ -787,9 +787,6 @@ blockquote footer:before {
   height: 100%;
 }
 
-.ibl-video .tm_video {
-  height: 3000px !important;
-}
 .post {
   padding-top: 90px;
 }
