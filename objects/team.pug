@@ -21,11 +21,23 @@ block content
           label Type&nbsp;
           select(data-component="TeamType" data-props={field: 'type'} style="display: inline-block; position: relative; text-align: center; vertical-align: middle; font-weight: 700; font-size: 15px; letter-spacing: .1em; padding: 12px 30px 13px; background: #F9811B; border: 1px solid #F9811B; border-radius: 50px; color: white; text-transform: uppercase; cursor: pointer; -webkit-transition: box-shadow 0.2s; -moz-transition: box-shadow 0.2s; transition: box-shadow 0.2s; margin: 5px;")
             option(value="") Select...
-            option(value="nextgen") NEXT GEN LEADERS
-            option(value="stem") STEM+ Leadership Team
-            option(value="significant") SIGNIFICANT STORY TEAM
-            option(value="founder") DIRECTOR AND FOUNDER
-            option(value="former") FORMER FELLOW
+            option(value="nextgen") STRATEGY
+            option(value="trainers") TRAINING THE TRAINERS
+            option(value="stem") STEM+ 
+            option(value="omnioikos") OMNIOIKOS
+            option(value="significant") STORY FEEDBACK 
+            option(value="media") MEDIA
+            option(value="music") MUSIC
+            option(value="edtech") EDTECH DEVELOPMENT
+            option(value="bigdata") BIG DATA ML
+            option(value="inclusive") INCLUSIVE DEVELOPMENT
+            option(value="technology") TECHNOLOGY
+            option(value="champions") REGIONAL CHAMPIONS
+            option(value="partners") INSTITUTIONAL PARTNERS
+          br
+          input(type='checkbox' data-props={field: 'homepage'})
+          label Show team member on front page&nbsp;
+          
       li(style='width: 50%')
         .member-info(style='display: block; opacity: 1; visibility: visible; -webkit-transform: scale(1) rotate(0); -moz-transform: scale(1) rotate(0); transform: scale(1) rotate(0); top: -30px;')
           p(data-component='MediumEditor' data-props={field: 'content', toolbar: {buttons: ['bold', 'italic']}})
