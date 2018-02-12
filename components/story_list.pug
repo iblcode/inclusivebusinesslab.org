@@ -168,8 +168,7 @@ if ( fields.stories != null )
             br
             | #{ eventYear }
           span.iiv-content
-            strong #{ m.title || "no title" }
-            span.iiv-content-text #{ teaserShort }
+            strong(style='padding-bottom: 30px;') #{ m.title || "no title" }
             a.btn.btn-alt.btn-medium(href=`/${language}/stories/${ m.id }` style='color: black;') Read more
       //- Event past
       when "eventImg"
@@ -181,8 +180,7 @@ if ( fields.stories != null )
             | #{ eventYear }
           span.iiv-image(style=`background-image: url(${images[0]})`)
           span.iiv-content
-            strong #{ m.title || "no title" }
-            span.iiv-content-text #{ teaserShort }
+            strong(style='padding-bottom: 30px;') #{ m.title || "no title" }
             a.btn.btn-alt.btn-medium(href=`/${language}/stories/${ m.id }` style='color: black;') Read more
           
       //- Milestone
