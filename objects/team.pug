@@ -34,7 +34,7 @@ block content
             option(value="technology") TECHNOLOGY
             option(value="champions") REGIONAL CHAMPIONS
           br
-          input(type='checkbox' data-props={field: 'homepage'})
+          input(type='checkbox' data-component="TeamFeatured" data-props={field: 'featured'})
           label Show team member on front page&nbsp;
           
       li(style='width: 50%')
@@ -66,7 +66,7 @@ block cms_bar
     li
       a.cms-btn.btn-save(style='color:white; background: #007F08;' href="#" data-component='TeamSaveButton' data-props={
         field: "teamMembers",
-        keys: ["image", "name", "content", "url", "type", "startdate", "enddate", "homepage"]
+        keys: ["image", "name", "content", "url", "type", "startdate", "enddate", "featured"]
       })
         //- i.fa.fa-check
         | Save

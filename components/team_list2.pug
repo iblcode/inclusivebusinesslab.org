@@ -4,6 +4,6 @@ span.ts-item-holder
 unless (fields.teamMembers == null)
   each m in fields.teamMembers
     //- id, image, name, content, type
-    if ( m.type == 'nextgen' )
+    if ( m.featured == true )
       span.ts-item-holder
         span.ts-item(style=`background-image: url(${m.image})`)
