@@ -116,7 +116,8 @@ if ( fields.stories != null )
       
       when "image"
         span.isotope-item(data-type='Significant Stories')
-          span.ist-image(style=`background-image: url(${images[0]})`)
+          - var imgTransformed = `https://process.filestackapi.com/resize=width:600,height:240,fit:crop,align:center/compress/${images[0].match("([a-zA-Z0-9]+)$")[0]}`
+          span.ist-image(style=`background-image: url(${imgTransformed})`)
           span.ist-content
             span.h4
               a(href=`/${language}/stories/${ m.id }` style='color: black;') #{ m.title || "no title" }
@@ -132,7 +133,8 @@ if ( fields.stories != null )
       when "news"
         span.isotope-item(data-type='news')
           if images.length > 0
-            span.ist-image(style=`background-image: url(${images[0]})`)
+            - var imgTransformed = `https://process.filestackapi.com/resize=width:600,height:240,fit:crop,align:center/compress/${images[0].match("([a-zA-Z0-9]+)$")[0]}`
+            span.ist-image(style=`background-image: url(${imgTransformed})`)
           span.ist-content
             span.h4
               a(href=`/${language}/stories/${ m.id }` style='color: white;') #{ m.title || "no title" }
