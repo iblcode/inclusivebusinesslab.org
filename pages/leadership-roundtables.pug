@@ -8,9 +8,68 @@ block content
           h1.bg-title.penguin-sp(data-component='MediumEditor' data-props={field:'title'})
             span.dark-blue Training-the-Trainers Leadership Roundtables
     span#hero-arrow
-  .wrapper3.pt-120.pb-90
+            
+  .wrapper3.pt-120
     .hello.hello-inner(data-component='MediumEditor' data-props={field:'content'})
       | Training-the-Trainers Leadership Roundtables aim to develop the trainers on leadership development. The initial focus will be on values including love, forgiveness, attitude, competence, integrity, personal growth as well as life of significance and purpose. Each roundtable follows a pattern designed to help everyone participate and accept the challenge of developing each value. This would help to create a close community in which they support and encourage one another. With deeper understanding of each value, personal growth is nourished through mutual support and leading to transformation.
+      
+  .wrapper2.pt-90
+    .checkmate
+      div(data-component="SectionVisible" data-props={section: 'visible_1'})
+        img(data-component="Filestack", data-props={field:'sq1', defaultURL:'/static/img/sq1.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_1'})
+              h3(data-component='Inplace' data-props={field:'title2'}) Motivation
+              p(data-component='MediumEditor' data-props={field:'desc2'})
+                | The program is intended to be an open-platform which will continue to be developed in collaboration with world-class universities and international and local schools, as well as with multinational corporations, industry leaders, experts, global inclusive business leaders, friends and supporters.
+      div(data-component="SectionVisible" data-props={section: 'visible_2'})
+        img(data-component="Filestack", data-props={field:'sq2', defaultURL:'/static/img/sq2.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_2'})
+              h3(data-component='Inplace' data-props={field:'title_2'}) Espresso
+              p(data-component='MediumEditor' data-props={field:'desc_2'})
+                | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
+      div(data-component="SectionVisible" data-props={section: 'visible_3'})
+        img(data-component="Filestack", data-props={field:'sq3', defaultURL:'/static/img/sq3.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_3'})
+              h3(data-component='Inplace' data-props={field:'title_3'}) Hackathon
+              p(data-component='MediumEditor' data-props={field:'desc_3'})
+                | The Hackathon is about changing the world through a mix of competitive coding, arts, culture, sports, entrepreneurship and community building. The main goal of the activity is to empower participants and show them how to use their STEM skills in order to transform the environment around them.
+      div(data-component="SectionVisible" data-props={section: 'visible_4'})
+        img(data-component="Filestack", data-props={field:'image_4', defaultURL:'/static/img/chk2.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_4'})
+              h3(data-component='Inplace' data-props={field:'title_4'}) Espresso
+              p(data-component='MediumEditor' data-props={field:'desc_4'})
+                | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
+      div(data-component="SectionVisible" data-props={section: 'visible_5'})
+        img(data-component="Filestack", data-props={field:'image_5', defaultURL:'/static/img/chk4.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_5'})
+              h3(data-component='Inplace' data-props={field:'title_5'}) Hackathon
+              p(data-component='MediumEditor' data-props={field:'desc_5'})
+                | The Hackathon is about changing the world through a mix of competitive coding, arts, culture, sports, entrepreneurship and community building. The main goal of the activity is to empower participants and show them how to use their STEM skills in order to transform the environment around them.
   section.stories
     h3.text-center(data-component='Inplace' data-props={field:'title_2'}) STORIES
     .isotope

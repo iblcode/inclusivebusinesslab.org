@@ -8,12 +8,71 @@ block content
           h1.bg-title.penguin-sp
             span.light-green(data-component='Inplace' data-props={field:'title'}) Life Upon Life Movement
     span#hero-arrow
-  .wrapper3.pt-120.pb-90
+      
+  .wrapper3.pt-120
     .hello.hello-inner(data-component='MediumEditor' data-props={field:'content'})
       | Life upon Life Movement encourages the next generation to look beyond their personal goals and achievements and pursue a purpose greater than themselves, being a positive role model and lead a life of significance by adding value to others. We express this as three slogans: be the example, be the culture, be the movement.
       br
       br
       | As the next generation embark on their journey of living a life with significance, we encourage them to  write Significant Stories. We showcase these stories on our website as an inspiration for others.
+      
+  .wrapper2.pt-90
+    .checkmate
+      div(data-component="SectionVisible" data-props={section: 'visible_1'})
+        img(data-component="Filestack", data-props={field:'sq1', defaultURL:'/static/img/sq1.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_1'})
+              h3(data-component='Inplace' data-props={field:'title2'}) Motivation
+              p(data-component='MediumEditor' data-props={field:'desc2'})
+                | The program is intended to be an open-platform which will continue to be developed in collaboration with world-class universities and international and local schools, as well as with multinational corporations, industry leaders, experts, global inclusive business leaders, friends and supporters.
+      div(data-component="SectionVisible" data-props={section: 'visible_2'})
+        img(data-component="Filestack", data-props={field:'sq2', defaultURL:'/static/img/sq2.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_2'})
+              h3(data-component='Inplace' data-props={field:'title_2'}) Espresso
+              p(data-component='MediumEditor' data-props={field:'desc_2'})
+                | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
+      div(data-component="SectionVisible" data-props={section: 'visible_3'})
+        img(data-component="Filestack", data-props={field:'sq3', defaultURL:'/static/img/sq3.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_3'})
+              h3(data-component='Inplace' data-props={field:'title_3'}) Hackathon
+              p(data-component='MediumEditor' data-props={field:'desc_3'})
+                | The Hackathon is about changing the world through a mix of competitive coding, arts, culture, sports, entrepreneurship and community building. The main goal of the activity is to empower participants and show them how to use their STEM skills in order to transform the environment around them.
+      div(data-component="SectionVisible" data-props={section: 'visible_4'})
+        img(data-component="Filestack", data-props={field:'image_4', defaultURL:'/static/img/chk2.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_4'})
+              h3(data-component='Inplace' data-props={field:'title_4'}) Espresso
+              p(data-component='MediumEditor' data-props={field:'desc_4'})
+                | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
+      div(data-component="SectionVisible" data-props={section: 'visible_5'})
+        img(data-component="Filestack", data-props={field:'image_5', defaultURL:'/static/img/chk4.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_5'})
+              h3(data-component='Inplace' data-props={field:'title_5'}) Hackathon
+              p(data-component='MediumEditor' data-props={field:'desc_5'})
+                | The Hackathon is about changing the world through a mix of competitive coding, arts, culture, sports, entrepreneurship and community building. The main goal of the activity is to empower participants and show them how to use their STEM skills in order to transform the environment around them.
   section.stories
     h3.text-center(data-component='Inplace' data-props={field:'h3-stories'}) STORIES
     .isotope

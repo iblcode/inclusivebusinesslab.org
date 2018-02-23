@@ -14,29 +14,62 @@ block content
 
   .wrapper2.pt-90
     .checkmate
-      div
+      div(data-component="SectionVisible" data-props={section: 'visible_1'})
+
+        
         img(data-component="Filestack", data-props={field:'image_1', defaultURL:'/static/img/chk1.jpg'})
         .chk-content
           .chk-cell
             .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_1'})
               h3(data-component='Inplace' data-props={field:'title_1'}) MathCafé Challenges
               p(data-component='MediumEditor' data-props={field:'desc_1'})
                 | MathCafé Challenges are creative tasks requiring students to work together to propose, discuss and develop their own innovative and original ideas. By participating in a Challenge, students will gain much more than STEM skills, they will also develop skills in: teamwork and leadership, art and design, problem solving, speaking English, communication and presentation.
-      div
+      div(data-component="SectionVisible" data-props={section: 'visible_2'})
         img(data-component="Filestack", data-props={field:'image_2', defaultURL:'/static/img/chk2.jpg'})
         .chk-content
           .chk-cell
             .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_2'})
               h3(data-component='Inplace' data-props={field:'title_2'}) Espresso
               p(data-component='MediumEditor' data-props={field:'desc_2'})
                 | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
-      div
+      div(data-component="SectionVisible" data-props={section: 'visible_3'})
         img(data-component="Filestack", data-props={field:'image_3', defaultURL:'/static/img/chk4.jpg'})
         .chk-content
           .chk-cell
             .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_3'})
               h3(data-component='Inplace' data-props={field:'title_3'}) Hackathon
               p(data-component='MediumEditor' data-props={field:'desc_3'})
+                | The Hackathon is about changing the world through a mix of competitive coding, arts, culture, sports, entrepreneurship and community building. The main goal of the activity is to empower participants and show them how to use their STEM skills in order to transform the environment around them.
+      div(data-component="SectionVisible" data-props={section: 'visible_4'})
+        img(data-component="Filestack", data-props={field:'image_4', defaultURL:'/static/img/chk2.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_4'})
+              h3(data-component='Inplace' data-props={field:'title_4'}) Espresso
+              p(data-component='MediumEditor' data-props={field:'desc_4'})
+                | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
+      div(data-component="SectionVisible" data-props={section: 'visible_5'})
+        img(data-component="Filestack", data-props={field:'image_5', defaultURL:'/static/img/chk4.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_5'})
+              h3(data-component='Inplace' data-props={field:'title_5'}) Hackathon
+              p(data-component='MediumEditor' data-props={field:'desc_5'})
                 | The Hackathon is about changing the world through a mix of competitive coding, arts, culture, sports, entrepreneurship and community building. The main goal of the activity is to empower participants and show them how to use their STEM skills in order to transform the environment around them.
   section.stories.pt-120
     h3.text-center STORIES

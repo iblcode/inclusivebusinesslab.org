@@ -9,22 +9,70 @@ block content
             span.light-blue(data-component='MediumEditor' data-props={field:'title'}) VIP Weekly
     span#hero-arrow
       
-      
-  .wrapper3.pt-120.pb-90
+  
+  .wrapper3.pt-120
     .hello.hello-inner(data-component='MediumEditor' data-props={field:'desc'})
       | VIP Weekly are cycles of lessons for high school students on Values – Improvisation – Presentation.
-      
-  .wrapper4
-    p(data-component='MediumEditor' data-props={field:'cont'})
-      | For each VIP cycle, we start with V-Class on values such as love, forgiveness, positive attitude, etc. Students are encouraged to write stories from their own experience based on the value discussed in class. Then the I-Class is designed to improve communication and building confidence through improvisation. The final lesson P-Class is dedicated to student presentations and discussions. Students are encouraged to present their stories on the topic from the V-Class.
-    //- br
-    //- a.btn.btn-alt(data-component='Link' data-props={href:'/resources'}) Resources
-    
-  .square-images.pt-90
-    div(style='background-image: url(/static/img/sq1.jpg)')
-    div(style='background-image: url(/static/img/sq2.jpg)')
-    div(style='background-image: url(/static/img/sq3.jpg)')
-      
+
+
+  .wrapper2.pt-90
+    .checkmate
+      div(data-component="SectionVisible" data-props={section: 'visible_1'})
+        img(data-component="Filestack", data-props={field:'image_1', defaultURL:'/static/img/sq1.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_1'})
+              h3(data-component='Inplace' data-props={field:'title_1'}) MathCafé Challenges
+              p(data-component='MediumEditor' data-props={field:'cont'})
+                | For each VIP cycle, we start with V-Class on values such as love, forgiveness, positive attitude, etc. Students are encouraged to write stories from their own experience based on the value discussed in class. Then the I-Class is designed to improve communication and building confidence through improvisation. The final lesson P-Class is dedicated to student presentations and discussions. Students are encouraged to present their stories on the topic from the V-Class.
+      div(data-component="SectionVisible" data-props={section: 'visible_2'})
+        img(data-component="Filestack", data-props={field:'image_2', defaultURL:'/static/img/sq2.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_2'})
+              h3(data-component='Inplace' data-props={field:'title_2'}) Espresso
+              p(data-component='MediumEditor' data-props={field:'desc_2'})
+                | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
+      div(data-component="SectionVisible" data-props={section: 'visible_3'})
+        img(data-component="Filestack", data-props={field:'image_3', defaultURL:'/static/img/sq3.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_3'})
+              h3(data-component='Inplace' data-props={field:'title_3'}) Hackathon
+              p(data-component='MediumEditor' data-props={field:'desc_3'})
+                | The Hackathon is about changing the world through a mix of competitive coding, arts, culture, sports, entrepreneurship and community building. The main goal of the activity is to empower participants and show them how to use their STEM skills in order to transform the environment around them.
+      div(data-component="SectionVisible" data-props={section: 'visible_4'})
+        img(data-component="Filestack", data-props={field:'image_4', defaultURL:'/static/img/chk2.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_4'})
+              h3(data-component='Inplace' data-props={field:'title_4'}) Espresso
+              p(data-component='MediumEditor' data-props={field:'desc_4'})
+                | Espresso is a group of activities run in conjunction with MathCafé. Whereas MathCafé is aimed at students of all backgrounds and abilities, Espresso activities are targeted the brightest students.
+      div(data-component="SectionVisible" data-props={section: 'visible_5'})
+        img(data-component="Filestack", data-props={field:'image_5', defaultURL:'/static/img/chk4.jpg'})
+        .chk-content
+          .chk-cell
+            .chk-cell-content
+              label(data-component="OnlyEditor")
+                |&nbsp;Show section&nbsp;
+                input(type='checkbox' style="margin-bottom:20px;" data-component="Checkbox" data-props={field: 'visible_5'})
+              h3(data-component='Inplace' data-props={field:'title_5'}) Hackathon
+              p(data-component='MediumEditor' data-props={field:'desc_5'})
+                | The Hackathon is about changing the world through a mix of competitive coding, arts, culture, sports, entrepreneurship and community building. The main goal of the activity is to empower participants and show them how to use their STEM skills in order to transform the environment around them.
+                    
       
   section.stories.pt-120
     h3.text-center(data-component='Inplace' data-props={field:'title_2'}) STORIES
