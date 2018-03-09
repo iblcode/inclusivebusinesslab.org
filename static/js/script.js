@@ -1,14 +1,14 @@
 ibl = {
-  milestones: function() {
-    var max = 0
-
-    $('.ml-item-content')
-      .height('auto')
-      .each(function() {
-        max = Math.max(max, $(this).height())
-      })
-      .height(max)
-  },
+  // milestones: function() {
+  //   var max = 0
+  //
+  //   $('.ml-item-content')
+  //     .height('auto')
+  //     .each(function() {
+  //       max = Math.max(max, $(this).height())
+  //     })
+  //     .height(max)
+  // },
   paralax: function() {
     $(window).on('scroll load resize', function() {
       $('.hero-layer.paralax').each(function() {
@@ -277,7 +277,7 @@ ibl = {
       $(this).slick({
         slidesToShow: 3,
         slidesToScroll: 3,
-        initialSlide: 1,
+        initialSlide: 0,
         prevArrow: '<span class="slick-prev"><span></span></span>',
         nextArrow: '<span class="slick-next"><span></span></span>',
         responsive: [
