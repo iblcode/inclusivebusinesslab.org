@@ -99,6 +99,7 @@ ibl = {
     ibl.homeHero()
     ibl.mobileMenu()
     ibl.teamSlider()
+    ibl.milestoneSlider()
     ibl.milestones()
     ibl.isotope.init()
     ibl.iblvideo()
@@ -262,6 +263,33 @@ ibl = {
           },
           {
             breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      })
+    })
+  },
+  milestoneSlider: function() {
+    $('.m-slider-holder').each(function() {
+      $(this).slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        initialSlide: 1,
+        prevArrow: '<span class="slick-prev"><span></span></span>',
+        nextArrow: '<span class="slick-next"><span></span></span>',
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 760,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1

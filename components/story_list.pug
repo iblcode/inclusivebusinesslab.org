@@ -22,7 +22,7 @@ if ( fields.stories != null )
     
     
   if props.layout == "milestones"
-    - var Stories = stories.sort(compare).reverse()
+    - var Stories = stories.sort(compare).reverse().slice(0, props.max)
   else
     - var Stories = stories.sort(compare)
   

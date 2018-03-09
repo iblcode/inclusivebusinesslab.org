@@ -23,34 +23,20 @@ block content
       p(data-component='MediumEditor' data-props={field:'home_hello_text'}).
         #[strong Inclusive Business Lab] and #[strong Inclusive Business Foundation] work together to create an ecosystem that addresses systemic poverty and rich-poor gap issues.
         
+  //- section.milestones-home
+  //-   .wrapper
+  //-     h3(data-component='Inplace' data-props={field:'milestones_title'}) Milestones
+  //-   .milestones-home-container
+  //-     .wrapper(data-component="StoryList" data-props={filter:"milestone", layout:"milestones", max:3})
+  //-   .wrapper.wrapper-milestonesbtn
+
   section.milestones-home
     .wrapper
       h3(data-component='Inplace' data-props={field:'milestones_title'}) Milestones
     .milestones-home-container
-      .wrapper(data-component="StoryList" data-props={filter:"milestone", layout:"milestones"})
-        //- .ml-col
-        //-   a.ml-item
-        //-     span.ml-img(style='background-image:url(/static/img/ml1.jpg)')
-        //-     span.ml-item-content
-        //-       span.ml-title We achieved something awesome!
-        //-       .btn.btn-alt Read more
-        //-       span.ml-date JAN 2017
-        //- .ml-col
-        //-   a.ml-item
-        //-     span.ml-img(style='background-image:url(/static/img/ml1.jpg)')
-        //-     span.ml-item-content
-        //-       span.ml-title We achieved something awesome!
-        //-       .btn.btn-alt Read more
-        //-       span.ml-date JAN 2017
-        //- .ml-col
-        //-   a.ml-item
-        //-     span.ml-img(style='background-image:url(/static/img/ml1.jpg)')
-        //-     span.ml-item-content
-        //-       span.ml-title We achieved something awesome!
-        //-       .btn.btn-alt Read more
-        //-       span.ml-date JAN 2017
+      .wrapper.m-slider-holder(data-component="StoryList" data-props={filter:"milestone", layout:"milestones", max:10})
+    .milestones-line
     .wrapper.wrapper-milestonesbtn
-      //- a.btn.btn-invert(data-component='LinkEditor' data-props={field:'home_milestones_btn', defaultURL:'/{{lang}}/milestones'}) All Milestones
 
   .strategies.wrapper2
     .text-center
@@ -83,6 +69,8 @@ block content
         | The success of our platform, a diversified ecosystem, is built upon global partnerships and collaboration across different sectors, including world-class universities and educational institutions, business and industry sectors, governments and third sector. Keeping standards high is important within the organisation, and “Only the Best” serves as a useful motto in this respect: we bring the world-best and make it available to all.
     section.t-slider
       .t-slider-holder(data-component="TeamList2")
+        //- span.ts-item-holder
+        //-   span.ts-item(style=`background-image: url(${ fields.violet || "/static/img/team1.jpg" })`)
   .text-center
     a.btn.btn-alt(data-component='LinkEditor' data-props={field:'home_team_url', defaultURL:'/{{lang}}/team'}) Meet the whole team
     
