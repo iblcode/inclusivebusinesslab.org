@@ -38,13 +38,15 @@ block content
           label Show team member on front page&nbsp;
           
       li(style='width: 50%')
+        
+            
         .member-info(style='display: block; opacity: 1; visibility: visible; -webkit-transform: scale(1) rotate(0); -moz-transform: scale(1) rotate(0); transform: scale(1) rotate(0); top: -30px;')
           p(data-component='MediumEditor' data-props={field: 'content', toolbar: {buttons: ['bold', 'italic']}})
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quippe: habes enim a rhetoribus; Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Atque haec ita iustitiae propria sunt, ut sint virtutum reliquarum communia. An hoc usque quaque, aliter in vita? Tum Lucius: Mihi vero ista valde probata sunt, quod item fratri puto. Cupiditates non Epicuri divisione finiebat, sed sua satietate.
           a.btn.btn-alt.btn-medium(data-component="UploadPdf" data-props={field: 'file1', services: ['COMPUTER']})
               | Upload PDF
           
-            
+          
           div.text-center(style="padding-top: 50px")
             
             a.btn.btn-alt.btn-medium(style="float:left; margin-top: 15px;" href='#') Read more
@@ -59,7 +61,9 @@ block content
                     font-size: 12px;
                   }
                 span.penguin-empty(data-component="Inplace" data-props={field: 'url'} style='background-color: lightgrey; padding: 10px;')
-
+      li(style='width: 50%')
+        .ibl-video(data-component="StoryVideo" data-props={field: 'video'})
+          iframe(src='https://placehold.it/930x150?text=Show+video+from+sproutvideo.com' style='position:absolute;width:100%;height:100%;left:0;top:0' frameborder='0')  
 block cms_bar
 
   //- div(data-component='TeamSave')
@@ -68,7 +72,7 @@ block cms_bar
     li
       a.cms-btn.btn-save(style='color:white; background: #007F08;' href="#" data-component='TeamSaveButton' data-props={
         field: "teamMembers",
-        keys: ["image", "name", "content", "url", "type", "startdate", "enddate", "featured", "file1", "file1-dname", "file1-checkbox"]
+        keys: ["image", "name", "content", "url", "type", "startdate", "enddate", "featured", "file1", "file1-dname", "file1-checkbox", "video"]
       })
         //- i.fa.fa-check
         | Save

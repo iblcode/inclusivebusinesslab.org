@@ -745,17 +745,24 @@ blockquote footer:before {
   }
 }
 
-.ibl-video {
+.ibl-video,
+.ibl-video2 {
   position: relative;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
-  height: 520px;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
   cursor: pointer;
   margin: auto;
+}
+
+.ibl-video {
+  height: 520px;
+}
+.ibl-video2 {
+  margin-bottom: 45px;
 }
 
 /*.ibl-video:after {

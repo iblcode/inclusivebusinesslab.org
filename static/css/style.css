@@ -1232,10 +1232,6 @@ body.is-touchscreen-false .lang-selector:hover ul {
   padding: 20px 20px 40px;
 }
 
-.ml-title {
-  height: 80px;
-}
-
 .ml-date:after {
   display: block;
   width: 16px;
@@ -1283,7 +1279,7 @@ body.is-touchscreen-false .lang-selector:hover ul {
 } */
 
 .milestones-line {
-  margin-top: -140px;
+  margin-top: -110px;
   height: 1px;
   border-bottom: 4px solid white;
 }
@@ -1293,6 +1289,7 @@ body.is-touchscreen-false .lang-selector:hover ul {
   display: block;
   padding-bottom: 15px;
   text-decoration: underline;
+  height: 110px;
 }
 
 .m-slider-holder > .slick-list {
@@ -1307,11 +1304,11 @@ body.is-touchscreen-false .lang-selector:hover ul {
 }
 
 .m-slider-holder .slick-next {
-  right: -5%;
+  right: -40px;
 }
 
 .m-slider-holder .slick-prev {
-  left: -5%;
+  left: -40px;
 }
 
 /* .m-slider-holder .slick-slide:not(.slick-active) {
