@@ -100,7 +100,7 @@ ibl = {
     ibl.mobileMenu()
     ibl.teamSlider()
     ibl.milestoneSlider()
-    ibl.milestones()
+    // ibl.milestones()
     ibl.isotope.init()
     ibl.iblvideo()
     // ibl.proportionBox('.square-images > div', '1:1');
