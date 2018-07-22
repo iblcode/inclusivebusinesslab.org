@@ -32,11 +32,15 @@ export function mount(ctx, props, el) {
           for a story
           or add
           <a href="javascript:;" id="${newsSelectLink}">News</a>
-          for a news article.
+          for a news article. New will only show on the news page and not on any other page.
           <br>
           Add
           <a href="javascript:;" class="${selectLink}" data-tag="highlight">Highlight</a>
           to show it on the homepage.
+          <br>
+          You can add
+          <a href="javascript:;" class="${selectLink}" data-tag="external Link">external Link</a>
+          if you want the element to show up in the list of stories / news but directly send the visitor to another page (this uses the "Learn more" link on the bottom).
           <br>
           You can add the following tags to appear on the individual pages:
           <a href="javascript:;" class="${selectLink}" data-tag="inclusive business">Inclusive Business</a>,
@@ -48,7 +52,7 @@ export function mount(ctx, props, el) {
           <a href="javascript:;" class="${selectLink}" data-tag="leadership challenges">Leadership Challenges</a>.
           <br>
           To show a story as a milestone on the first page, tag it with <a href="javascript:;" class="${selectLink}" data-tag="milestone">Milestone</a>.
-          Heads up: Milestones will not be shown on the "Stories" page. So add the tag <a href="javascript:;" class="${selectLink}" data-tag="story">Story</a> to make sure it will appear there.
+
 
         </p>
       </div>

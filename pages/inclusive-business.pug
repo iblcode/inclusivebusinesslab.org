@@ -6,7 +6,7 @@ block content
       .hero-layer-text-v.active
         h1.bg-title.penguin-sp
           span.green(data-component='Inplace' data-props={field:'title'}) Inclusive Business
-  .wrapper3.pt-120
+  .wrapper3.pt-120.pb-120
     img(alt='OmniOikos', data-component="Filestack", data-props={field:'image-1', defaultURL:'/static/img/omnioikos_logo.svg'})
     .r-grid.qed
       .col
@@ -18,7 +18,7 @@ block content
               OmniOikos is an e-m-digital platform with the vision “Economy for Everyone”, where we will showcase, develop, upscale and distribute the Inclusive Brand Q.E.D of “Quality; Excellence; Dignity”. Behind these quality and ethical brands and products, throughout the value-chains from seeds to stores, are the many significant stories that bring dignity to human lives.
 
           //- a.btn.btn-alt(href='javascript:;') Visit Omnioikos
-  section.stories.pt-120(data-component="StorySectionVisible" data-props={filter:"inclusive business"})
+  section.stories(data-component="StorySectionVisible" data-props={filter:"inclusive business"})
     h3.text-center(data-component='Inplace' data-props={field:'h3-stories'}) STORIES
     .isotope
       .isotope-content.bg-grey(data-component="StoryList" data-props={filter:"inclusive business"})

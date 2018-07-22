@@ -12,6 +12,7 @@
     ["content2", { "localized": false }],
     ["exists", { "localized": false }],
     ["video", { "localized": false }],
-    ["sproutid", { "localized": false }]
+    ["sproutid", { "localized": false }],
+    ["url-link-editor-url", { "localized": false }]
   ]
 }

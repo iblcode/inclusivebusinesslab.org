@@ -11,12 +11,12 @@ block content
       .hero-layer-text-v.active
         .wrapper3
           h1.bg-title.penguin-sp
-            span.orange(data-component='Inplace' data-props={field:'title'}) Our Stories
+            span.orange(data-component='Inplace' data-props={field:'title'}) News and Press Releases
   section.stories(style='padding-top: 70px;')
-    .text-center
-      a.btn.btn-alt(href='javascript:;' data-component="StoryAddButton" style='margin-bottom:25px;') Add another story
+    //- .text-center
+      a.btn.btn-alt(href='javascript:;' data-component="StoryAddButton") Add another story
     .isotope
-      .isotope-content(data-component="StoryList" data-props={filter:""})
+      .isotope-content(data-component="StoryList" data-props={filter:"news"})
 
     .text-center.btn-more
       //- a.btn.btn-alt(href='javascript:;') Show more stories

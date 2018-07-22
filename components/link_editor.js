@@ -1,10 +1,7 @@
-import {
-  mount as mountInplace,
-  render as renderInplace
-} from 'penguin-inplace'
+import { mount as mountInplace, render as renderInplace } from 'penguin-inplace'
 import { update } from 'penguin.js'
 
-export function mount (ctx, props, el) {
+export function mount(ctx, props, el) {
   if (process.env.PENGUIN_ENV === 'production') return
 
   loadStyle()
@@ -16,8 +13,7 @@ export function mount (ctx, props, el) {
       // exists in store
       el.href = renderUrl(ctx, value)
       url = value
-    }
-    else {
+    } else {
       // new
       el.href = renderUrl(ctx, props.defaultURL)
       url = props.defaultURL
@@ -25,29 +21,35 @@ export function mount (ctx, props, el) {
   }
 
   update()
-  ctx.store.subscribe( update )
+  ctx.store.subscribe(update)
 
   var tooltipWrap = createTip.call(el, ctx, props, url)
 
-  el.addEventListener('click', function (e) {
+  el.addEventListener('click', function(e) {
     e.preventDefault()
 
-    if (e.altKey) { window.location.href = this.href }
-    else {
-
+    if (e.altKey) {
+      window.location.href = this.href
+    } else {
       // var firstChild = document.body.firstChild
       // firstChild.parentNode.insertBefore(tooltipWrap, firstChild)
       document.body.appendChild(tooltipWrap)
 
-
       const padding = 5
       var linkProps = el.getBoundingClientRect()
       var tooltipProps = tooltipWrap.getBoundingClientRect()
-      var topPos = linkProps.top + window.scrollY - (tooltipProps.height + padding)
-      var overflow = linkProps.left + window.scrollX + tooltipProps.width - window.innerWidth
+      var topPos =
+        linkProps.top + window.scrollY - (tooltipProps.height + padding)
+      var overflow =
+        linkProps.left + window.scrollX + tooltipProps.width - window.innerWidth
       var left = linkProps.left + window.scrollX
-      if ( overflow > 0 ) { left -= overflow }
-      tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+left+'px;')
+      if (overflow > 0) {
+        left -= overflow
+      }
+      tooltipWrap.setAttribute(
+        'style',
+        'top:' + topPos + 'px;' + 'left:' + left + 'px;'
+      )
     }
   })
 
@@ -65,30 +67,35 @@ export function mount (ctx, props, el) {
   mountInplace(ctx, props, el)
 }
 
-export function render (ctx, props) {
-  const {store} = ctx
+export function render(ctx, props) {
+  const { store } = ctx
   const value = ctx.store.getState().fields[props.field]
   const url = store.getState().fields[`${props.field}-link-editor-url`]
 
-  return{ replace: `
+  if ((url == '' || url == null) && props.hide === true) return { replace: '' }
+
+  return {
+    replace: `
     <a
-      href="${url == null ? renderUrl(ctx, props.defaultURL) : renderUrl(ctx, url)}"
-      class="${ props.className == null ? '' : props.className }"
-      id="${ props.id == null ? '' : props.id }">
-    ${value == null ? props.innerHTML : value }
+      href="${
+        url == null ? renderUrl(ctx, props.defaultURL) : renderUrl(ctx, url)
+      }"
+      class="${props.className == null ? '' : props.className}"
+      id="${props.id == null ? '' : props.id}">
+    ${value == null ? props.innerHTML : value}
     </a>
-  `}
+  `
+  }
 }
 
-function renderUrl( { language }, url ) {
+function renderUrl({ language }, url) {
   const pat = /({{\s?lang\s?}})/
 
   return url.replace(pat, language)
 }
 
-function createTip ( ctx, props, url ) {
-
-  var tooltipWrap = document.createElement("div")
+function createTip(ctx, props, url) {
+  var tooltipWrap = document.createElement('div')
   tooltipWrap.className = 'penguin-tooltip'
   tooltipWrap.insertAdjacentHTML('beforeend', template)
   // var firstChild = document.body.firstChild
@@ -99,13 +106,13 @@ function createTip ( ctx, props, url ) {
 
   var close = tooltipWrap.querySelector('.link-editor-toolbar-close')
   var link = tooltipWrap.querySelector('.link-editor-toolbar-link')
-  const {store} = ctx
+  const { store } = ctx
   input.value = url
-  save.addEventListener('click', (e) => {
+  save.addEventListener('click', e => {
     e.preventDefault()
 
     renderUrl(ctx, input.value)
-    store.dispatch(update({[`${props.field}-link-editor-url`] : input.value}))
+    store.dispatch(update({ [`${props.field}-link-editor-url`]: input.value }))
 
     cancelTip(e)
   })
@@ -119,7 +126,7 @@ function createTip ( ctx, props, url ) {
   //
   // tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+(linkProps.left + window.scrollX)+'px;')
 
-  function cancelTip (e){
+  function cancelTip(e) {
     e.preventDefault()
     tooltipWrap.remove()
   }
@@ -127,11 +134,9 @@ function createTip ( ctx, props, url ) {
   return tooltipWrap
 }
 
-
-
-function loadStyle () {
-  var css = document.createElement("style")
-  css.type = "text/css"
+function loadStyle() {
+  var css = document.createElement('style')
+  css.type = 'text/css'
   css.innerHTML = style
   document.head.appendChild(css)
 }

@@ -66,6 +66,7 @@ function saveGloabl(ctx, props, el) {
   const content2 = fields.content2
   const video = fields.video
   const sproutid = fields['video-sproutid']
+  const url = fields['url-link-editor-url']
   const current = {
     id,
     title,
@@ -78,7 +79,8 @@ function saveGloabl(ctx, props, el) {
     img3,
     content2,
     video,
-    sproutid
+    sproutid,
+    url
   }
 
   const element = find({ id }, globalElements)

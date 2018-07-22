@@ -1,10 +1,10 @@
 if ( fields.stories != null )
-
+  
   //- Filter
   if ( props.filter != null && props.filter != '' )
     - var stories = fields.stories.filter( s => ( s.tags != null && Array.isArray( s.tags ) && s.tags.length != 0 && s.tags.indexOf( props.filter.toLowerCase() ) > -1 ))
   else
-    - var stories = fields.stories
+    - var stories = fields.stories.filter( s => ( s.tags != null && Array.isArray( s.tags ) && s.tags.length != 0 && s.tags.indexOf( 'news' ) == -1 ))
 
   //- Sorting
   -
@@ -60,7 +60,7 @@ if ( fields.stories != null )
     //- handle tags
     if ( m.tags != null && m.tags.length != 0 )
       - var tags = m.tags.join( ', ' )
-
+      
       - var downcaseTags = m.tags.map( t => ( t.toLowerCase() ) )
       if downcaseTags.indexOf( 'significant story' ) > -1
         - var type = "story"
@@ -71,6 +71,7 @@ if ( fields.stories != null )
 
     else
       - var tags = ""
+      - var downcaseTags = []
       - var type = "story"
 
     //- handle images
@@ -85,6 +86,18 @@ if ( fields.stories != null )
       // var video = undefined
       if ( m.video != null && m.video != '' ) { var video = m.video }
       else { var video = ''}
+      
+      
+    //- handle url
+    - 
+      if (m.url != '' && m.url != null && downcaseTags.indexOf( 'external link' ) > -1) {
+        var url = m.url.trim()
+        if (url.toLowerCase().search("https://") != 0 && url.toLowerCase().search("http://") != 0 ) {
+          url = "http://" + url
+        }
+      } else {
+        var url = `/${language}/stories/${ m.id }`
+      }
     
     
     //- handle layouts
@@ -106,7 +119,7 @@ if ( fields.stories != null )
         span.isotope-item(data-type='Significant Stories')
           span.ist-content
             span.h4
-              a(href=`/${language}/stories/${ m.id }` style='color: black;') #{ m.title || "no title" }
+              a(href=url style='color: black;') #{ m.title || "no title" }
             span.p #{ teaser }
               //- | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
             span.ist-bottom
@@ -122,7 +135,7 @@ if ( fields.stories != null )
           span.ist-image(style=`background-image: url(${imgTransformed})`)
           span.ist-content
             span.h4
-              a(href=`/${language}/stories/${ m.id }` style='color: black;') #{ m.title || "no title" }
+              a(href=url style='color: black;') #{ m.title || "no title" }
             span.p #{ teaser }
             span.ist-bottom
               span.ist-date #{ date }
@@ -139,7 +152,7 @@ if ( fields.stories != null )
             span.ist-image(style=`background-image: url(${imgTransformed})`)
           span.ist-content
             span.h4
-              a(href=`/${language}/stories/${ m.id }` style='color: white;') #{ m.title || "no title" }
+              a(href=url style='color: white;') #{ m.title || "no title" }
             span.ist-bottom
               span.ist-date #{ date }
               span.ist-type
@@ -153,7 +166,7 @@ if ( fields.stories != null )
           span.ist-image(style='background-image: url(/static/img/iso.2.png)')
           span.ist-content
             span.h4
-              a(href=`/${language}/stories/${ m.id }` style='color: black;') #{m.title}
+              a(href=url style='color: black;') #{m.title}
             span.p
               | An tu me de L. Non enim iam stirpis bonum quaeret, sed animalis. Non est ista, inquam, Piso, magna dissensio. Egone non intellego, quid sit don Graece, Latine voluptas? Nullus est igitur cuiusquam dies natalis. Quo modo?
             span.ist-bottom
@@ -173,7 +186,7 @@ if ( fields.stories != null )
             | #{ eventYear }
           span.iiv-content
             strong(style='padding-bottom: 30px;') #{ m.title || "no title" }
-            a.btn.btn-alt.btn-medium(href=`/${language}/stories/${ m.id }` style='color: black;') Read more
+            a.btn.btn-alt.btn-medium(href=url style='color: black;') Read more
       //- Event past
       when "eventImg"
         .isotope-item-v(data-type='Past')
@@ -185,12 +198,12 @@ if ( fields.stories != null )
           span.iiv-image(style=`background-image: url(${images[0]})`)
           span.iiv-content
             strong(style='padding-bottom: 30px;') #{ m.title || "no title" }
-            a.btn.btn-alt.btn-medium(href=`/${language}/stories/${ m.id }` style='color: black;') Read more
+            a.btn.btn-alt.btn-medium(href=url style='color: black;') Read more
           
       //- Milestone
       when "milestone"
         .ml-col
-          a.ml-item(href=`/${language}/stories/${ m.id }` class=`${video ? 'ml-item-video' : ''}`)
+          a.ml-item(href=url class=`${video ? 'ml-item-video' : ''}`)
             -
               if (m.sproutid != null && m.sproutid != '') {
                 var src = `//cdn-thumbnails.sproutvideo.com/${m.sproutid}/0/btn_false,w_640,h_360/poster.jpg`
@@ -217,7 +230,7 @@ if ( fields.stories != null )
             //-     span.iiv-content
             //-       strong  #{ m.title || "no title" }
             //-       span.iiv-content-text #{ teaserShort }
-            //-       a.btn.btn-alt.btn-medium(href=`/${language}/stories/${ m.id }` style='color: black;') Read more
+            //-       a.btn.btn-alt.btn-medium(href=url style='color: black;') Read more
           
           
 else
