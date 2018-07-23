@@ -8,5 +8,5 @@ export function mount(ctx, props, el) {
 }
 
 export function render() {
-  return { attrs: {} }
+  return { replace: '' }
 }
